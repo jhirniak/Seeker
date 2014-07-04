@@ -1,0 +1,35 @@
+\documentclass[12pt, a4paper]{usecase}
+
+\setid{1}
+\setname{Information Retrieval}
+\setDatecCreated{26 May 2014}
+\setDateLastUpdated{26 May 2014}
+
+\setActors{System}
+\setDescription{Actor process all source listed documents and updates the database accordingly.}
+\setPreconditions{Regular update in time of small server activity (e.g. 2am),
+  Update requested by administrator}
+\setPostconditions{The database contains the latest document information,
+  If data accessed during update user notified that data may be inconsistent by a warning as well warning was saved in all generated documents}
+\setPriority{100}
+\setFrequency{10}
+\setBasicFlow{Activate at predefined time, Fetch all documents, Extract information, Update aggregates accordingly}
+\setAlternativeFlow{Update requested by administrator, Same as basic flow}
+\setExceptions{Update already in progress}
+\setSpecialRequirements{Cannot be requested one after another}
+\setAssumptions{}
+\setNotes{}
+
+
+\begin{document}
+
+\pagenumbering{gobble}
+\topskip0pt
+\vspace*{\fill}
+
+\begin{usecase}	
+\end{usecase}
+
+\vspace*{\fill}
+
+\end{document}

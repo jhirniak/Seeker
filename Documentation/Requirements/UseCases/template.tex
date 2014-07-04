@@ -1,0 +1,44 @@
+\documentclass[12pt, a4paper]{article}
+
+\def\arraystretch{1.5}
+
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+
+\usepackage{array}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\begin{document}
+
+\begin{tabular}{!{\vrule width 2pt}R{4cm}|L{11cm}!{\vrule width 2pt}}
+\noalign{\hrule height 2pt}
+Use Case ID: & a \\\hline
+Use Case Name: & b \\\hline
+Date Created: &  \\\hline
+Date Last Updated: &  \\
+\noalign{\hrule height 2pt}
+\end{tabular}
+
+\vspace{5mm}
+
+\begin{tabular}{!{\vrule width 2pt}R{4cm}|L{11cm}!{\vrule width 2pt}}
+\noalign{\hrule height 2pt}
+Actors: &  \\\hline
+Description: &  \\\hline
+Preconiditions: &  \\\hline
+Postconditions: &  \\\hline
+Priority: &  \\\hline
+Frequency of Use: &  \\\hline
+Basic Flow: &  \\\hline
+Alternative Flow: &  \\\hline
+Exceptions: &  \\\hline
+Includes: &  \\\hline
+Special Requirements: &  \\\hline
+Assumptions: &  \\\hline
+Notes and Issues: &  \\
+\noalign{\hrule height 2pt}
+\end{tabular}
+
+\end{document}

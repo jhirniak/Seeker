@@ -1,0 +1,649 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+html {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browse Happy prompt
+   ========================================================================== */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body {
+    background-image: url('../img/bg/bg-seastorm-beach-view.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% auto;
+}
+
+header {
+    width: 960px;
+    height: 120px;
+    margin:0px auto;
+    font-family: Helvetica;
+    font-size: 1.4em;
+}
+
+header h1 {
+    width: 190px;
+    height: 100%;
+    text-shadow: 0px 1px 1px #4d4d4d;
+    color: #3c0388;
+    font: 80px 'LeagueGothicRegular';
+    margin:20px auto;
+    float: left;
+}
+
+header h2 {
+    padding-top:20px;
+    width: 760px;
+    height: 100%;
+    float: right;
+    font-size: .8em;
+    text-align: center;
+    color: #656152;
+}
+
+header a,
+header a:focus,
+header a:hover
+{
+    color: inherit;
+}
+
+@font-face {
+    font-family: LeagueGothicRegular;
+    src: url('../font/LeagueGothic-Regular.otf');
+}
+
+#content {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.line {
+    clear: both;
+    width:100%;
+    border-bottom:2px solid #000;
+}
+
+#query {
+    color: #444;
+    padding: .5em .5em;
+    position: relative;
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+#search {
+    clear: both;
+}
+
+#search textarea {
+    font-size: 15px;
+    line-height: 20px;
+    font-family: courier;
+    color: #333;
+}
+
+form input[type=text], div.fake_form {
+    background: #eee;
+    line-height: 15px;
+    border: 0;
+    border-bottom: 1px dotted #888;
+    color: #333; }
+
+form input[type=text].inputted {
+    color: #ff0000;
+    border-bottom: 0;
+    background: transparent; }
+
+div.fake_form {
+    display: inline-block;
+    visibility: collapse; }
+
+button,
+input[type="submit"] {
+    font-size: 100%;
+    text-decoration: none;
+    padding: .5em 1em;
+    border: 1px solid rgba(0,0,0,0);
+    border-radius: 2px;
+    color: #444;
+    background-color: #E6E6E6;
+    cursor: default;
+}
+
+input[type="submit"] {
+    background-image: url('../img/magnifying-glass.png');
+    background-repeat: no-repeat;
+    background-position: right 30px center;
+    padding-left: 24px;
+    width: 960px;
+}
+
+input[type="submit"]:hover {
+    color: #222;
+    border: 1px solid rgba(120,120,120,.5);
+    background-color: #e6e6d4;
+}
+
+.optionBox > button {
+    margin: 12px 0;
+    width: 100%;
+}
+
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary {
+    color: #fff;
+}
+
+.button-success {
+    background: rgb(28, 184, 65); /* this is a green */
+}
+
+.button-error {
+    background: rgb(202, 60, 60); /* this is a maroon */
+}
+
+.button-warning {
+    background: rgb(223, 117, 20); /* this is an orange */
+}
+
+.button-secondary {
+    background: rgb(66, 184, 221); /* this is a light blue */
+}
+
+#optionMenu {
+    float:left;
+    width:100%;
+    border-bottom:2px solid #000;
+    overflow:hidden;
+    position:relative;
+}
+
+#optionMenu ul {
+    clear:left;
+    float:left;
+    list-style:none;
+    margin:0;
+    padding:0;
+    position:relative;
+    left:0%;
+    text-align:center;
+}
+
+#optionMenu ul li {
+    display:block;
+    float:left;
+    list-style:none;
+    margin:0;
+    padding:0;
+    position:relative;
+    /* right:50%; */
+}
+
+#optionMenu ul li a {
+    display:block;
+    margin:0 0 0 1px;
+    padding:3px 10px;
+    background:#ddd;
+    color:#000;
+    text-decoration:none;
+    line-height:1.3em;
+}
+
+#optionMenu ul li a:hover {
+    background:#369;
+    color:#fff;
+}
+
+#optionMenu ul li a.active,
+#optionMenu ul li a.active:hover {
+    color:#fff;
+    background:#000;
+    font-weight:bold;
+}
+
+/* Overlay box */
+div.overlay {
+    /* visibility: hidden; */
+    opacity: 0.5;
+    background: #000;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
+div.optionBox {
+    /* visibility: hidden; */
+    opacity: 1;
+    background: #000;
+    width: 50%;
+    height: 50%;
+    z-index: 20;
+    top: 25%;
+    left: 25%;
+    position: fixed;
+    padding: 1.4em;
+    color: #fff;
+    border-radius: 12px;
+}
+
+div.optionBox #closeBtn {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    width: 48px;
+    height: 48px;
+    font-size: 36px;
+    line-height: 48px;
+    border-radius: 100%;
+    background: rgb(202, 60, 60); /* this is a maroon */
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+}
+
+ol.tree .closeGroupBtn {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    width: 48px;
+    height: 48px;
+    font-size: 36px;
+    line-height: 48px;
+    border-radius: 100%;
+    background: rgb(202, 60, 60); /* this is a maroon */
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+}
+
+div.optionBox #selectBtn {
+
+}
+
+/* Stage selection */
+#stageSelection ul, .arrow {
+    float: left;
+    height: 100%;
+}
+
+#stageSelection ul {
+    list-style-type: none;
+    border: 1px solid #fff;
+    left: 0;
+}
+
+.arrow {
+    background-color: white;
+    color: #000;
+    height: 100%;
+    width: 24px;
+}
+
+.queryAtom {
+}
+
+.removeBtn {
+    margin-left: 4px;
+    margin-right: 4px;
+    font-size:75%;
+    vertical-align: super;
+    border-radius: 100%;
+    color: white;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    border: 1px solid rgba(0,0,0,0);
+    cursor: default;
+    background: rgb(28, 184, 65); /* this is a green */
+}
+
+.comma {
+    margin-right: 12px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+
+}
+
+#addGroup {
+    background: rgb(28, 184, 65); /* this is a green */
+    color: #fff;
+    width: 48px;
+    height: 48px;
+    font-size: 36px;
+    line-height: 48px;
+    border-radius: 100%;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+}
+
+.opButtons {
+    display: inline-block;
+    margin: 0 0 0 8px;
+
+
+}
+
+.opButtons button {
+    position: relative;
+    top: -2px;
+    margin: 0;
+    padding: 0;
+
+    height: 18px;
+    width: 18px;
+    line-height: 18px;
+    font-size: 16px;
+
+    border-radius: 100%;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+.opButtons .editBtn {
+    background: rgb(66, 184, 221); /* this is a light blue */
+}
+
+.opButtons .deleteBtn {
+    background: rgb(202, 60, 60); /* this is a maroon */
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

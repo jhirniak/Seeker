@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/treemenu.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <header>
+            <h1><a href="index.html">Seeker</a></h1>
+            <h2>Place to insert short project description and link to the documentation.<br />
+                She’s a solan, she’s a tramper, she’s a sea-shaker,<br />
+                she’s a falcon, she’s a kestrel, she’s a wide-night-seeker...</h2>
+        </header>
+
+        <div id="popup">
+            <div class="overlay"></div>
+                <div class="optionBox">
+                    <h3 id="title">Test</h3>
+                    <!-- Vertical acordion popup -->
+                    <!--
+                        <div id="accordion">
+                            <h3>Section 1</h3>
+                            <div>
+                                <p>
+                                    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+                                    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+                                    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+                                    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+                                </p>
+                            </div>
+                            <h3>Section 2</h3>
+                            <div>
+                                <p>
+                                    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+                                    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+                                    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+                                    suscipit faucibus urna.
+                                </p>
+                            </div>
+                            <h3>Section 3</h3>
+                            <div>
+                                <p>
+                                    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+                                    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+                                    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+                                    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+                                </p>
+                                <ul>
+                                    <li>List item one</li>
+                                    <li>List item two</li>
+                                    <li>List item three</li>
+                                </ul>
+                            </div>
+                            <h3>Section 4</h3>
+                            <div>
+                                <p>
+                                    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                                    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+                                    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+                                    mauris vel est.
+                                </p>
+                                <p>
+                                    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+                                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+                                    inceptos himenaeos.
+                                </p>
+                            </div>
+                        </div>
+                    -->
+
+                <!-- Horizontal stage selector -->
+                <div id="stageSelection">
+                    <div>
+                        <input type="checkbox" name="lvl1[]" value="1" />1<br />
+                        <input type="checkbox" name="lvl1[]" value="2" />2<br />
+                        <input type="checkbox" name="lvl1[]" value="3" />3<br />
+                        <input type="checkbox" name="lvl1[]" value="4" />4<br />
+                        <input type="checkbox" name="lvl1[]" value="5" />5<br />
+                        <input type="checkbox" name="lvl1[]" value="6" />6<br />
+                    </div>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                    </ul>
+                    <div class="arrow">&lt;</div>
+                    <ul>
+                        <li>a</li>
+                        <li>b</li>
+                        <li>c</li>
+                        <li>d</li>
+                        <li>e</li>
+                        <li>f</li>
+                    </ul>
+                    <div class="arrow">&lt;</div>
+                    <ul>
+                        <li>i</li>
+                        <li>ii</li>
+                        <li>iii</li>
+                    </ul>
+                </div>
+                <button type="button" title="Select" id="selectBtn">Select</button>
+                <button type="button" title="Close" id="closeBtn">X</button>
+            </div>
+        </div>
+
+        <div id="content">
+
+            <div id="optionMenu">
+                <ul>
+                    <!--
+                    <li><a href="#" onclick="addGroupExample()">Report Type</a></li>
+                    <li><a href="#" onclick="addSectionExample()">Section</a></li>
+                    <li><a href="#" onclick="addInputBoxExample()">Field</a></li>
+                    <li><a href="#" onclick="addTextExample()">Just text</a></li>
+                    -->
+                    <li><a href="#" id="help">Help</a></li>
+                    <li><a href="#" id="restartQuery">Restart query</a></li>
+                    <li><a href="#" id="undo">Undo</a></li>
+                    <li><a href="#" id="redo">Redo</a></li>
+                </ul>
+            </div>
+
+            <div id="search">
+                <form action="search_result_0.html">
+                    <div id="query">
+                        <!--<p>Your query:</p>-->
+                        <h3 style="clear:both; padding-top:12px;">Query:</h3>
+                        <p style="display:none">Hint: get rid of it later</p>
+
+                        <!-- Query -->
+
+                        <ol class="tree">
+                            <li class="node">
+                                <label for="r0">Committee of Experts' evaluation report, Committee of Ministers' Recommendation</label>
+                                <!--
+                                <span class="opButtons">
+                                    <button type="button" value="Edit" alt="Edit" title="Edit this node" class="editBtn">E</button>
+                                    <button type="button" value="Delete" alt="Delete" title="Delete this node from the query" class="deleteBtn">X</button>
+                                </span>
+                                -->
+                                <input type="checkbox" checked id="folder1" />
+                                <ol>
+                                    <li class="node">
+                                        <label for="r00">Cycle 1, Last</label> <input type="checkbox" checked id="subfolder1" />
+                                        <ol>
+                                            <li class="node">UK report</li>
+                                            <li class="node">Sections: <input type="text" value="none" id="in0"/></li>
+                                            <li class="node">
+                                                <label for="r001">Languages</label> <input type="checkbox" checked id="subfolder1" />
+                                                <ol>
+                                                    <li class="node"><input type="text" value="none" id="in1"/></li>
+                                                    <li class="node"><input type="text" value="none" id="in2"/></li>
+                                                </ol>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+                            <button type="button" class="closeGroupBtn" title="Close the current group (whole gray box)">X</button>
+                        </ol>
+
+                        <ol class="tree">
+                            <li class="node">
+                                <label for="r1">State Periodical Report</label> <input type="checkbox" checked id="folder1" />
+                                <ol>
+                                    <li class="node">
+                                        <label for="r10">Cycle All</label> <input type="checkbox" checked id="subfolder1" />
+                                        <ol>
+                                            <li class="node">All countries</li>
+                                            <li class="node">Sections: <input type="text" value="none" id="in3" /></li>
+                                            <li class="node">
+                                                <label for="r101">Language</label> <input type="checkbox" checked id="subfolder1" />
+                                                <ol>
+                                                    <li class="node"><input type="text" value="none" id="in4" /></li>
+                                                    <li class="node"><input type="text" value="none" id="in5" /></li>
+                                                </ol>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li class="node">
+                                        <label for="cycle">Cycle Last</label> <input type="checkbox" checked id="cycle" />
+                                        <ol>
+                                            <li class="node">Section: <input type="text" value="none" id="in6" /></li>
+                                            <li class="node">Languages: <input type="text" value="none" id="in7" /></li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+                            <button type="button" class="closeGroupBtn" title="Close the current group (whole gray box)">X</button>
+                        </ol>
+
+                        <!-- END Query -->
+
+                        <button type="button" value="Add next report type" id="addGroup" title="Adds new report type group to the query">+</button>
+
+                    </div>
+                    <div class="line"></div>
+                    <input type="submit" value="Generate document..." title="Generates document from the specified query" /> <!-- TODO: Find better name -->
+                </form>
+            </div>
+
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    </body>
+</html>

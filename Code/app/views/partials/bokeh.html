@@ -1,0 +1,9 @@
+<!-- Each <li> corresponds to one spinnin bokeh.
+     Can use AngularJS to manage number and colours of bokehs. -->
+
+<div ng-controller="BokehCtrl" ng-show="bokeh.waiting">
+    <div class="overlay"></div>
+    <ul class="bokeh">
+        <li ng-repeat="item in bokeh.items"></li>
+    </ul>
+</div>
