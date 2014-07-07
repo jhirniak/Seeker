@@ -12,27 +12,27 @@ angular.module('seekerApp')
             "id": 1,
             "type": "source",
             "title": "Committee of Experts report",
-            "items": [{
+            "nodes": [{
                 "id": 2,
                 "type": "cycle",
                 "title": "Cycle: 1, last",
-                "items": [
+                "nodes": [
                     {
                         "id": 21,
                         "type": "producer-country",
                         "title": "Country: UK",
-                        "items": [
+                        "nodes": [
                             {
                                 "id": 211,
                                 "type": "specifier-language",
                                 "title": "Languages: Scottish-Gaelic, Welsh",
-                                "items": []
+                                "nodes": []
                             },
                             {
                                 "id": 212,
                                 "type": "specifier-text",
                                 "title": "Contains some of words: education, school",
-                                "items": []
+                                "nodes": []
                             }
                         ]
                     }
@@ -41,18 +41,18 @@ angular.module('seekerApp')
             {
                 "id": 22,
                 "title": "Organize by",
-                "items": [
+                "nodes": [
                     {
                         "id": 221,
                         "organizer": "211-asc",
                         "title": "Language (ascending)",
-                        "items": []
+                        "nodes": []
                     },
                     {
                         "id": 222,
                         "organizer": "212-asc",
                         "title": "Cycle (ascending)",
-                        "items": []
+                        "nodes": []
                     }
                 ]
             }]
@@ -63,7 +63,7 @@ angular.module('seekerApp')
         return "Hello moto!";
     };
 
-    $scope.selectedItem = {};
+    $scope.selectedNode = {};
 
     $scope.options = {
     };
@@ -81,13 +81,12 @@ angular.module('seekerApp')
         $scope.data.splice(0,0, a);
     };
 
-    $scope.newSubItem = function(scope) {
-        // TODO: replace name items with nodes
+    $scope.newSubNode = function(scope) {
         var nodeData = scope.$modelValue;
-        nodeData.items.push({
-            id: nodeData.id * 10 + nodeData.items.length,
-            title: nodeData.title + '.' + (nodeData.items.length + 1),
-            items: []
+        nodeData.nodes.push({
+            id: nodeData.id * 10 + nodeData.nodes.length,
+            title: nodeData.title + '.' + (nodeData.nodes.length + 1),
+            nodes: []
         });
     };
 
