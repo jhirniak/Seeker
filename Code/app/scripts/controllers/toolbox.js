@@ -3,8 +3,10 @@
 angular.module('seekerApp')
     .controller('ToolboxCtrl', function ($scope, $location, Auth) {
         $scope.menu = [
+            {'title': 'help'},
             {'title': 'undo'},
             {'title': 'redo'},
-            {'title': 'help'}
+            {'title': 'collapse all'},
+            {'title': 'expand all'}
         ]
     });

@@ -36,7 +36,7 @@ angular.module('seekerApp')
                                 "id": 212,
                                 "type": "specifier-text",
                                 "value": ['education', 'school'],
-                                "title": "Contains some of words: education, school",
+                                "title": "Contains any of: education, school",
                                 "nodes": []
                             }
                         ]
@@ -71,17 +71,16 @@ angular.module('seekerApp')
     $scope.options = {
     };
 
-    $scope.remove = function(scope) {
-        scope.remove();
-    };
-
     $scope.toggle = function(scope) {
         scope.toggle();
     };
 
-    $scope.moveLastToTheBegginig = function () {
-        var a = $scope.data.pop();
-        $scope.data.splice(0,0, a);
+    $scope.modify = function(scope) {
+        alert('modifying' + scope);
+    };
+
+    $scope.remove = function(scope) {
+        scope.remove();
     };
 
     $scope.newSubNode = function(scope) {
@@ -91,6 +90,11 @@ angular.module('seekerApp')
             title: nodeData.title + '.' + (nodeData.nodes.length + 1),
             nodes: []
         });
+    };
+
+    $scope.moveLastToTheBegginig = function () {
+        var a = $scope.data.pop();
+        $scope.data.splice(0,0, a);
     };
 
     var getRootNodesScope = function() {
