@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('seekerApp')
-  .controller('QueryCtrl', function ($scope, $http, Bokeh, $timeout) {
+  .controller('QueryCtrl', function ($scope, $http, Bokeh, $timeout, History) {
     /* $http.get('/api/awesomeThings').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;
     }); */
@@ -63,10 +63,59 @@ angular.module('seekerApp')
         }
     ];
 
+    History.watch('data', $scope);
+    History.watch('formatting', $scope);
+
     $scope.selectedNode = {};
 
     $scope.options = {
     };
+
+    /*
+    Function.prototype.method = function (name, func) {
+        this.prototype[name] = func;
+        return this;
+    };
+
+    function clone(obj) {
+        if (null == obj || "object" != typeof obj) return obj;
+        var copy = obj.constructor();
+        for (var attr in obj) {
+            if (obj.hasOwnProperty(attr)) copy[attr] = obj[attr];
+        }
+        return copy;
+    }
+
+    function History(obj) {
+        this.index = -1;
+        this.trace = [];
+        this.obj = obj;
+        this.note();
+    }
+
+    History.method('note', function () {
+        this.trace[++this.index] = clone(this.obj);
+        alert(this.index);
+    });
+
+    History.method('undo', function () {
+        if (this.index >= 0) {
+            alert('undoing');
+            this.obj = this.trace[this.index--];
+            // this.updateButtons();
+        }
+    });
+
+    History.method('redo', function () {
+        if (this.index < this.trace.length - 1) {
+            alert('redoing');
+            this.obj = this.trace[this.index++];
+            // this.updateButtons();
+        }
+    });
+
+    var dataHistory = new History($scope.data);
+    */
 
     $scope.toggle = function(scope) {
         scope.toggle();
@@ -80,7 +129,7 @@ angular.module('seekerApp')
         scope.remove();
     };
 
-    $scope.newSubNode = function(scope) {
+    $scope.insertAfter = function(scope) {
         var nodeData = scope.$modelValue;
         nodeData.nodes.push({
             id: nodeData.id * 10 + nodeData.nodes.length,
@@ -89,7 +138,7 @@ angular.module('seekerApp')
         });
     };
 
-    $scope.moveLastToTheBegginig = function () {
+    $scope.moveLastToTheBeginning = function () {
         var a = $scope.data.pop();
         $scope.data.splice(0,0, a);
     };
@@ -100,6 +149,7 @@ angular.module('seekerApp')
 
     $scope.collapseAll = function() {
         var scope = getRootNodesScope();
+        console.log('collapseAll on scope:', scope);
         scope.collapseAll();
     };
 
@@ -108,20 +158,25 @@ angular.module('seekerApp')
         scope.expandAll();
     };
 
-    $scope.history = {
+    /*
+    var history = {
         index: -1,
         trace: [],
 
+        record: function () {
+            trace[++index] = $scope.data;
+        },
+
         undo: function () {
             if (index >= 0) {
-                $scope.query = history[index--];
+                $scope.data = history[index--];
                 this.updateButtons();
             }
         },
 
         redo: function () {
             if (index < history.length - 1) {
-                $scope.query = history[index++];
+                $scope.data = history[index++];
                 this.updateButtons();
             }
         },
@@ -144,6 +199,15 @@ angular.module('seekerApp')
             }
         }
     };
+    */
+
+    $scope.toolboxMenu = [
+        {'title': 'help', 'action': function () { alert('help'); }},
+        {'title': 'undo', 'action': function () {History.undo('data', $scope); }},
+        {'title': 'redo', 'action': function () {History.redo('data', $scope); }},
+        {'title': 'collapse all', 'action': $scope.collapseAll},
+        {'title': 'expand all', 'action': $scope.expandAll}
+    ];
 
     var types = ['source', 'cycle', 'country', 'organizer', 'decorator', 'language', 'section', 'text'];
 

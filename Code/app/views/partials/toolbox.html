@@ -1,6 +1,8 @@
 <!-- Query toolbox, provides elements for: undo, redo, help, etc. -->
 <div ng-controller="ToolboxCtrl">
-    <ul>
-        <li ng-repeat="item in menu">{{item.title}}</li>
+    <ul class="nav nav-pills pull-left">
+        <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
+            <a ng-click="item.action">{{item.title}}</a>
+        </li>
     </ul>
 </div>
