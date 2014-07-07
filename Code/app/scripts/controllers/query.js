@@ -42,27 +42,24 @@ angular.module('seekerApp')
                         ]
                     }
                 ]
-            },
-            {
-                "id": 22,
-                "title": "Organize by",
-                "nodes": [
-                    {
-                        "id": 221,
-                        "organizer": "211-asc",
-                        "value": "211-asc",
-                        "title": "Language (ascending)",
-                        "nodes": []
-                    },
-                    {
-                        "id": 222,
-                        "organizer": "212-asc",
-                        "value": "212-asc",
-                        "title": "Cycle (ascending)",
-                        "nodes": []
-                    }
-                ]
             }]
+        }
+    ];
+
+    $scope.formatting = [
+        {
+            "id": 221,
+            "organizer": "211-asc",
+            "value": "211-asc",
+            "title": "Language (ascending)",
+            "nodes": []
+        },
+        {
+            "id": 222,
+            "organizer": "212-asc",
+            "value": "212-asc",
+            "title": "Cycle (ascending)",
+            "nodes": []
         }
     ];
 

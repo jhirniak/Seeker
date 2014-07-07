@@ -100,6 +100,26 @@ body {
     .jumbotron {
         border-bottom: 0;
     }
+
+    /* */
+    .toybox {
+      background-color: #eee;
+      border-bottom: 0;
+      border-radius: 6px;
+      padding: 12px;
+      margin-top: 24px;
+      margin-bottom: 24px;
+    }
+}
+
+.toybox hr {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 0;
+  border-top: 1px solid #d5d5d5;
+  box-sizing: content-box;
+  height: 0;
+  display: block;
 }
 
 /* Overlay box, shades the content below */
