@@ -10,22 +10,27 @@ angular.module('seekerApp')
     $scope.data = [
         {
             "id": 1,
+            "type": "source",
             "title": "Committee of Experts report",
             "items": [{
                 "id": 2,
+                "type": "cycle",
                 "title": "Cycle: 1, last",
                 "items": [
                     {
                         "id": 21,
+                        "type": "producer-country",
                         "title": "Country: UK",
                         "items": [
                             {
                                 "id": 211,
+                                "type": "specifier-language",
                                 "title": "Languages: Scottish-Gaelic, Welsh",
                                 "items": []
                             },
                             {
                                 "id": 212,
+                                "type": "specifier-text",
                                 "title": "Contains some of words: education, school",
                                 "items": []
                             }
@@ -39,18 +44,24 @@ angular.module('seekerApp')
                 "items": [
                     {
                         "id": 221,
+                        "organizer": "211-asc",
                         "title": "Language (ascending)",
                         "items": []
                     },
                     {
                         "id": 222,
+                        "organizer": "212-asc",
                         "title": "Cycle (ascending)",
                         "items": []
                     }
                 ]
             }]
         }
-    ];
+    ]
+
+    $scope.getQuery = function () {
+        return "Hello moto!";
+    };
 
     $scope.selectedItem = {};
 
