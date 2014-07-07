@@ -6,6 +6,94 @@ angular.module('seekerApp')
       $scope.awesomeThings = awesomeThings;
     }); */
 
+    // init tree
+    $scope.data = [
+        {
+            "id": 1,
+            "title": "Committee of Experts report",
+            "items": [{
+                "id": 2,
+                "title": "Cycle: 1, last",
+                "items": [
+                    {
+                        "id": 21,
+                        "title": "Country: UK",
+                        "items": [
+                            {
+                                "id": 211,
+                                "title": "Languages: Scottish-Gaelic, Welsh",
+                                "items": []
+                            },
+                            {
+                                "id": 212,
+                                "title": "Contains some of words: education, school",
+                                "items": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 22,
+                "title": "Organize by",
+                "items": [
+                    {
+                        "id": 221,
+                        "title": "Language (ascending)",
+                        "items": []
+                    },
+                    {
+                        "id": 222,
+                        "title": "Cycle (ascending)",
+                        "items": []
+                    }
+                ]
+            }]
+        }
+    ];
+
+    $scope.selectedItem = {};
+
+    $scope.options = {
+    };
+
+    $scope.remove = function(scope) {
+        scope.remove();
+    };
+
+    $scope.toggle = function(scope) {
+        scope.toggle();
+    };
+
+    $scope.moveLastToTheBegginig = function () {
+        var a = $scope.data.pop();
+        $scope.data.splice(0,0, a);
+    };
+
+    $scope.newSubItem = function(scope) {
+        // TODO: replace name items with nodes
+        var nodeData = scope.$modelValue;
+        nodeData.items.push({
+            id: nodeData.id * 10 + nodeData.items.length,
+            title: nodeData.title + '.' + (nodeData.items.length + 1),
+            items: []
+        });
+    };
+
+    var getRootNodesScope = function() {
+        return angular.element(document.getElementById("tree-root")).scope();
+    };
+
+    $scope.collapseAll = function() {
+        var scope = getRootNodesScope();
+        scope.collapseAll();
+    };
+
+    $scope.expandAll = function() {
+        var scope = getRootNodesScope();
+        scope.expandAll();
+    };
+
     $scope.history = {
         index: -1,
         trace: [],
