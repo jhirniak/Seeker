@@ -27,6 +27,8 @@
     <div>{{data || json}}</div>
     <hr />
     <h3>MongoDB query based on the tree:</h3>
+    <!-- TODO: Why the filter approach does not work? -->
+    <!-- <div>{{data || query}}</div> -->
     <div>{{getQuery()}}</div>
     <!--
     <div ng-repeat="group in query">

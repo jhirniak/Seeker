@@ -11,26 +11,31 @@ angular.module('seekerApp')
         {
             "id": 1,
             "type": "source",
+            "value": "committee-of-experts",
             "title": "Committee of Experts report",
             "nodes": [{
                 "id": 2,
                 "type": "cycle",
+                "value": [1, 'last'],
                 "title": "Cycle: 1, last",
                 "nodes": [
                     {
                         "id": 21,
                         "type": "producer-country",
+                        "value": ['UK'],
                         "title": "Country: UK",
                         "nodes": [
                             {
                                 "id": 211,
                                 "type": "specifier-language",
+                                "value": ['Scottish-Gaelic', 'Welsh'],
                                 "title": "Languages: Scottish-Gaelic, Welsh",
                                 "nodes": []
                             },
                             {
                                 "id": 212,
                                 "type": "specifier-text",
+                                "value": ['education', 'school'],
                                 "title": "Contains some of words: education, school",
                                 "nodes": []
                             }
@@ -45,23 +50,47 @@ angular.module('seekerApp')
                     {
                         "id": 221,
                         "organizer": "211-asc",
+                        "value": "211-asc",
                         "title": "Language (ascending)",
                         "nodes": []
                     },
                     {
                         "id": 222,
                         "organizer": "212-asc",
+                        "value": "212-asc",
                         "title": "Cycle (ascending)",
                         "nodes": []
                     }
                 ]
             }]
         }
-    ]
+    ];
 
     $scope.getQuery = function () {
-        return "Hello moto!";
-    };
+        console.log('Filter executed');
+        var q = {};
+        var queue = [];
+
+        ($scope.data).forEach(function (node) {
+            queue.push(node);
+        });
+
+        while (queue.length > 0) {
+            var node = queue.shift();
+
+            if (node["type"] !== undefined && node["value"] !== undefined) {
+                q[node["type"]] = node["value"];
+            }
+
+            if (node.nodes !== undefined) {
+                node.nodes.forEach(function (n) {
+                    queue.push(n);
+                });
+            }
+        }
+
+        return 'db.docs.find(' + JSON.stringify(q) + ');';
+    }
 
     $scope.selectedNode = {};
 
@@ -236,6 +265,7 @@ angular.module('seekerApp')
         }
     }
 
+    /*
     function renderTree() {
 
     }
@@ -243,7 +273,9 @@ angular.module('seekerApp')
     $scope.query = {
 
     };
+    */
 
+    /*
     var root = initRoot('Committee of Experts report');
     var cycle = root.appendChild('cycle', [1, 'last']);
     cycle.appendChild('section', ['1-b', '2-c', '3-i']);
@@ -251,6 +283,8 @@ angular.module('seekerApp')
     cycle.appendChild('country', 'UK');
     root.appendChild('text', 'school; education');
     console.log('Root:', root);
+    */
+
     /*
     root.appendChild('children');
     console.log('Root node:', root);

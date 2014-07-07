@@ -82,3 +82,32 @@ seekerApp.factory('Bokeh', function () {
     }
     return bokeh;
 });
+
+/* Change tree data to MongoDB query*/
+seekerApp.filter('query', function () {
+    return function (data) {
+        console.log('Filter executed');
+        var q = {};
+        var queue = [];
+
+        data.forEach(function (node) {
+            queue.push(node);
+        });
+
+        while (queue.length > 0) {
+            var node = queue.shift();
+
+            if (node["type"] !== undefined && node["value"] !== undefined) {
+                q[node["type"]] = node["value"];
+            }
+
+            if (node.nodes !== undefined) {
+                node.nodes.forEach(function (n) {
+                    queue.push(n);
+                });
+            }
+        }
+
+        return 'db.docs.find(' + JSON.stringify(q) + ');';
+    };
+});
