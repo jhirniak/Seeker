@@ -4,7 +4,8 @@ var seekerApp = angular.module('seekerApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'ui.tree'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
