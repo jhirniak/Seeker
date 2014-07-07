@@ -66,32 +66,6 @@ angular.module('seekerApp')
         }
     ];
 
-    $scope.getQuery = function () {
-        console.log('Filter executed');
-        var q = {};
-        var queue = [];
-
-        ($scope.data).forEach(function (node) {
-            queue.push(node);
-        });
-
-        while (queue.length > 0) {
-            var node = queue.shift();
-
-            if (node["type"] !== undefined && node["value"] !== undefined) {
-                q[node["type"]] = node["value"];
-            }
-
-            if (node.nodes !== undefined) {
-                node.nodes.forEach(function (n) {
-                    queue.push(n);
-                });
-            }
-        }
-
-        return 'db.docs.find(' + JSON.stringify(q) + ');';
-    }
-
     $scope.selectedNode = {};
 
     $scope.options = {

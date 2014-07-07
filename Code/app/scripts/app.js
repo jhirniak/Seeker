@@ -83,8 +83,8 @@ seekerApp.factory('Bokeh', function () {
     return bokeh;
 });
 
-/* Change tree data to MongoDB query*/
-seekerApp.filter('query', function () {
+/* Format tree data from model to MongoDB query*/
+seekerApp.filter('queryLens', function () {
     return function (data) {
         console.log('Filter executed');
         var q = {};
