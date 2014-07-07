@@ -139,7 +139,7 @@ angular.module('seekerApp')
     }
 
     function renderTree() {
-        
+
     }
 
     $scope.query = {
