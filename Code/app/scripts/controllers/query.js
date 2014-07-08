@@ -6,7 +6,7 @@ angular.module('seekerApp')
       $scope.awesomeThings = awesomeThings;
     }); */
 
-    // init tree
+    // example: init tree
     $scope.data = [
         {
             "id": 1,
@@ -46,9 +46,11 @@ angular.module('seekerApp')
         }
     ];
 
+    // example: init formatting data
     $scope.formatting = [
         {
             "id": 221,
+            "type": "formatting",
             "organizer": "211-asc",
             "value": "211-asc",
             "title": "Language (ascending)",
@@ -56,6 +58,7 @@ angular.module('seekerApp')
         },
         {
             "id": 222,
+            "type": "formatting",
             "organizer": "212-asc",
             "value": "212-asc",
             "title": "Cycle (ascending)",
@@ -63,6 +66,7 @@ angular.module('seekerApp')
         }
     ];
 
+    // add history functionality to data and formatting (allows to undo/redo)
     History.watch('data', $scope);
     History.watch('formatting', $scope);
 
@@ -122,7 +126,7 @@ angular.module('seekerApp')
     };
 
     $scope.modify = function (node) {
-        alert('modifying' + node);
+        console.log('Modifying:', node);
     };
 
     $scope.remove = function (node) {
@@ -138,22 +142,25 @@ angular.module('seekerApp')
         });
     };
 
+    // TODO: Replace hints with proper text
+    // TODO: Use language packagef like i18n
+    function hintify(text) {
+        return 'This is a hint about ' + text + '. To be written and included here.';
+    };
+
     var type2hint = {
-        'source': 'Hint about source...',
-        'cycle': 'Hint about cycle...',
-        'country': 'Hint about country...',
-        'organizer': 'Hint about organizer...',
-        'decorator': 'Hint about decorator...',
-        'language': 'Hint about language...',
-        'section': 'Hint about section...',
-        'text': 'Hint about text...'
-    }
+        'source': hintify('source'),
+        'cycle': hintify('cycle'),
+        'producer-country': hintify('country'),
+        'formatting': hintify('formatting'),
+        //'decorator': hintify('decorator'),
+        'specifier-language': hintify('language'),
+        'specifier-section': hintify('section'),
+        'specifier-text': hintify('text')
+    };
 
-    $scope.hintTmp = 'Just testin\'...';
-
-    $scope.hint = function (node) {
-    // display hint to the user - what given node type represents, how to interpret it, and how to work with it
-        return type2hint[node.type];
+    $scope.hint = function (type) {
+        return type2hint[type] || 'Hint not specified for this type of node.';
     };
 
     $scope.moveLastToTheBeginning = function () {
@@ -321,58 +328,6 @@ angular.module('seekerApp')
             };
         }
     }
-
-    /*
-    function renderTree() {
-
-    }
-
-    $scope.query = {
-
-    };
-    */
-
-    /*
-    var root = initRoot('Committee of Experts report');
-    var cycle = root.appendChild('cycle', [1, 'last']);
-    cycle.appendChild('section', ['1-b', '2-c', '3-i']);
-    cycle.appendChild('language', ['Scottish-Gaelic', 'Welsh']);
-    cycle.appendChild('country', 'UK');
-    root.appendChild('text', 'school; education');
-    console.log('Root:', root);
-    */
-
-    /*
-    root.appendChild('children');
-    console.log('Root node:', root);
-    console.log('options', $scope.query.getOptions(root));
-    //$scope.example = example;
-    */
-
-    /*
-    $scope.query = [
-        {
-            "id": 0,
-            "data": {
-                "committee": ["Committee of Experts"],
-                "cycle": [1, "last"],
-                "languages": ["Scottish-Gaelic", "Welsh"],
-                "sections": ["1-b-ii", "2-c-i", "2-c", "3"],
-                "countries": ["UK"]
-            }
-        },
-        {
-            "id": 1,
-            "data": {
-                "cycle": ["last"],
-                "committee": ["State Periodical Report"],
-                "languages": ["Catalan", "French"],
-                "sections": ["1-b", "3-a", "4", "last"],
-                "countries": ["UK"]
-            }
-        }
-    ];
-    */
 
     $scope.select = function (key, value) {
         switch (key) {
