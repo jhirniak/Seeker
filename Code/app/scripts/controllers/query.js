@@ -127,15 +127,18 @@ angular.module('seekerApp')
 
     $scope.items = ['item1', 'item2', 'item3'];
 
-    function openModal(size) {
+    // opens modal window of 'size' and passes 'node' to its controller
+    // size - 'sm' for small, 'lg' for large, nothing for medium
+    // node - reference to object which is being modified
+    function openModal(size, node) {
 
         var modalInstance = $modal.open({
             templateUrl: 'partials/selector.html',
             controller: 'SelectorCtrl',
             size: size,
             resolve: {
-                items: function () {
-                    return $scope.items;
+                node: function () {
+                    return node;
                 }
             }
         });
@@ -149,7 +152,7 @@ angular.module('seekerApp')
 
     $scope.modify = function (node) {
         console.log('Modifying:', node);
-        openModal('lg');
+        openModal('lg', node);
     };
 
     $scope.remove = function (node) {

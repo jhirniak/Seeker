@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('seekerApp')
-    .controller('SelectorCtrl', function ($scope, $modalInstance) {
+    .controller('SelectorCtrl', function ($scope, $modalInstance, node) {
         $scope.modal = {
             header: 'Test header',
             text: 'change me'
@@ -14,5 +14,9 @@ angular.module('seekerApp')
         $scope.cancel = function () {
             $modalInstance.dismiss('cancel');
         };
+
+        $scope.node = node;
+
+        console.log('Received node', node);
 
 });

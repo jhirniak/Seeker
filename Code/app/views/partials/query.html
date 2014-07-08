@@ -7,7 +7,7 @@
         {{node.title}}
         <a class="pull-right btn btn-danger btn-xs" data-nodrag ng-click="remove(this)"><span class="glyphicon glyphicon-remove"></span></a>
         <a class="pull-right btn btn-primary btn-xs" data-nodrag ng-click="insertAfter(this)" style="margin-right: 8px;"><span class="glyphicon glyphicon-plus"></span></a>
-        <a class="pull-right btn btn-success btn-xs" data-nodrag ng-click="modify(this)"><span class="glyphicon glyphicon-edit"></span></a>
+        <a class="pull-right btn btn-success btn-xs" data-nodrag ng-click="modify(node)"><span class="glyphicon glyphicon-edit"></span></a>
     </div>
     <ol ui-tree-nodes="options" ng-model="node.nodes" ng-class="{hidden: collapsed}">
         <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'">
