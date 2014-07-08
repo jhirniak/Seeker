@@ -117,25 +117,43 @@ angular.module('seekerApp')
     var dataHistory = new History($scope.data);
     */
 
-    $scope.toggle = function(scope) {
-        scope.toggle();
+    $scope.toggle = function (node) {
+        node.toggle();
     };
 
-    $scope.modify = function(scope) {
-        alert('modifying' + scope);
+    $scope.modify = function (node) {
+        alert('modifying' + node);
     };
 
-    $scope.remove = function(scope) {
-        scope.remove();
+    $scope.remove = function (node) {
+        node.remove();
     };
 
-    $scope.insertAfter = function(scope) {
-        var nodeData = scope.$modelValue;
+    $scope.insertAfter = function (node) {
+        var nodeData = node.$modelValue;
         nodeData.nodes.push({
             id: nodeData.id * 10 + nodeData.nodes.length,
             title: nodeData.title + '.' + (nodeData.nodes.length + 1),
             nodes: []
         });
+    };
+
+    var type2hint = {
+        'source': 'Hint about source...',
+        'cycle': 'Hint about cycle...',
+        'country': 'Hint about country...',
+        'organizer': 'Hint about organizer...',
+        'decorator': 'Hint about decorator...',
+        'language': 'Hint about language...',
+        'section': 'Hint about section...',
+        'text': 'Hint about text...'
+    }
+
+    $scope.hintTmp = 'Just testin\'...';
+
+    $scope.hint = function (node) {
+    // display hint to the user - what given node type represents, how to interpret it, and how to work with it
+        return type2hint[node.type];
     };
 
     $scope.moveLastToTheBeginning = function () {

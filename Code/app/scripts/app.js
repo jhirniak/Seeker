@@ -87,7 +87,6 @@ seekerApp.factory('Bokeh', function () {
 /* Format tree data from model to MongoDB query*/
 seekerApp.filter('queryLens', function () {
     return function (data) {
-        console.log('Filter executed');
         var q = {};
         var queue = [];
 
