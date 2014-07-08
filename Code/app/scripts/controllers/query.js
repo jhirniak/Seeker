@@ -163,6 +163,10 @@ angular.module('seekerApp')
         return type2hint[type] || 'Hint not specified for this type of node.';
     };
 
+    $scope.tooltip = {
+         delay: 1000
+    }
+
     $scope.moveLastToTheBeginning = function () {
         var a = $scope.data.pop();
         $scope.data.splice(0,0, a);
