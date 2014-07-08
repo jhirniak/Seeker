@@ -6,140 +6,99 @@ angular.module('seekerApp')
       $scope.awesomeThings = awesomeThings;
     }); */
 
-    // TODO: in nodes, disable or hide glyph on leaves
+    var types = ['source', 'cycle', 'country', 'language', 'section', 'text', 'ordering-root', 'ordering-child', 'decorator-root', 'decorator-child'];
+    var rootTypes = ['source', 'ordering-root', 'decorator-root'];
+    var infertileTypes = ['language', 'section', 'text', 'ordering-child', 'decorator-child'];
+    var uniqueOnPathTypes = ['cycle', 'country'];
+    var nodeProperties = ['id', 'type', 'parent', 'children', 'header', 'value', 'appendChild', 'fertile'];
 
-    // example: init tree
-    $scope.data = [
+    // example: init trees
+    var example = {};
+    example['data'] = [
         {
-            "id": 1,
-            "type": 'source',
-            "value": "committee-of-experts",
-            "title": "Committee of Experts report",
-            "nodes": [{
-                "id": 2,
-                "type": 'cycle',
-                "value": [1, 'last'],
-                "title": "Cycle: 1, last",
-                "nodes": [
-                    {
-                        "id": 21,
-                        "type": 'country',
-                        "value": ['UK'],
-                        "title": "Country: UK",
-                        "nodes": [
-                            {
-                                "id": 211,
-                                "type": 'language',
-                                "value": ['Scottish-,Gaelic', 'Welsh'],
-                                "title": "Languages: Scottish-Gaelic, Welsh",
-                                "nodes": []
-                            },
-                            {
-                                "id": 212,
-                                "type": 'text',
-                                "value": ['education', 'school'],
-                                "title": "Contains any of: education, school",
-                                "nodes": []
-                            }
-                        ]
-                    }
+            id: 1,
+            type: 'source',
+            header: 'Report Type',
+            value: 'Committee of Experts',
+            children: [
+                {
+                    id: 11,
+                    type: 'cycle',
+                    header:'Cycle',
+                    value: [1, 'last'],
+                    children: [
+                        {
+                            id: 111,
+                            type: 'country',
+                            header: 'Country',
+                            value: ['UK'],
+                            children: [
+                                {
+                                    id: 1111,
+                                    type: 'language',
+                                    header: 'Language',
+                                    value: ['Scottish-,Gaelic', 'Welsh'],
+                                    children: []
+                                },
+                                {
+                                    id: 1112,
+                                    type: 'text',
+                                    header: 'Contains any of',
+                                    value: ['education', 'school'],
+                                    children: []
+                                }
+                            ]
+                        }
                 ]
             }]
         }
     ];
 
     // example: init formatting data
-    $scope.formatting = [
-        { id: 0,
+    example['formatting'] = [
+        { id: 1,
           type: 'ordering-root',
-          title: 'Ordering',
-          nodes: [
+          header: 'Ordering',
+          children: [
               {
-                  "id": 221,
-                  "type": 'ordering-child',
-                  "organizer": "211-asc",
-                  "value": "211-asc",
-                  "title": "Language (ascending)",
-                  "nodes": []
+                  id: 11,
+                  type: 'ordering-child',
+                  value: 'Language ascending (1111-asc)',
+                  children: []
               },
               {
-                  "id": 222,
-                  "type": 'ordering-child',
-                  "organizer": "212-asc",
-                  "value": "212-asc",
-                  "title": "Cycle (ascending)",
-                  "nodes": []
+                  id: 12,
+                  type: 'ordering-child',
+                  value: 'Language ascending (1112-asc)',
+                  children: []
               }
           ]
         },
         {
-            id: 1,
+            id: 2,
             type: 'decorator-root',
-            title: 'Decorator',
-            nodes :[
+            header: 'Decorator',
+            children :[
                 {
-                    id: 10,
+                    id: 21,
                     type: 'decorator-child',
-                    title: 'some cool template'
+                    value: 'some cool template'
                 }
             ]
         }
     ];
 
-    // add history functionality to data and formatting (allows to undo/redo)
-    History.watch('data', $scope);
-    History.watch('formatting', $scope);
+    // add history functionality to data and formatting (allows to undo/redo) on tree elements
+    $scope.trees = {};
+    $scope.trees['data'] = nodify(example.data);
+    $scope.trees['formatting'] = nodify(example.formatting);
+
+    History.watch('trees', $scope);
 
     $scope.selectedNode = {};
 
     $scope.options = {
     };
-
-    /*
-    Function.prototype.method = function (name, func) {
-        this.prototype[name] = func;
-        return this;
-    };
-
-    function clone(obj) {
-        if (null == obj || "object" != typeof obj) return obj;
-        var copy = obj.constructor();
-        for (var attr in obj) {
-            if (obj.hasOwnProperty(attr)) copy[attr] = obj[attr];
-        }
-        return copy;
-    }
-
-    function History(obj) {
-        this.index = -1;
-        this.trace = [];
-        this.obj = obj;
-        this.note();
-    }
-
-    History.method('note', function () {
-        this.trace[++this.index] = clone(this.obj);
-        alert(this.index);
-    });
-
-    History.method('undo', function () {
-        if (this.index >= 0) {
-            alert('undoing');
-            this.obj = this.trace[this.index--];
-            // this.updateButtons();
-        }
-    });
-
-    History.method('redo', function () {
-        if (this.index < this.trace.length - 1) {
-            alert('redoing');
-            this.obj = this.trace[this.index++];
-            // this.updateButtons();
-        }
-    });
-
-    var dataHistory = new History($scope.data);
-    */
 
     $scope.toggle = function (node) {
         node.toggle();
@@ -181,10 +140,10 @@ angular.module('seekerApp')
 
     $scope.insertAfter = function (node) {
         var nodeData = node.$modelValue;
-        nodeData.nodes.push({
-            id: nodeData.id * 10 + nodeData.nodes.length,
-            title: nodeData.title + '.' + (nodeData.nodes.length + 1),
-            nodes: []
+        nodeData.children.push({
+            id: nodeData.id * 10 + nodeData.children.length,
+            title: nodeData.title + '.' + (nodeData.children.length + 1),
+            children: []
         });
     };
 
@@ -198,19 +157,8 @@ angular.module('seekerApp')
         return 'This is a hint about ' + text + '. To be written and included here.';
     };
 
-    var type2hint = {
-        'source': hintify('source'),
-        'cycle': hintify('cycle'),
-        'producer-country': hintify('country'),
-        'formatting': hintify('formatting'),
-        //'decorator': hintify('decorator'),
-        'specifier-language': hintify('language'),
-        'specifier-section': hintify('section'),
-        'specifier-text': hintify('text')
-    };
-
     $scope.hint = function (type) {
-        return type2hint[type] || 'Hint not specified for this type of node.';
+        return hintify(type) || 'Hint not specified for this type of node.';
     };
 
     $scope.tooltip = {
@@ -241,67 +189,18 @@ angular.module('seekerApp')
         $scope.data = [];
     };
 
-    /*
-    var history = {
-        index: -1,
-        trace: [],
-
-        record: function () {
-            trace[++index] = $scope.data;
-        },
-
-        undo: function () {
-            if (index >= 0) {
-                $scope.data = history[index--];
-                this.updateButtons();
-            }
-        },
-
-        redo: function () {
-            if (index < history.length - 1) {
-                $scope.data = history[index++];
-                this.updateButtons();
-            }
-        },
-
-        updateButtons : function () {
-            console.log('History @ index: ' + index + '/' + (trace.length - 1));
-            if (index < 0) {
-                // disable undo button
-                console.log('Disabled undo button.');
-            } else {
-                // enable undo button
-                console.log('Enabled undo button.');
-            }
-            if (index >= history.length - 1) {
-                // disable redo button
-                console.log('Disabled redo button.');
-            } else {
-                // enable redo button
-                console.log('Enabled redo button.');
-            }
-        }
-    };
-    */
-
     // TODO: add glyphs icons to buttons
     // TODO: generalize menu or make two menus for formatting and query
     $scope.toolboxMenu = [
         {'title': 'help', 'action': function () { $scope.help('lg') }},
-        {'title': 'undo', 'action': function () {History.undo('data', $scope); }},
-        {'title': 'redo', 'action': function () {History.redo('data', $scope); }},
+        {'title': 'undo', 'action': function () {History.undo('trees', $scope); }},
+        {'title': 'redo', 'action': function () {History.redo('trees', $scope); }},
         {'title': 'collapse all', 'action': $scope.collapseAll},
         {'title': 'expand all', 'action': $scope.expandAll},
         {'title': 'reset', 'action': $scope.resetQuery }
     ];
 
-    var types = ['source', 'cycle', 'country', 'organizer', 'decorator', 'language', 'section', 'text'];
-
-    // tests
-    function isRoot(node) {
-        return node.parent === null;
-    }
-
+    // TODO: Deal with not working parent part
     function isOnPath(node, type) {
         // scan up (all parents)
         var currNode = node;
@@ -319,7 +218,7 @@ angular.module('seekerApp')
             if (currNode.type === type) {
                 return true;
             }
-            currNode.children.forEach(function (child) {
+            (currNode.children || []).forEach(function (child) {
                 queue.push(child);
             });
         }
@@ -327,67 +226,88 @@ angular.module('seekerApp')
         return false;
     }
 
-    function canBeRootChild(node, type) {
-        if (!isRoot(node)) {
+    // TODO: rewrite to ng
+    // returns list of types for given node, legal indicated by true, and illegal by false
+    function fertile(node) {
+        if (node === null || !node) {
             return false;
         } else {
-            node.children.forEach(function (child) {
-                if (child.type === type) {
-                    return false;
-                }
-            })
-            return true;
+            return infertileTypes.indexOf(node.type) === -1;
         }
     }
 
-    // returns list of types for given node, legal indicated by true, and illegal by false
-    function legalTypes(node) {
-        return {
-            source: false,
-            cycle: !isOnPath(node, 'cycle'),
-            country: !isOnPath(node, 'country'),
-            //organizer: canBeRootChild(node, 'organizer'),
-            //decorator: canBeRootChild(node, 'decorator'),
-            language: true,
-            section: true,
-            text: true
+    function FertilityList() {
+        var l = {};
+        types.forEach(function (t) {
+            l[t] = false;
+        });
+        return l;
+    }
+
+    function legalChildren (node) {
+        var legal = FertilityList(); // list prototype, all properties are false by default
+
+        if (fertile(node)) {
+            // if fertile then can give birth to any infertile type
+            infertileTypes.forEach(function (t) {
+                legal[t] = true;
+            });
+
+            // if fertile and there is no child any path through given node then can give birth to that uniquePathType
+            uniqueOnPathTypes.forEach(function (t) {
+                legal[t] = !isOnPath(node, t);
+            });
         }
+
+        return legal;
     }
 
-    function initRoot(data) {
-        return createNode('source', data, null, []);
+    function elemIn(elem, array) {
+        return array.indexOf(elem) !== -1;
     }
 
-    function createNode(type, data, parent, children) {
-    // Check if parameters are valid
-    // Type must be one of the types and cannot be undefined
-    // Parent and children must be either object (reference, array, or null) or undefined
-    // Note that parent should not be array, but there is no point in going crazy with the sanitization of the parameters
-        if (types.indexOf(type) === -1) {
-            throw 'Expected one of types: ' + types.toString() + ', but found: ' + type;
-        } else if (parent !== undefined && typeof parent !== 'object') {
-            throw 'Expected parent either to be reference to parent object or undefined, but found: ' + (typeof parent);
-        } else if (children !== undefined && typeof children !== 'object') {
-            throw 'Expected children either to be either object (reference, array, or null) or undefined, but found: ' + (typeof children);
+    function appendChild(parent, child) {
+        if ((parent === null || !parent) && !elemIn(child.type, rootTypes)) {
+            // should be root type, but is not
+            throw 'Expected root type, but found attempt to assign type ' + child.type + ' to parent' + parent;
+        } else if (!legalChildren(parent)[child.type]) {
+            // illegal children
+            throw 'Expected one of the legal children types, i.e. ' + legalChild(parent) + ', but found ' + children.type;
         } else {
-            // Everything OK, create and return node
+            var child = Node(type, child.header, child.value, child.id);
+            parent.children.push(child);
+        }
+    }
+
+    function Node(type, header, value, id) {
+        if (!type || types.indexOf(type) === -1) {
+            throw 'Expected one of node types: ' + rootTypes + ', but found: ' + type + '.';
+        } else {
             return {
+                id: id,
                 type: type,
-                data: data,
-                parent: parent || null,
-                children: children || [],
-                appendChild: function (type, data) {
-                    var legal = legalTypes(this);
-                    if (legal[type] === true) {
-                        var ref = createNode(type, data, this);
-                        this.children.push(ref);
-                        return ref;
-                    } else {
-                        throw 'Illegal type. Expected one of the legal types: ' + legal + '. But found: ' + type + '.';
-                    }
-                }
+                children: [],
+                header: header,
+                value: value,
+                appendChild: function (child) { return appendChild(this, child); },
+                fertile: function () { return fertile(this); },
+                legalChildren: function () { return legalChildren(this); }
             };
         }
+    }
+
+    function nodify(json) {
+        var n = [];
+        json.forEach(function (node) {
+            var children = [];
+            if (node.children) {
+                children = nodify(node.children);
+            }
+            var parent = Node(node.type, node.header, node.value, node.id);
+            parent.children = children;
+            n.push(parent);
+        });
+        return n;
     }
 
     $scope.select = function (key, value) {
