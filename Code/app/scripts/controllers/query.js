@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('seekerApp')
-  .controller('QueryCtrl', function ($scope, $http, Bokeh, $timeout, History) {
+  .controller('QueryCtrl', function ($scope, $http, Bokeh, $timeout, History, $modal) {
     /* $http.get('/api/awesomeThings').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;
     }); */
@@ -127,6 +127,15 @@ angular.module('seekerApp')
 
     $scope.modify = function (node) {
         console.log('Modifying:', node);
+
+        var modalInstance = $modal.open({
+            templateUrl: 'partials/selector.html',
+            controller: 'SelectorCtrl',
+            size: 'lg',
+            resolve: function () {
+                return '';
+            }
+        });
     };
 
     $scope.remove = function (node) {
