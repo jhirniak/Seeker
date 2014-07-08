@@ -1,40 +1,42 @@
 'use strict';
 
 angular.module('seekerApp')
-  .controller('QueryCtrl', function ($scope, $http, Bokeh, $timeout, History, $modal, $log) {
+  .controller('QueryCtrl', function ($scope, $http, Bokeh, $timeout, History, $modal) {
     /* $http.get('/api/awesomeThings').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;
     }); */
+
+    // TODO: in nodes, disable or hide glyph on leaves
 
     // example: init tree
     $scope.data = [
         {
             "id": 1,
-            "type": "source",
+            "type": 'source',
             "value": "committee-of-experts",
             "title": "Committee of Experts report",
             "nodes": [{
                 "id": 2,
-                "type": "cycle",
+                "type": 'cycle',
                 "value": [1, 'last'],
                 "title": "Cycle: 1, last",
                 "nodes": [
                     {
                         "id": 21,
-                        "type": "producer-country",
+                        "type": 'country',
                         "value": ['UK'],
                         "title": "Country: UK",
                         "nodes": [
                             {
                                 "id": 211,
-                                "type": "specifier-language",
-                                "value": ['Scottish-Gaelic', 'Welsh'],
+                                "type": 'language',
+                                "value": ['Scottish-,Gaelic', 'Welsh'],
                                 "title": "Languages: Scottish-Gaelic, Welsh",
                                 "nodes": []
                             },
                             {
                                 "id": 212,
-                                "type": "specifier-text",
+                                "type": 'text',
                                 "value": ['education', 'school'],
                                 "title": "Contains any of: education, school",
                                 "nodes": []
@@ -48,21 +50,39 @@ angular.module('seekerApp')
 
     // example: init formatting data
     $scope.formatting = [
-        {
-            "id": 221,
-            "type": "formatting",
-            "organizer": "211-asc",
-            "value": "211-asc",
-            "title": "Language (ascending)",
-            "nodes": []
+        { id: 0,
+          type: 'ordering-root',
+          title: 'Ordering',
+          nodes: [
+              {
+                  "id": 221,
+                  "type": 'ordering-child',
+                  "organizer": "211-asc",
+                  "value": "211-asc",
+                  "title": "Language (ascending)",
+                  "nodes": []
+              },
+              {
+                  "id": 222,
+                  "type": 'ordering-child',
+                  "organizer": "212-asc",
+                  "value": "212-asc",
+                  "title": "Cycle (ascending)",
+                  "nodes": []
+              }
+          ]
         },
         {
-            "id": 222,
-            "type": "formatting",
-            "organizer": "212-asc",
-            "value": "212-asc",
-            "title": "Cycle (ascending)",
-            "nodes": []
+            id: 1,
+            type: 'decorator-root',
+            title: 'Decorator',
+            nodes :[
+                {
+                    id: 10,
+                    type: 'decorator-child',
+                    title: 'some cool template'
+                }
+            ]
         }
     ];
 
@@ -217,6 +237,10 @@ angular.module('seekerApp')
         scope.expandAll();
     };
 
+    $scope.resetQuery = function () {
+        $scope.data = [];
+    };
+
     /*
     var history = {
         index: -1,
@@ -260,12 +284,15 @@ angular.module('seekerApp')
     };
     */
 
+    // TODO: add glyphs icons to buttons
+    // TODO: generalize menu or make two menus for formatting and query
     $scope.toolboxMenu = [
         {'title': 'help', 'action': function () { $scope.help('lg') }},
         {'title': 'undo', 'action': function () {History.undo('data', $scope); }},
         {'title': 'redo', 'action': function () {History.redo('data', $scope); }},
         {'title': 'collapse all', 'action': $scope.collapseAll},
-        {'title': 'expand all', 'action': $scope.expandAll}
+        {'title': 'expand all', 'action': $scope.expandAll},
+        {'title': 'reset', 'action': $scope.resetQuery }
     ];
 
     var types = ['source', 'cycle', 'country', 'organizer', 'decorator', 'language', 'section', 'text'];
@@ -319,8 +346,8 @@ angular.module('seekerApp')
             source: false,
             cycle: !isOnPath(node, 'cycle'),
             country: !isOnPath(node, 'country'),
-            organizer: canBeRootChild(node, 'organizer'),
-            decorator: canBeRootChild(node, 'decorator'),
+            //organizer: canBeRootChild(node, 'organizer'),
+            //decorator: canBeRootChild(node, 'decorator'),
             language: true,
             section: true,
             text: true

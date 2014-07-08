@@ -3,7 +3,7 @@
 <!-- Nested list template -->
 <script type="text/ng-template" id="nodes_renderer.html">
     <div ui-tree-handle tooltip-html-unsafe="{{hint(node.type)}}" tooltip-popup-delay="{{tooltip.delay}}">
-        <a class="btn btn-success btn-xs" data-nodrag ng-click="toggle(this)"><span class="glyphicon" ng-class="{'glyphicon-chevron-right': collapsed, 'glyphicon-chevron-down': !collapsed}"></span></a>
+        <a ng-class="{'hidden': node.nodes.length === 0}" class="btn btn-success btn-xs" data-nodrag ng-click="toggle(this)"><span class="glyphicon" ng-class="{'glyphicon-chevron-right': collapsed, 'glyphicon-chevron-down': !collapsed}" ></span></a>
         {{node.title}}
         <a class="pull-right btn btn-danger btn-xs" data-nodrag ng-click="remove(this)"><span class="glyphicon glyphicon-remove"></span></a>
         <a class="pull-right btn btn-primary btn-xs" data-nodrag ng-click="insertAfter(this)" style="margin-right: 8px;"><span class="glyphicon glyphicon-plus"></span></a>

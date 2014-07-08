@@ -2,11 +2,16 @@
 
 angular.module('seekerApp')
     .controller('SelectorCtrl', function ($scope, $modalInstance, node) {
+
+        // data
         $scope.modal = {
             header: 'Test header',
             text: 'change me'
         };
 
+        $scope.node = node;
+
+        // functions
         $scope.ok = function () {
             $modalInstance.close('something to return');
         };
@@ -15,8 +20,7 @@ angular.module('seekerApp')
             $modalInstance.dismiss('cancel');
         };
 
-        $scope.node = node;
+        // parsing / responding
 
-        console.log('Received node', node);
 
 });

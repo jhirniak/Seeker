@@ -83,7 +83,7 @@ seekerApp.factory('Bokeh', function () {
         console.log('Set bokeh animation. Waiting: ', bokeh.waiting);
     }
     return bokeh;
-});
+})
 
 /* Format tree data from model to MongoDB query*/
 seekerApp.filter('queryLens', function () {
