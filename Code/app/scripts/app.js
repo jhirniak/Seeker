@@ -6,7 +6,8 @@ var seekerApp = angular.module('seekerApp', [
   'ngSanitize',
   'ngRoute',
   'ui.tree',
-  'decipher.history'
+  'decipher.history',
+  'ui.bootstrap'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
