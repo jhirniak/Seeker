@@ -125,28 +125,28 @@ angular.module('seekerApp')
         node.toggle();
     };
 
-    $scope.items = ['item1', 'item2', 'item3'];
-
     // opens modal window of 'size' and passes 'node' to its controller
     // size - 'sm' for small, 'lg' for large, nothing for medium
     // node - reference to object which is being modified
-    function openModal(size, node) {
+    function openModal(size, node, help) {
+
+        var templateUrl = 'partials/selector.html';
+        var controller =  'SelectorCtrl';
+
+        if (help) {
+            templateUrl = 'partials/help.html';
+            controller =  'HelpCtrl';
+        }
 
         var modalInstance = $modal.open({
-            templateUrl: 'partials/selector.html',
-            controller: 'SelectorCtrl',
+            templateUrl: templateUrl,
+            controller: controller,
             size: size,
             resolve: {
                 node: function () {
                     return node;
                 }
             }
-        });
-
-        modalInstance.result.then(function (selectedItem) {
-            $scope.selected = selectedItem;
-        }, function () {
-            $log.info('Modal dismissed at: ' + new Date());
         });
     };
 
@@ -167,6 +167,10 @@ angular.module('seekerApp')
             nodes: []
         });
     };
+
+    $scope.help = function (size, node) {
+        openModal('lg', node, true);
+    }
 
     // TODO: Replace hints with proper text
     // TODO: Use language package like i18n
@@ -257,7 +261,7 @@ angular.module('seekerApp')
     */
 
     $scope.toolboxMenu = [
-        {'title': 'help', 'action': function () { alert('help'); }},
+        {'title': 'help', 'action': function () { $scope.help('lg') }},
         {'title': 'undo', 'action': function () {History.undo('data', $scope); }},
         {'title': 'redo', 'action': function () {History.redo('data', $scope); }},
         {'title': 'collapse all', 'action': $scope.collapseAll},
