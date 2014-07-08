@@ -186,7 +186,7 @@ angular.module('seekerApp')
     };
 
     $scope.resetQuery = function () {
-        $scope.data = [];
+        $scope.trees = [];
     };
 
     // TODO: add glyphs icons to buttons
