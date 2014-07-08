@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('seekerApp')
-  .controller('QueryCtrl', function ($scope, $http, Bokeh, $timeout, History, $modal) {
+  .controller('QueryCtrl', function ($scope, $http, Bokeh, $timeout, History, $modal, $log) {
     /* $http.get('/api/awesomeThings').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;
     }); */
@@ -125,17 +125,31 @@ angular.module('seekerApp')
         node.toggle();
     };
 
-    $scope.modify = function (node) {
-        console.log('Modifying:', node);
+    $scope.items = ['item1', 'item2', 'item3'];
+
+    function openModal(size) {
 
         var modalInstance = $modal.open({
             templateUrl: 'partials/selector.html',
             controller: 'SelectorCtrl',
-            size: 'lg',
-            resolve: function () {
-                return '';
+            size: size,
+            resolve: {
+                items: function () {
+                    return $scope.items;
+                }
             }
         });
+
+        modalInstance.result.then(function (selectedItem) {
+            $scope.selected = selectedItem;
+        }, function () {
+            $log.info('Modal dismissed at: ' + new Date());
+        });
+    };
+
+    $scope.modify = function (node) {
+        console.log('Modifying:', node);
+        openModal('lg');
     };
 
     $scope.remove = function (node) {
@@ -152,7 +166,7 @@ angular.module('seekerApp')
     };
 
     // TODO: Replace hints with proper text
-    // TODO: Use language packagef like i18n
+    // TODO: Use language package like i18n
     function hintify(text) {
         return 'This is a hint about ' + text + '. To be written and included here.';
     };
