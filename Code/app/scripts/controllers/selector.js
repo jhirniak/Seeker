@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('seekerApp')
-    .controller('SelectorCtrl', function ($scope, $modalInstance, node) {
+    .controller('SelectorCtrl', function ($scope, $modalInstance, node, getHeader) {
 
         // data
         $scope.modal = {
@@ -10,6 +10,7 @@ angular.module('seekerApp')
         };
 
         $scope.node = node;
+        $scope.header = getHeader(node);
 
         // functions
         $scope.ok = function () {

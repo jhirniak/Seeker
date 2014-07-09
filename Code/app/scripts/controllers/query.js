@@ -34,7 +34,7 @@ angular.module('seekerApp')
                                 {
                                     id: 1111,
                                     type: 'language',
-                                    value: ['Scottish-,Gaelic', 'Welsh'],
+                                    value: ['Scottish-Gaelic', 'Welsh'],
                                     children: []
                                 },
                                 {
@@ -116,9 +116,8 @@ angular.module('seekerApp')
             controller: controller,
             size: size,
             resolve: {
-                node: function () {
-                    return node;
-                }
+                node: function () { return node; },
+                getHeader: function () { return $scope.getHeader; }
             }
         });
     };
@@ -216,7 +215,7 @@ angular.module('seekerApp')
         return word.charAt(0).toUpperCase() + word.slice(1);
     }
 
-    function getHeader(node) {
+    $scope.getHeader = function (node) {
         var type = node.type;
         var header = t2h[type] || upcaseFirstChar(type);
 
@@ -229,10 +228,9 @@ angular.module('seekerApp')
         }
     }
 
-    $scope.getHeader = getHeader;
-
-    function typedList2str() {
-
+    $scope.lst2str = function (lst) {
+        if (lst) { return lst.join(', '); }
+        else { return ''; }
     }
 
     // TODO: add glyphs icons to buttons
