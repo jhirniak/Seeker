@@ -192,16 +192,20 @@ angular.module('seekerApp')
     };
 
     function plural(word) {
-        var lastIdx = word.length - 1;
-        var lastChar = word.charAt(lastIdx).toLowerCase();
+        if (typeof word === 'string' && word.length >= 1) {
+            var lastIdx = word.length - 1;
+            var lastChar = word.charAt(lastIdx).toLowerCase();
 
-        if (word.slice(lastIdx-1) === 'of') {
-            return word;
-        }
-        else if (lastChar === 'y') {
-            return word.slice(0, lastIdx) + 'ies';
+            if (word.slice(lastIdx-1) === 'of') {
+                return word;
+            }
+            else if (lastChar === 'y') {
+                return word.slice(0, lastIdx) + 'ies';
+            } else {
+                return word + 's';
+            }
         } else {
-            return word + 's';
+            return word;
         }
     }
     var t2h = {

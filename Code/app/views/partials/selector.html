@@ -8,7 +8,7 @@
         <form>
             <input type="text" name="text" ng-model="modal.text" />
             <input type="text" name="text" ng-model="node.value" />
-            <input type="text" ng-model="selectedSource" ng-options="source for source in sources" placeholder="Enter source" bs-typeahead>
+            <input type="text" ng-model="selectedSource" typeahead="source for source in sources" placeholder="Enter source" bs-typeahead>
         </form>
     </div>
 

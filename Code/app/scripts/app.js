@@ -8,7 +8,7 @@ var seekerApp = angular.module('seekerApp', [
   'ui.tree',
   'decipher.history',
   'ui.bootstrap',
-  'mgcrea.ngStrap'
+  'ngAnimate'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
