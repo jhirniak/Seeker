@@ -10,6 +10,7 @@ angular.module('seekerApp')
     var rootTypes = ['source', 'ordering-root', 'decorator-root'];
     var infertileTypes = ['language', 'section', 'text', 'ordering-child', 'decorator-child'];
     var uniqueOnPathTypes = ['cycle', 'country'];
+    var noValueTypes = ['ordering-root', 'decorator-root'];
     var nodeProperties = ['id', 'type', 'parent', 'children', 'header', 'value', 'appendChild', 'fertile'];
 
     // example: init trees
@@ -18,32 +19,27 @@ angular.module('seekerApp')
         {
             id: 1,
             type: 'source',
-            header: 'Report Type',
-            value: 'Committee of Experts',
+            value: ['Committee of Experts'],
             children: [
                 {
                     id: 11,
                     type: 'cycle',
-                    header:'Cycle',
                     value: [1, 'last'],
                     children: [
                         {
                             id: 111,
                             type: 'country',
-                            header: 'Country',
                             value: ['UK'],
                             children: [
                                 {
                                     id: 1111,
                                     type: 'language',
-                                    header: 'Language',
                                     value: ['Scottish-,Gaelic', 'Welsh'],
                                     children: []
                                 },
                                 {
                                     id: 1112,
                                     type: 'text',
-                                    header: 'Contains any of',
                                     value: ['education', 'school'],
                                     children: []
                                 }
@@ -58,18 +54,17 @@ angular.module('seekerApp')
     example['formatting'] = [
         { id: 1,
           type: 'ordering-root',
-          header: 'Ordering',
           children: [
               {
                   id: 11,
                   type: 'ordering-child',
-                  value: 'Language ascending (1111-asc)',
+                  value: ['Language ascending (1111-asc)'],
                   children: []
               },
               {
                   id: 12,
                   type: 'ordering-child',
-                  value: 'Language ascending (1112-asc)',
+                  value: ['Language ascending (1112-asc)'],
                   children: []
               }
           ]
@@ -77,12 +72,11 @@ angular.module('seekerApp')
         {
             id: 2,
             type: 'decorator-root',
-            header: 'Decorator',
             children :[
                 {
                     id: 21,
                     type: 'decorator-child',
-                    value: 'some cool template'
+                    value: ['some cool template']
                 }
             ]
         }
@@ -198,12 +192,55 @@ angular.module('seekerApp')
         $scope.trees = [];
     };
 
+    function plural(word) {
+        var lastIdx = word.length - 1;
+        var lastChar = word.charAt(lastIdx).toLowerCase();
+
+        if (word.slice(lastIdx-1) === 'of') {
+            return word;
+        }
+        else if (lastChar === 'y') {
+            return word.slice(0, lastIdx) + 'ies';
+        } else {
+            return word + 's';
+        }
+    }
+    var t2h = {
+        'source': 'Report Type',
+        'text': 'Contains any of',
+        'ordering-root': 'Order by',
+        'decorator-root': 'Use template'
+    }
+
+    function upcaseFirstChar(word) {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+    }
+
+    function getHeader(node) {
+        var type = node.type;
+        var header = t2h[type] || upcaseFirstChar(type);
+
+        if (elemIn(type, noValueTypes) || (node.value.length <= 1)) {
+        // has no value property or is singular
+            return header;
+        } else {
+        // is plural
+            return plural(header);
+        }
+    }
+
+    $scope.getHeader = getHeader;
+
+    function typedList2str() {
+
+    }
+
     // TODO: add glyphs icons to buttons
     // TODO: generalize menu or make two menus for formatting and query
     $scope.toolboxMenu = [
         {'title': 'help', 'action': function () { $scope.help('lg') }},
-        {'title': 'undo', 'action': function () {History.undo('trees', $scope); }},
-        {'title': 'redo', 'action': function () {History.redo('trees', $scope); }},
+        {'title': 'undo', 'action': function () { History.undo('trees', $scope); }},
+        {'title': 'redo', 'action': function () { History.redo('trees', $scope); }},
         {'title': 'collapse all', 'action': $scope.collapseAll},
         {'title': 'expand all', 'action': $scope.expandAll},
         {'title': 'reset', 'action': $scope.resetQuery }
