@@ -14,33 +14,34 @@ angular.module('seekerApp')
     var nodeProperties = ['id', 'type', 'parent', 'children', 'header', 'value', 'appendChild', 'fertile'];
 
     // example: init trees
+    // IMPORTANT: All values must be objects, if they would be string then AngularJS would not register every change to them (it is the recommended approach)
     var example = {};
     example['data'] = [
         {
             id: 1,
             type: 'source',
-            value: ['Committee of Experts'],
+            value: [{value: 'Committee of Experts'}],
             children: [
                 {
                     id: 11,
                     type: 'cycle',
-                    value: [1, 'last'],
+                    value: [{value: 1}, {value: 'last'}],
                     children: [
                         {
                             id: 111,
                             type: 'country',
-                            value: ['UK'],
+                            value: [{value: 'United Kingdom'}],
                             children: [
                                 {
                                     id: 1111,
                                     type: 'language',
-                                    value: ['Scottish-Gaelic', 'Welsh'],
+                                    value: [{value: 'Scottish-Gaelic'}, {value: 'Welsh'}],
                                     children: []
                                 },
                                 {
                                     id: 1112,
                                     type: 'text',
-                                    value: ['education', 'school'],
+                                    value: [{value: 'education'}, {value: 'school'}],
                                     children: []
                                 }
                             ]
@@ -233,7 +234,12 @@ angular.module('seekerApp')
     }
 
     $scope.lst2str = function (lst) {
-        if (lst) { return lst.join(', '); }
+        if (lst) {
+            var vals = lst.map(function (val) {
+                return val.value;
+            });
+            return vals.join(', ');
+        }
         else { return ''; }
     }
 

@@ -6,9 +6,7 @@
     <div class="modal-body">
         Hello, and, yes it works :-)! And {{modal.text}}!
         <form>
-            <input type="text" name="text" ng-model="modal.text" />
-            <input type="text" name="text" ng-model="node.value" />
-            <input type="text" ng-model="selectedSource" typeahead="source for source in sources" placeholder="Enter source" bs-typeahead>
+            <input type="text" ng-repeat="item in node.value" ng-model="item.value" typeahead="hint for hint in getHints() | filter:$viewValue | limitTo:8" typeahead-min-length="0" placeholder="Enter source" />
         </form>
     </div>
 
