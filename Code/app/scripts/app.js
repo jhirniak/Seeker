@@ -102,8 +102,8 @@ seekerApp.filter('queryLens', function () {
                 q[node["type"]] = node["value"];
             }
 
-            if (node.nodes !== undefined) {
-                node.nodes.forEach(function (n) {
+            if (node.children !== undefined) {
+                node.children.forEach(function (n) {
                     queue.push(n);
                 });
             }
