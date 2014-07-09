@@ -170,19 +170,28 @@ angular.module('seekerApp')
         $scope.data.splice(0,0, a);
     };
 
-    var getRootNodesScope = function() {
-        return angular.element(document.getElementById("tree-root")).scope();
+    // returns all tree roots identified by class name "tree-root" (should be attached to ol root node)
+    var getRootScopes = function() {
+        var scopes = [];
+        var roots = document.getElementsByClassName("tree-root");
+        for (var i = 0; i < roots.length; ++i) {
+            scopes.push(angular.element(roots[i]).scope());
+        }
+        return scopes;
     };
 
     $scope.collapseAll = function() {
-        var scope = getRootNodesScope();
-        console.log('collapseAll on scope:', scope);
-        scope.collapseAll();
+        getRootScopes().forEach(function (scope) {
+            console.log('collapseAll on scope:', scope);
+            scope.collapseAll();
+        });
     };
 
     $scope.expandAll = function() {
-        var scope = getRootNodesScope();
-        scope.expandAll();
+        getRootScopes().forEach(function (scope) {
+            console.log('collapseAll on scope:', scope);
+            scope.expandAll();
+        });
     };
 
     $scope.resetQuery = function () {

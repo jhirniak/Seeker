@@ -26,7 +26,7 @@
 <div class="toybox">
     <h3>Query:</h3>
     <div ui-tree="options">
-        <ol ui-tree-nodes="" ng-model="trees.data" id="tree-root">
+        <ol ui-tree-nodes="" ng-model="trees.data" class="tree-root">
             <li ng-repeat="node in trees.data" ui-tree-node ng-include="'nodes_renderer.html'"></li>
         </ol>
     </div>
@@ -35,7 +35,7 @@
 
     <h3>Formatting:</h3>
     <div ui-tree="options">
-        <ol ui-tree-nodes ng-model="trees.formatting" >
+        <ol ui-tree-nodes ng-model="trees.formatting" class="tree-root">
             <li ng-repeat="node in trees.formatting" ui-tree-node ng-include="'nodes_renderer.html'"></li>
         </ol>
     </div>
