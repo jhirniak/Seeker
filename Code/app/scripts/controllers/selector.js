@@ -22,7 +22,8 @@ angular.module('seekerApp')
         };
 
         // parsing / responding
-
-
+        $scope.sources = ['Committee of Experts', 'Regulatory Committee', 'Committee of Great Coffee',
+            'Committee of Great Changes', 'Interstellar Committee of Interesting Puzzles'];
+        $scope.selectedSource = '';
 
 });
