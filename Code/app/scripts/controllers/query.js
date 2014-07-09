@@ -59,13 +59,13 @@ angular.module('seekerApp')
               {
                   id: 11,
                   type: 'ordering-child',
-                  value: ['Language ascending (1111-asc)'],
+                  value: [{value: 'Language ascending (1111-asc)'}],
                   children: []
               },
               {
                   id: 12,
                   type: 'ordering-child',
-                  value: ['Language ascending (1112-asc)'],
+                  value: [{value: 'Language ascending (1112-asc)'}],
                   children: []
               }
           ]
@@ -77,7 +77,7 @@ angular.module('seekerApp')
                 {
                     id: 21,
                     type: 'decorator-child',
-                    value: ['some cool template']
+                    value: [{value: 'some cool template'}]
                 }
             ]
         }
@@ -136,7 +136,8 @@ angular.module('seekerApp')
         var nodeData = node.$modelValue;
         nodeData.children.push({
             id: nodeData.id * 10 + nodeData.children.length,
-            title: nodeData.title + '.' + (nodeData.children.length + 1),
+            type: 'text',
+            value: [{value: nodeData.title + '.' + (nodeData.children.length + 1)}],
             children: []
         });
     };
