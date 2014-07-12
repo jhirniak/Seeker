@@ -4,9 +4,9 @@
     </div>
 
     <div class="modal-body">
-        Hello, and, yes it works :-)! And {{modal.text}}!
+        <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
         <form>
-            <input type="text" ng-repeat="item in node.value" ng-model="item.value" typeahead="hint for hint in getHints() | filter:$viewValue | limitTo:8" typeahead-min-length="0" placeholder="Enter source" />
+            <input type="text" ng-repeat="item in node.value" ng-model="item.value" typeahead="hint for hint in getHints() | filter:$viewValue | limitTo:8" typeahead-min-length="1" placeholder="Enter source" typeahead-editable="false" />
         </form>
     </div>
 
