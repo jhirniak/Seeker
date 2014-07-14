@@ -91,33 +91,48 @@ angular.module('seekerApp')
             validate: node.type
         }
 
-        $scope.listMode = false;
+        $scope.listMode = $scope.getHints().length < 10;
+        console.log('List mode?',  $scope.getHints().length < 10);
 
         $scope.tabs = [
             {
                 title: 'Text',
-                active: true,
+                active: !$scope.listMode,
                 content: 'surprise',
                 action: function () { $scope.listMode = false; }
             },
             {
                 title: 'List',
-                active: true,
+                active: $scope.listMode,
                 content: 'list',
                 action: function () { $scope.listMode = true; }
             }
         ];
 
+        /* Disabled, see comment in selector.html
         $scope.gridOptions = {
             data: 'list',
             selectedItems: $scope.node.value,
             multiSelect: true,
             afterSelectionChange: function () {
-                $scope.selectedIDs = [];
-                angular.forEach($scope.mySelections, function ( item ) {
-                    $scope.selectedIDs.push( /*item.id */ 1)
+                //$scope.selectedIDs = [];
+                $scope.node.value = [];
+                angular.forEach($scope.mySelections, function ( val ) {
+                    //$scope.selectedIDs.push( item.id ) // item with id property
+                    $scope.node.value.push({value:val.value});
+                    console.log(val);
                 });
             }
         };
+
+        $timeout(function () {
+            var hints = $scope.getHints();
+            var selected = node.value;
+            for (var i = 0; i < selected.length; ++i) {
+                var row = hints.indexOf(selected[i]);
+                $scope.gridOptions.selectRow(row, true);
+            }
+        });
+        */
 
 });
