@@ -7,9 +7,19 @@ angular.module('seekerApp')
         $scope.header = getHeader(node);
 
         // modal functions
+
         $scope.ok = function () {
+            removeAllEmpty();
             $modalInstance.close('something to return');
         };
+
+        function removeAllEmpty() {
+            for (var i = 0; i < node.value.length; ++i) {
+                if (node.value[i].value.trim() === '') {
+                    $scope.remove(i--);
+                }
+            }
+        }
 
         $scope.cancel = function () {
             $modalInstance.dismiss('cancel');
@@ -19,6 +29,10 @@ angular.module('seekerApp')
         $scope.remove = function (index) {
             $scope.node.value.splice(index, 1);
         };
+
+        $scope.addEmpty = function () {
+            $scope.node.value.push({value: ''});
+        }
 
         // TODO: move all this data to model (database)
         // TODO: can use flags in display countries
@@ -97,13 +111,13 @@ angular.module('seekerApp')
             {
                 title: 'Text',
                 active: !$scope.listMode,
-                content: 'surprise',
+                //content: 'surprise',
                 action: function () { $scope.listMode = false; }
             },
             {
                 title: 'List',
                 active: $scope.listMode,
-                content: 'list',
+                //content: 'list',
                 action: function () { $scope.listMode = true; }
             }
         ];
@@ -133,5 +147,7 @@ angular.module('seekerApp')
             }
         });
         */
+
+        $scope.validate = $scope.getHints().length > 0; // require to specify one of the suggested values
 
 });
