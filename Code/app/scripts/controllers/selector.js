@@ -181,4 +181,8 @@ angular.module('seekerApp')
             {title: 'Select All', action: function () { node.value = angular.copy($scope.list); }},
             {title: 'Select None', action: function () { node.value = []; }}
         ];
+
+        $scope.textToolbox = [
+            {title: 'Sort', action: function () { node.value.sort(function (a, b) { return a.value > b.value; } ); }}
+        ];
 });
