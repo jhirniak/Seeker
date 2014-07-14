@@ -149,3 +149,19 @@ body {
 .hidden {
   display: none;
 }
+
+input.has-visited.ng-invalid:not(.has-focus) {
+  background-color: #ffeeee;
+}
+
+/* fixes cursor type display issue on tabset in ui-bootstrap */
+a {
+  cursor: pointer;
+}
+
+.table {
+  border: 1px solid rgb(212, 212, 212);
+  width: 400px;
+  height: 180px;
+  margin: 10px;
+}

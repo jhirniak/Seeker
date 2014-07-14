@@ -3,22 +3,21 @@
 angular.module('seekerApp')
     .controller('SelectorCtrl', function ($scope, $modalInstance, node, getHeader) {
 
-        // data
-        $scope.modal = {
-            header: 'Test header',
-            text: 'change me'
-        };
-
         $scope.node = node;
         $scope.header = getHeader(node);
 
-        // functions
+        // modal functions
         $scope.ok = function () {
             $modalInstance.close('something to return');
         };
 
         $scope.cancel = function () {
             $modalInstance.dismiss('cancel');
+        };
+
+        // item functions
+        $scope.remove = function (index) {
+            $scope.node.value.splice(index, 1);
         };
 
         // TODO: move all this data to model (database)
@@ -36,23 +35,89 @@ angular.module('seekerApp')
             return hint[node.type] || [];
         };
 
+        function objectify(lst) {
+            return lst.map(function (val) {
+                return {value: val};
+            });
+        }
+
+        $scope.list = objectify(hint[node.type] || []);
+
         $scope.selected = '';
 
         // alerts
-
         $scope.alerts = [
-            { type: 'warning', msg: 'Lorem ipsum...'},
+            /* { type: 'warning', msg: 'Lorem ipsum...'},
             { type: 'info', msg: 'Lorem ipsum...'},
             { type: 'danger', msg: 'Oh snap! Change a few things up and try submitting again.' },
-            { type: 'success', msg: 'Well done! You successfully read this important alert message.' }
+            { type: 'success', msg: 'Well done! You successfully read this important alert message.' } */
         ];
 
-        $scope.addAlert = function() {
-            $scope.alerts.push({msg: 'Another alert!'});
+        console.log('node.value:', $scope.node.value);
+
+        function addAlert(type, msg) {
+            $scope.alerts.push({type: type, msg: msg});
         };
 
         $scope.closeAlert = function(index) {
             $scope.alerts.splice(index, 1);
+        };
+
+        $scope.emptyFields = function () {
+            var empty = [];
+            for (var i = 0; i < $scope.node.value.length; ++i) {
+                if (($scope.node.value[i].value || '').trim() === '') {
+                    empty.push(i);
+                }
+            }
+            return empty;
+        };
+
+        $scope.anyEmpty = function () {
+            for (var i = 0; i < $scope.node.value.length; ++i) {
+                if ($scope.node.value[i].value && $scope.node.value[i].value.trim() === '') {
+                    return true;
+                }
+            }
+            return false;
+        };
+
+        $scope.blurCallback = function () {
+
+        };
+
+        // configuration
+        $scope.config = {
+            validate: node.type
+        }
+
+        $scope.listMode = false;
+
+        $scope.tabs = [
+            {
+                title: 'Text',
+                active: true,
+                content: 'surprise',
+                action: function () { $scope.listMode = false; }
+            },
+            {
+                title: 'List',
+                active: true,
+                content: 'list',
+                action: function () { $scope.listMode = true; }
+            }
+        ];
+
+        $scope.gridOptions = {
+            data: 'list',
+            selectedItems: $scope.node.value,
+            multiSelect: true,
+            afterSelectionChange: function () {
+                $scope.selectedIDs = [];
+                angular.forEach($scope.mySelections, function ( item ) {
+                    $scope.selectedIDs.push( /*item.id */ 1)
+                });
+            }
         };
 
 });

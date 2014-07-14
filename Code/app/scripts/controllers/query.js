@@ -102,6 +102,8 @@ angular.module('seekerApp')
     // opens modal window of 'size' and passes 'node' to its controller
     // size - 'sm' for small, 'lg' for large, nothing for medium
     // node - reference to object which is being modified
+    // validate - does fields require validation (check if entered value is one of the legal ones)
+    // help - display in help mode?
     function openModal(size, node, help) {
 
         var templateUrl = 'partials/selector.html';

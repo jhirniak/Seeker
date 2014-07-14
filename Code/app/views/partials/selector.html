@@ -4,14 +4,38 @@
     </div>
 
     <div class="modal-body">
+        <alert type="warning" ng-show="modifyDataForm.$invalid">You must select one of the available values.</alert>
+        <!-- <alert type="info" ng-show="emptyFields().length !== 0">If box{{emptyFields().length > 1 | iff : 'es' : ''}} {{emptyFields() | humanizeListKeys}} will be left empty on submit then it will be removed.</alert> -->
         <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
-        <form>
-            <input type="text" ng-repeat="item in node.value" ng-model="item.value" typeahead="hint for hint in getHints() | filter:$viewValue | limitTo:8" typeahead-min-length="1" placeholder="Enter source" typeahead-editable="false" />
+
+        <tabset>
+            <tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" select="tab.action()">{{tab.content}}</tab>
+        </tabset>
+
+        <form name="modifyDataForm" novalidate>
+
+            <div class="form-group" ng-hide="listMode">
+                <!-- <label>Group</label> -->
+                <div class="row" style="padding-bottom:12px;" ng-repeat="item in node.value">
+                    <span class="col-sm-6"><input type="text" name="{{$index}}" ng-model-options="{ updateOn: 'mousedown blur' }" class="form-control" style="width: none" ng-model="item.value" typeahead="hint for hint in getHints() | filter:$viewValue | limitTo:8" typeahead-min-length="1" placeholder="Enter source" typeahead-editable="true" /></span>
+                    <a class="pull-left btn btn-danger btn-xs" data-nodrag ng-click="remove($index)"><span class="glyphicon glyphicon-remove"></span></a>
+                </div>
+            </div>
+
+            <!--
+            <div class="form-group" ng-show="listMode">
+                <label ng-repeat="item in list">
+                    <input type="checkbox" checklist-model="node.value" checklist-value="item"> {{item.value}}
+                </label>
+            </div>
+            -->
+
+            <div class="table" ng-grid="gridOptions" ng-show="listMode"></div>
         </form>
     </div>
 
     <div class="modal-footer">
-        <button class="btn btn-primary" ng-click="ok()">OK</button>
+        <button class="btn btn-primary" ng-click="ok()" ng-disabled="modifyDataForm.$invalid">OK</button>
         <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
     </div>
 </div>

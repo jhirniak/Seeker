@@ -8,7 +8,8 @@ var seekerApp = angular.module('seekerApp', [
   'ui.tree',
   'decipher.history',
   'ui.bootstrap',
-  'ngAnimate'
+  'ngAnimate',
+  'ngGrid'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
@@ -113,3 +114,147 @@ seekerApp.filter('queryLens', function () {
         return 'db.docs.find(' + JSON.stringify(q) + ');';
     };
 });
+
+// conditional text filter
+seekerApp.filter('iff', function () {
+    return function (condition, onTrue, onFalse) {
+        return condition ? onTrue : onFalse;
+    }
+});
+
+// display list keys (indexes) in human readable form (with indexes starting from 1)
+seekerApp.filter('humanizeListKeys', function () {
+    return function (lst) {
+        if (lst) {
+            var keys = [];
+            for (var i = 0; i < lst.length; i++) {
+                if (lst[i] !== undefined) {
+                    keys.push(i + 1);
+                }
+            }
+            return keys.join(', ');
+        } else {
+            return '';
+        }
+    }
+});
+
+// attach an action the the blur and focus events
+// accessed as form values, i.e. formName.fieldName.$focused
+seekerApp.directive('ngFocus', [function() {
+    var FOCUS_CLASS = "ng-focused";
+    return {
+        restrict: 'A',
+        require: 'ngModel',
+        link: function(scope, element, attrs, ctrl) {
+            ctrl.$focused = false;
+            element.bind('focus', function(evt) {
+                element.addClass(FOCUS_CLASS);
+                scope.$apply(function() {ctrl.$focused = true;});
+            }).bind('blur', function(evt) {
+                    element.removeClass(FOCUS_CLASS);
+                    scope.$apply(function() {ctrl.$focused = false;});
+                });
+        }
+    }
+}]);
+
+/**
+ * Checklist-model
+ * AngularJS directive for list of checkboxes
+ */
+
+seekerApp
+    .directive('checklistModel', ['$parse', '$compile', function($parse, $compile) {
+        // contains
+        function contains(arr, item) {
+            if (angular.isArray(arr)) {
+                for (var i = 0; i < arr.length; i++) {
+                    if (angular.equals(arr[i], item)) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        // add
+        function add(arr, item) {
+            arr = angular.isArray(arr) ? arr : [];
+            for (var i = 0; i < arr.length; i++) {
+                if (angular.equals(arr[i], item)) {
+                    return arr;
+                }
+            }
+            arr.push(item);
+            return arr;
+        }
+
+        // remove
+        function remove(arr, item) {
+            if (angular.isArray(arr)) {
+                for (var i = 0; i < arr.length; i++) {
+                    if (angular.equals(arr[i], item)) {
+                        arr.splice(i, 1);
+                        break;
+                    }
+                }
+            }
+            return arr;
+        }
+
+        // http://stackoverflow.com/a/19228302/1458162
+        function postLinkFn(scope, elem, attrs) {
+            // compile with `ng-model` pointing to `checked`
+            $compile(elem)(scope);
+
+            // getter / setter for original model
+            var getter = $parse(attrs.checklistModel);
+            var setter = getter.assign;
+
+            // value added to list
+            var value = $parse(attrs.checklistValue)(scope.$parent);
+
+            // watch UI checked change
+            scope.$watch('checked', function(newValue, oldValue) {
+                if (newValue === oldValue) {
+                    return;
+                }
+                var current = getter(scope.$parent);
+                if (newValue === true) {
+                    setter(scope.$parent, add(current, value));
+                } else {
+                    setter(scope.$parent, remove(current, value));
+                }
+            });
+
+            // watch original model change
+            scope.$parent.$watch(attrs.checklistModel, function(newArr, oldArr) {
+                scope.checked = contains(newArr, value);
+            }, true);
+        }
+
+        return {
+            restrict: 'A',
+            priority: 1000,
+            terminal: true,
+            scope: true,
+            compile: function(tElement, tAttrs) {
+                if (tElement[0].tagName !== 'INPUT' || !tElement.attr('type', 'checkbox')) {
+                    throw 'checklist-model should be applied to `input[type="checkbox"]`.';
+                }
+
+                if (!tAttrs.checklistValue) {
+                    throw 'You should provide `checklist-value`.';
+                }
+
+                // exclude recursion
+                tElement.removeAttr('checklist-model');
+
+                // local scope var storing individual checkbox model
+                tElement.attr('ng-model', 'checked');
+
+                return postLinkFn;
+            }
+        };
+    }]);
