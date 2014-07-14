@@ -17,13 +17,21 @@
             <div class="form-group" ng-hide="listMode">
                 <!-- <label>Group</label> -->
                 <div class="row" style="padding-bottom:12px;" ng-repeat="item in node.value">
-                    <span class="col-sm-6"><input type="text" name="{{$index}}" ng-model-options="{ updateOn: 'mousedown blur' }" class="form-control" style="width: none" ng-model="item.value" typeahead="hint for hint in getHints() | filter:$viewValue | limitTo:8" typeahead-min-length="1" placeholder="Enter source" typeahead-editable="!validate" /></span>
+                    <span class="col-sm-6"><input type="text" name="{{$index}}" ng-model-options="{ updateOn: 'mousedown blur' }" class="form-control" style="width: none" ng-model="item.value" typeahead="hint for hint in getHints() | filter:$viewValue | limitTo:8" typeahead-min-length="1" placeholder="Enter source" typeahead-editable="!validate" typeahead-on-select="check($item, $model, $label)"/></span>
                     <a class="pull-left btn btn-danger btn-xs" data-nodrag ng-click="remove($index)"><span class="glyphicon glyphicon-remove"></span></a>
                 </div>
                 <a class="pull-left btn btn-success btn-xs" data-nodrag ng-click="addEmpty()"><span class="glyphicon glyphicon-plus"></span></a>
             </div>
 
             <div id="list" class="form-group" ng-show="listMode">
+                <div>
+                    <ul class="nav nav-pills pull-left">
+                        <li ng-repeat="item in listToolbox">
+                            <a ng-href="#" ng-click="item.action()">{{item.title}}</a>
+                        </li>
+                    </ul>
+                </div>
+
                 <label ng-repeat="item in list">
                     <input type="checkbox" checklist-model="node.value" checklist-value="item"> {{item.value}}
                 </label>

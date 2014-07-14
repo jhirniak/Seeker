@@ -10,16 +10,41 @@ angular.module('seekerApp')
 
         $scope.ok = function () {
             removeAllEmpty();
+            removeAllDuplicates();
             $modalInstance.close('something to return');
         };
 
         function removeAllEmpty() {
             for (var i = 0; i < node.value.length; ++i) {
-                if (node.value[i].value.trim() === '') {
+                if (('' + node.value[i].value).trim() === '') {
                     $scope.remove(i--);
                 }
             }
         }
+
+        // find first position of object with property prop of value val in array/list lst
+        // (used for removing duplicates)
+        function findElem(lst, prop, val) {
+            for (var i = 0; i < lst.length; ++i) {
+                if (lst[i][prop] == val) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        function removeAllDuplicates() {
+            $scope.node.value = $scope.node.value.filter(function (elem, pos) {
+                return findElem(node.value, 'value', elem.value) == pos;
+            });
+            console.log('Check if there are any duplicates: ', $scope.node.value);
+        }
+
+        $scope.check = function(item, model, label) {
+            console.log('Item:', item);
+            console.log('Model:', model);
+            console.log('Label:', label);
+        };
 
         $scope.cancel = function () {
             $modalInstance.dismiss('cancel');
@@ -150,4 +175,10 @@ angular.module('seekerApp')
 
         $scope.validate = $scope.getHints().length > 0; // require to specify one of the suggested values
 
+
+        // list menu options
+        $scope.listToolbox = [
+            {title: 'Select All', action: function () { node.value = angular.copy($scope.list); }},
+            {title: 'Select None', action: function () { node.value = []; }}
+        ];
 });
