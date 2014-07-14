@@ -91,8 +91,7 @@ angular.module('seekerApp')
             validate: node.type
         }
 
-        $scope.listMode = $scope.getHints().length < 10;
-        console.log('List mode?',  $scope.getHints().length < 10);
+        $scope.listMode = $scope.getHints().length <= 10 || node.type === 'text';
 
         $scope.tabs = [
             {
