@@ -139,6 +139,20 @@ seekerApp.filter('humanizeListKeys', function () {
     }
 });
 
+seekerApp.filter('titleCase', function () {
+    return function (title) {
+        if (!title || typeof title !== 'string') {
+            return '';
+        } else {
+            var words = title.toLowerCase().split(' ');
+            for (var i = 0; i < words.length; ++i) {
+                words[i] = words[i].charAt(0).toUpperCase() + words[i].splice(1);
+            }
+            return words.join(' ');
+        }
+    }
+});
+
 // attach an action the the blur and focus events
 // accessed as form values, i.e. formName.fieldName.$focused
 seekerApp.directive('ngFocus', [function() {

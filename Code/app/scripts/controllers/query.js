@@ -114,9 +114,9 @@ angular.module('seekerApp')
                 controller =  'HelpCtrl';
                 break;
             case 'new':
-                templateUrl = 'partials/selector.html';
-                controller =  'SelectorCtrl';
-                break;
+                //templateUrl = 'partials/newnode.html';
+                //controller =  'NewNodeCtrl';
+                //break;
             default:
                 templateUrl = 'partials/selector.html';
                 controller =  'SelectorCtrl';
@@ -128,7 +128,8 @@ angular.module('seekerApp')
             size: size,
             resolve: {
                 node: function () { return node; },
-                getHeader: function () { return $scope.getHeader; }
+                getHeader: function () { return $scope.getHeader; },
+                isNew: function () { return template === 'new'; }
             }
         });
     };
@@ -143,6 +144,9 @@ angular.module('seekerApp')
     };
 
     $scope.insertAfter = function (node) {
+        console.log('Making child for:', node);
+        openModal('lg', node, 'new');
+        /*
         var nodeData = node.$modelValue;
         nodeData.children.push({
             id: nodeData.id * 10 + nodeData.children.length,
@@ -150,6 +154,7 @@ angular.module('seekerApp')
             value: [{value: nodeData.title + '.' + (nodeData.children.length + 1)}],
             children: []
         });
+        */
     };
 
     $scope.help = function (size, node) {
@@ -267,6 +272,7 @@ angular.module('seekerApp')
 
     // TODO: Deal with not working parent part
     function isOnPath(node, type) {
+        return true; // TODO: fix this issue
         // scan up (all parents)
         var currNode = node;
         while (currNode !== null) {
@@ -322,6 +328,11 @@ angular.module('seekerApp')
             uniqueOnPathTypes.forEach(function (t) {
                 legal[t] = !isOnPath(node, t);
             });
+
+            // TODO: make it responsive
+            // temporairly switched of decorator and order
+            legal['ordering-child'] = false;
+            legal['decorator-child'] = false;
         }
 
         return legal;

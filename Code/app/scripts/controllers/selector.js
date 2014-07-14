@@ -1,10 +1,25 @@
 'use strict';
 
 angular.module('seekerApp')
-    .controller('SelectorCtrl', function ($scope, $modalInstance, node, getHeader) {
+    .controller('SelectorCtrl', function ($scope, $modalInstance, node, getHeader, isNew) {
 
         $scope.node = node;
         $scope.header = getHeader(node);
+        $scope.isNew = isNew;
+
+        $scope.child = {};
+        $scope.child.type = '';
+        $scope.child.value = [];
+
+        function getType() {
+            if (isNew) {
+                return $scope.child.type;
+            } else {
+                return $scope.node.type;
+            }
+        }
+
+        $scope.getType = getType;
 
         // modal functions
 
@@ -71,7 +86,7 @@ angular.module('seekerApp')
         hint['country'] = ['Armenia', 'Austria', 'Bosnia and Herzegovina', 'Croatia', 'Cyprus', 'Czech Republic', 'Denmark', 'Finland', 'Germany', 'Hungary', 'Liechtenstein', 'Luxembourg', 'Montenegro', 'Netherlands', 'Norway', 'Poland', 'Romania', 'Serbia', 'Slovakia', 'Slovenia', 'Spain', 'Sweden', 'Switzerland', 'Ukraine', 'United Kingdom'];
 
         $scope.getHints = function () {
-            return hint[node.type] || [];
+            return hint[getType()] || [];
         };
 
         function objectify(lst) {
@@ -80,7 +95,7 @@ angular.module('seekerApp')
             });
         }
 
-        $scope.list = objectify(hint[node.type] || []);
+        $scope.list = objectify(hint[getType()] || []);
 
         $scope.selected = '';
 
@@ -127,10 +142,10 @@ angular.module('seekerApp')
 
         // configuration
         $scope.config = {
-            validate: node.type
+            validate: getType()
         }
 
-        $scope.listMode = $scope.getHints().length <= 10 || node.type === 'text';
+        $scope.listMode = $scope.getHints().length <= 10 || getType() === 'text';
 
         $scope.tabs = [
             {
@@ -146,6 +161,21 @@ angular.module('seekerApp')
                 action: function () { $scope.listMode = true; }
             }
         ];
+
+        $scope.typeTabs = [];
+
+        function createTabs() {
+            var tabs = [];
+            var census = node.legalChildren();
+            for(var child in census) {
+                if (census[child]) {
+                    tabs.push({type: child, action: function () { $scope.child.type = child; } });
+                }
+            }
+            return tabs;
+        }
+
+        $scope.typeTabs = createTabs();
 
         /* Disabled, see comment in selector.html
         $scope.gridOptions = {

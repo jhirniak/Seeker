@@ -8,6 +8,10 @@
         <!-- <alert type="info" ng-show="emptyFields().length !== 0">If box{{emptyFields().length > 1 | iff : 'es' : ''}} {{emptyFields() | humanizeListKeys}} will be left empty on submit then it will be removed.</alert> -->
         <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
 
+        <tabset style="padding-bottom: 24px" ng-show="isNew">
+            <tab ng-repeat="tab in typeTabs" heading="{{tab.type}}" active="tab.active" select="switch(tab.type)">{{tab.content}}</tab>
+        </tabset>
+
         <tabset style="padding-bottom: 24px">
             <tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" select="tab.action()">{{tab.content}}</tab>
         </tabset>
