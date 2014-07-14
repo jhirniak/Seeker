@@ -104,14 +104,22 @@ angular.module('seekerApp')
     // node - reference to object which is being modified
     // validate - does fields require validation (check if entered value is one of the legal ones)
     // help - display in help mode?
-    function openModal(size, node, help) {
+    function openModal(size, node, template) {
 
-        var templateUrl = 'partials/selector.html';
-        var controller =  'SelectorCtrl';
+        var templateUrl, controller;
 
-        if (help) {
-            templateUrl = 'partials/help.html';
-            controller =  'HelpCtrl';
+        switch (template) {
+            case 'help':
+                templateUrl = 'partials/help.html';
+                controller =  'HelpCtrl';
+                break;
+            case 'new':
+                templateUrl = 'partials/selector.html';
+                controller =  'SelectorCtrl';
+                break;
+            default:
+                templateUrl = 'partials/selector.html';
+                controller =  'SelectorCtrl';
         }
 
         var modalInstance = $modal.open({
@@ -127,7 +135,7 @@ angular.module('seekerApp')
 
     $scope.modify = function (node) {
         console.log('Modifying:', node);
-        openModal('lg', node);
+        openModal('lg', node, 'modify');
     };
 
     $scope.remove = function (node) {
@@ -145,7 +153,7 @@ angular.module('seekerApp')
     };
 
     $scope.help = function (size, node) {
-        openModal('lg', node, true);
+        openModal('lg', node, 'help');
     }
 
     // TODO: Replace hints with proper text
