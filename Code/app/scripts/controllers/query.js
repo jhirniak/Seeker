@@ -20,7 +20,7 @@ angular.module('seekerApp')
         {
             id: 1,
             type: 'source',
-            value: [{value: 'Committee of Experts'}],
+            value: [{value: 'Committee of Experts\' evaluation report'}],
             children: [
                 {
                     id: 11,
@@ -181,14 +181,14 @@ angular.module('seekerApp')
     };
 
     // returns all tree roots identified by class name "tree-root" (should be attached to ol root node)
-    var getRootScopes = function() {
+    function getRootScopes() {
         var scopes = [];
         var roots = document.getElementsByClassName("tree-root");
         for (var i = 0; i < roots.length; ++i) {
             scopes.push(angular.element(roots[i]).scope());
         }
         return scopes;
-    };
+    }
 
     $scope.collapseAll = function() {
         getRootScopes().forEach(function (scope) {
@@ -271,31 +271,81 @@ angular.module('seekerApp')
     ];
 
     // TODO: Deal with not working parent part
+    function getRootNode(type) {
+        if (!type) {
+            return $scope.trees['data'];
+        }
+        return $scope.trees[type];
+    }
+
+    // BFS
+    // parent - parent node
+    // type - children type to check paths including node for
     function isOnPath(node, type) {
-        return true; // TODO: fix this issue
-        // scan up (all parents)
-        var currNode = node;
-        while (currNode !== null) {
-            if (currNode.type === type) {
-                return true;
+        var root2node = getPathFromRootTo(node);
+        var node2leaves = node;
+        return containsType(root2node, type) || containsType(node2leaves, type);
+    }
+
+    // DFS algorithm to find a path from 'node' node to 'goal node, it works up to bottom of 'node'
+    // returns path from 'node' to 'goal', undefined if path does not exist
+    function getPathTo(node, goal) {
+        if (node === goal) {
+            return [node]; // return the end of the path
+        } else {
+        // if child on path then path will be returned, undefined otherwise
+            var children = node.children || [];
+            for (var i = 0; i < children.length; ++i) {
+                var path = getPathTo(children[i], goal);
+                if (path) {
+                    path.unshift(node);;
+                    return path;
+                }
             }
-            currNode = currNode.parent;
+        }
+    }
+
+    // returns path from data tree root to given node
+    // TODO: Assumes data has only one root, but will it hold in the future development?
+    function getPathFromRootTo(node) {
+        return getPathTo(getRootNode('data')[0], node);
+    }
+
+    // checks if tree contains on any path any object of type 'type'
+    // tree can be also a list of root nodes (useful for checking list of root-node list)
+    function containsType(tree, type) {
+
+        // if tree is list of tree nodes then copy them all to the queue (to avoid operating on the actual tree)
+        // otherwise just instantiate queue with the root of the tree
+        var q;
+        if (Object.prototype.toString.call(tree) === '[object Array]') {
+            q = angular.copy(tree);
+        } else {
+            q = [tree];
         }
 
-        // scan down (all children)
-        var queue = [node];
-        while (queue.length > 0) {
-            var currNode = queue.shift();
-            if (currNode.type === type) {
+        while (q.length !== 0) {
+            var node = q.shift();
+            if (node.type === type) {
                 return true;
+            } else {
+                (node.children || []).forEach(function (child) {
+                    q.push(child);
+                });
             }
-            (currNode.children || []).forEach(function (child) {
-                queue.push(child);
-            });
         }
 
         return false;
     }
+
+    var testRoot = $scope.trees.data[0];
+    var testCountry = $scope.trees.data[0].children[0].children[0];
+    /*console.log('Looking for path from:', testRoot, 'to:', testGoal);
+    console.log('Path found:', getPathTo(testRoot, testGoal));
+    console.log('Is country on path from testRoot?', isOnPath(testCountry, 'text'));*/
+    console.log('%cTests:', "color:green");
+    console.log('Legal children of root:', testRoot.legalChildren());
+    console.log('Legal children of country:', testCountry.legalChildren());
 
     // TODO: rewrite to ng
     // returns list of types for given node, legal indicated by true, and illegal by false

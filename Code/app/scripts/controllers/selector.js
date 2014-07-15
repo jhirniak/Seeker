@@ -215,4 +215,8 @@ angular.module('seekerApp')
         $scope.textToolbox = [
             {title: 'Sort', action: function () { node.value.sort(function (a, b) { return a.value > b.value; } ); }}
         ];
+
+        if (isNew) {
+            console.log('Legal children:', node.legalChildren());
+        }
 });
