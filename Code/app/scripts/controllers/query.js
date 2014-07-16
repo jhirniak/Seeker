@@ -308,6 +308,15 @@ angular.module('seekerApp')
         }
     }
 
+    function hasChildOfType(node, type) {
+        node.children.forEach(function (child) {
+            if (child.type === type) {
+                return true;
+            }
+        });
+        return false;
+    }
+
     // returns path from data tree root to given node
     // TODO: Assumes data has only one root, but will it hold in the future development?
     function getPathFromRootTo(node) {
@@ -383,9 +392,16 @@ angular.module('seekerApp')
             });
 
             // TODO: make it responsive
-            // temporairly switched of decorator and order
+            // temporarily switched of decorator and order
             legal['ordering-child'] = false;
             legal['decorator-child'] = false;
+
+            // prohibit multiple nodes of the same type at the same level (always values should be appended not another node)
+            for (var type in legal) {
+                if (hasChildOfType(node, type)) {
+                    legal[type] = false;
+                }
+            }
         }
 
         return legal;

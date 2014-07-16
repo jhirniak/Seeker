@@ -168,7 +168,7 @@ angular.module('seekerApp')
                 title: 'Text',
                 active: !$scope.listMode,
                 //content: 'surprise',
-                action: function () { $scope.listMode = false; }
+                action: function () { sortValues(); $scope.listMode = false;  }
             },
             {
                 title: 'List',
@@ -238,8 +238,12 @@ angular.module('seekerApp')
             {title: 'Select None', action: function () { getNode().value = []; }}
         ];
 
+        function sortValues() {
+            $scope.node.value.sort(function (a, b) { return a.value > b.value; } );
+        }
+
         $scope.textToolbox = [
-            {title: 'Sort', action: function () { getNode().value.sort(function (a, b) { return a.value > b.value; } ); }}
+            {title: 'Sort', action: function () { sortValues(); }}
         ];
 
         if (isNew) {
