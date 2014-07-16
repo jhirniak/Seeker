@@ -170,3 +170,9 @@ a {
   clear: both;
   width: 100%;
 }
+
+.insertRoot {
+  a span:not(:last-child) {
+    padding-right:1em;
+  }
+}
