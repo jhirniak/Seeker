@@ -10,12 +10,12 @@
 
         <!-- Legal children of parent types, display only if creating new child of node -->
         <tabset style="padding-bottom: 24px" ng-show="isNew">
-            <tab ng-repeat="tab in typeTabs" heading="{{tab.type}}" active="tab.active" select="tab.action(tab.type)">{{tab.content}}</tab>
+            <tab ng-repeat="tab in typeTabs" heading="{{tab.type | titleCase}}" active="tab.active" select="tab.action(tab.type)">{{tab.content}}</tab>
         </tabset>
 
         <!-- Editing options -->
         <tabset style="padding-bottom: 24px">
-            <tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" select="tab.action()">{{tab.content}}</tab>
+            <tab ng-repeat="tab in tabs" ng-show="tab.show()" heading="{{tab.title}}" active="tab.active" select="tab.action()">{{tab.content}}</tab>
         </tabset>
 
         <form name="modifyDataForm" novalidate>
@@ -32,7 +32,7 @@
 
                 <!-- <label>Group</label> -->
                 <div class="row" style="padding-bottom:12px;" ng-repeat="item in node.value">
-                    <span class="col-sm-6"><input type="text" name="{{$index}}" ng-model-options="{ updateOn: 'mousedown blur' }" class="form-control" style="width: none" ng-model="item.value" typeahead="hint for hint in getHints() | filter:$viewValue | limitTo:8" typeahead-min-length="1" placeholder="Enter source" typeahead-editable="!validate" typeahead-on-select="check($item, $model, $label)"/></span>
+                    <span class="col-sm-6"><input type="text" name="{{$index}}" ng-model-options="{ updateOn: 'mousedown blur' }" class="form-control" style="width: none" ng-model="item.value" typeahead="hint for hint in getHints() | filter:$viewValue | limitTo:8" typeahead-min-length="1" placeholder="Enter source" typeahead-editable="true" typeahead-on-select="check($item, $model, $label)"/></span>
                     <a class="pull-left btn btn-danger btn-xs" data-nodrag ng-click="remove($index)"><span class="glyphicon glyphicon-remove"></span></a>
                 </div>
                 <a class="pull-left btn btn-success btn-xs" data-nodrag ng-click="addEmpty()"><span class="glyphicon glyphicon-plus"></span></a>

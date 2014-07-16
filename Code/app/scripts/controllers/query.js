@@ -6,7 +6,9 @@ angular.module('seekerApp')
       $scope.awesomeThings = awesomeThings;
     }); */
 
+    // TODO: move to JSON config file
     var types = ['source', 'cycle', 'country', 'language', 'section', 'text', 'ordering-root', 'ordering-child', 'decorator-root', 'decorator-child'];
+    var dataRootTypes = ['source'];
     var rootTypes = ['source', 'ordering-root', 'decorator-root'];
     var infertileTypes = ['language', 'section', 'text', 'ordering-child', 'decorator-child'];
     var uniqueOnPathTypes = ['cycle', 'country'];
@@ -104,42 +106,40 @@ angular.module('seekerApp')
     // node - reference to object which is being modified
     // validate - does fields require validation (check if entered value is one of the legal ones)
     // help - display in help mode?
-    function openModal(size, node, template) {
+    // params:
+    //   - node
+    //   - template
+    //   - new
+    //   - root
+    function openModal(size, params) {
 
         var templateUrl, controller;
 
-        switch (template) {
+        switch (params.template) {
             case 'help':
                 templateUrl = 'partials/help.html';
                 controller =  'HelpCtrl';
                 break;
-            case 'new':
-                //templateUrl = 'partials/newnode.html';
-                //controller =  'NewNodeCtrl';
-                //break;
             default:
                 templateUrl = 'partials/selector.html';
                 controller =  'SelectorCtrl';
         }
 
-        var isNew = template === 'new';
-        console.log('isNew:', isNew);
+        params['getHeader'] = $scope.getHeader;
 
         var modalInstance = $modal.open({
             templateUrl: templateUrl,
             controller: controller,
             size: size,
             resolve: {
-                node: function () { return node; },
-                getHeader: function () { return $scope.getHeader; },
-                isNew: function () { return isNew; }
+                params: function () { return params; }
             }
         });
     };
 
     $scope.modify = function (node) {
         console.log('Modifying:', node);
-        openModal('lg', node, 'modify');
+        openModal('lg', {node: node});
     };
 
     $scope.remove = function (node) {
@@ -148,7 +148,7 @@ angular.module('seekerApp')
 
     $scope.insertAfter = function (node) {
         console.log('Making child for:', node);
-        openModal('lg', node, 'new');
+        openModal('lg', {node: node, isNew: true});
         /*
         var nodeData = node.$modelValue;
         nodeData.children.push({
@@ -160,9 +160,15 @@ angular.module('seekerApp')
         */
     };
 
+    $scope.insertRoot = function () {
+        openModal('lg', {isNew: true, isRoot: true, tree: $scope.trees['data'], createNode: Node, dataRootTypes: dataRootTypes });
+    };
+
     $scope.help = function (size, node) {
-        openModal('lg', node, 'help');
+        openModal('lg', {node: node, template: 'help'});
     }
+
+    $scope.noData = function () { return $scope.trees['data'].length === 0; };
 
     // TODO: Replace hints with proper text
     // TODO: Use language package like i18n
@@ -242,6 +248,10 @@ angular.module('seekerApp')
     }
 
     $scope.getHeader = function (node) {
+        if (!node) {
+            return '';
+        }
+
         var type = node.type;
         var header = t2h[type] || upcaseFirstChar(type);
 
@@ -382,7 +392,11 @@ angular.module('seekerApp')
     function legalChildren (node) {
         var legal = FertilityList(); // list prototype, all properties are false by default
 
-        if (fertile(node)) {
+        if (!node || node === null) {
+            dataRootTypes.forEach(function (type) {
+                legal[type] = true;
+            });
+        } else if (fertile(node)) {
             // if fertile then can give birth to any infertile type
             infertileTypes.forEach(function (t) {
                 legal[t] = true;

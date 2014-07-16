@@ -141,14 +141,14 @@ seekerApp.filter('humanizeListKeys', function () {
 
 seekerApp.filter('titleCase', function () {
     return function (title) {
-        if (!title || typeof title !== 'string') {
-            return '';
-        } else {
+        if (title && typeof title === 'string') {
             var words = title.toLowerCase().split(' ');
             for (var i = 0; i < words.length; ++i) {
-                words[i] = words[i].charAt(0).toUpperCase() + words[i].splice(1);
+                words[i] = words[i].charAt(0).toUpperCase() + words[i].substring(1);
             }
             return words.join(' ');
+        } else {
+            return '';
         }
     }
 });

@@ -23,7 +23,11 @@
     </ul>
 </div>
 
-<div class="toybox">
+<div class="toybox" ng-show="noData()">
+    <a class="center-block btn btn-primary btn-xs" data-nodrag ng-click="insertRoot()" style="margin-right: 8px;"><span class="glyphicon glyphicon-plus"></span></a>
+</div>
+
+<div class="toybox" ng-hide="noData()">
     <h3>Query:</h3>
     <div ui-tree="options">
         <ol ui-tree-nodes="" ng-model="trees.data" class="tree-root">

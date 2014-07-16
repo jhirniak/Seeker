@@ -1,46 +1,75 @@
 'use strict';
 
 angular.module('seekerApp')
-    .controller('SelectorCtrl', function ($scope, $modalInstance, node, getHeader, isNew) {
+    .controller('SelectorCtrl', function ($scope, $modalInstance, params) {
 
-        $scope.thisNode = node;
-        $scope.header = getHeader(node);
+        // initialize variables
+
+        var isNew = params.isNew;
+        var isRoot = params.isRoot;
+
+        // get list of legal children
+        var legalChildren = isRoot ? params.dataRootTypes : Object.keys(params.node.legalChildren()).map(function (type) {
+                if (params.node.legalChildren()[type]) {
+                    return type;
+                }  else {
+                    return '';
+                }
+            }).filter(function (val) {
+                return val !== '';
+            });
+
+        if (!isRoot) {
+            $scope.thisNode = params.node;
+        }
+
+        if (isNew) {
+            $scope.child = {};
+            $scope.child.type = legalChildren[0];
+            $scope.child.value = [{value: ''}];
+        }
+
+        $scope.header = isRoot ? 'New root' : params.getHeader(params.node);
         $scope.isNew = isNew;
 
-        $scope.child = {};
-        $scope.child.type = '';
-        $scope.child.value = [];
-
-        $scope.node = getNode(); // refers either to node being modified or created (for simplicity)
-
-        // returns reference to node being modified (either existing one or one being created)
-        function getNode() {
-            if (isNew) {
-                return $scope.child;
-            } else {
-                return $scope.thisNode;
-            }
-        }
-
-        // return node parent if creating new one
-        function  getParent() {
-            if (isNew) {
-                return node;
-            } else {
-                return undefined;
-            }
-        }
+        $scope.node = isNew ? $scope.child : $scope.thisNode; // refers either to node being modified or created (for simplicity)
 
         // modal functions
         $scope.ok = function () {
             removeAllEmpty();
             removeAllDuplicates();
             sortValues();
-            if (isNew) {
-                node.appendChild({type: $scope.node.type, value: $scope.node.value});
+
+            if (isRoot && isNew) {
+                params.tree.push(params.createNode($scope.node.type, undefined, $scope.node.value, 1));
             }
+            else if (isNew) {
+                $scope.thisNode.appendChild({type: $scope.node.type, value: $scope.node.value});
+            }
+
             $modalInstance.close('something to return');
         };
+
+        $scope.check = function(item, model, label) {
+            console.log('Item:', item);
+            console.log('Model:', model);
+            console.log('Label:', label);
+        };
+
+        $scope.cancel = function () {
+            $modalInstance.dismiss('cancel');
+        };
+
+        // item functions
+        $scope.remove = function (index) {
+            $scope.node.value.splice(index, 1);
+        };
+
+        $scope.addEmpty = function () {
+            $scope.node.value.push({value: ''});
+        };
+
+        // value operations
 
         function removeAllEmpty() {
             for (var i = 0; i < $scope.node.value.length; ++i) {
@@ -66,25 +95,6 @@ angular.module('seekerApp')
                 return findElem($scope.node.value, 'value', elem.value) == pos;
             });
             console.log('Check if there are any duplicates: ', $scope.node.value);
-        }
-
-        $scope.check = function(item, model, label) {
-            console.log('Item:', item);
-            console.log('Model:', model);
-            console.log('Label:', label);
-        };
-
-        $scope.cancel = function () {
-            $modalInstance.dismiss('cancel');
-        };
-
-        // item functions
-        $scope.remove = function (index) {
-            $scope.node.value.splice(index, 1);
-        };
-
-        $scope.addEmpty = function () {
-            $scope.node.value.push({value: ''});
         }
 
         // TODO: move all this data to model (database)
@@ -161,47 +171,86 @@ angular.module('seekerApp')
             validate: function () { return $scope.node.type; }
         }
 
-        $scope.listMode = $scope.getHints().length <= 10 || getType() === 'text';
+        function listAvailable() {
+            return $scope.getHints().length > 0;
+        }
 
-        $scope.tabs = [
-            {
+        function listMode() {
+            return $scope.getHints().length <= 10 && listAvailable();
+        }
+
+        $scope.listMode = listMode();
+
+        function Tabs() {
+            var tabs = [];
+
+            tabs.push({
                 title: 'Text',
                 active: !$scope.listMode,
+                show: function () { return true; },
                 //content: 'surprise',
-                action: function () { sortValues(); $scope.listMode = false;  }
-            },
-            {
+                action: function () { sortValues(); refreshView('switch-conditional'); }
+            });
+
+            tabs.push({
                 title: 'List',
                 active: $scope.listMode,
+                show: function () { return listAvailable(); },
                 //content: 'list',
-                action: function () { $scope.listMode = true; }
-            }
-        ];
+                action: function () { refreshView('switch-conditional'); }
+            });
+
+            return tabs;
+        }
+
+        $scope.tabs = Tabs();
+        console.log('Tabs:', $scope.tabs);
 
         $scope.typeTabs = [];
 
         // if creating new children of parental node then display tabs of all legal children types (to choose from)
         // otherwise return []
         function createTabs() {
-            if (isNew) {
-                var tabs = [];
-                var census = node.legalChildren();
-                for(var childType in census) {
-                    if (census[childType]) {
-                        tabs.push({type: childType, action: function () { $scope.node.type = this.type; console.log('Changed type to', $scope.node.type); refreshView();} });
-                    }
+            var tabs = [];
+
+            if (isRoot && isNew) {
+                for (var i = 0; i < params.dataRootTypes.length; ++i) {
+                    tabs.push(
+                        { type: params.dataRootTypes[i],
+                          action: function () { $scope.node.type = this.type; console.log('Changed type to', $scope.node.type); refreshView('types'); }
+                        });
                 }
-                return tabs;
-            } else {
-                return [];
+            } else if (isNew) {
+                var active = true;
+                legalChildren.forEach( function (type) {
+                    tabs.push(
+                        { type: type,
+                          active: active,
+                          action: function () { $scope.node.type = this.type; console.log('Changed type to', $scope.node.type); refreshView('types');}
+                        });
+                    active = false;
+                });
+
+            }
+
+            return tabs;
+        }
+
+        function refreshView(action) {
+            console.log('action', action, 'listAvailable()', listAvailable(), '$scope.listMode', $scope.listMode);
+            if (action === 'types') {
+                $scope.list = objectify($scope.getHints()); // refresh list of hints
+            }
+            if (!listAvailable() && $scope.listMode) {
+                console.log('Switching to text from list');
+                $scope.listMode = false;
+                $scope.tabs[0]['active'] = true;
+                $scope.tabs[1]['active'] = false;
             }
         }
 
-        function refreshView() {
-            $scope.list = objectify($scope.getHints()); // refresh list of hints
-        }
-
         $scope.typeTabs = createTabs();
+        console.log('Type tabs:', $scope.typeTabs);
 
         /* Disabled, see comment in selector.html
         $scope.gridOptions = {
@@ -231,11 +280,10 @@ angular.module('seekerApp')
 
         $scope.validate = $scope.getHints().length > 0; // require to specify one of the suggested values
 
-
         // list menu options
         $scope.listToolbox = [
-            {title: 'Select All', action: function () { getNode().value = angular.copy($scope.list); }},
-            {title: 'Select None', action: function () { getNode().value = []; }}
+            {title: 'Select All', action: function () { $scope.node.value = angular.copy($scope.list); }},
+            {title: 'Select None', action: function () { $scope.node.value = []; }}
         ];
 
         function sortValues() {
@@ -246,7 +294,4 @@ angular.module('seekerApp')
             {title: 'Sort', action: function () { sortValues(); }}
         ];
 
-        if (isNew) {
-            console.log('Legal children:', node.legalChildren());
-        }
 });
