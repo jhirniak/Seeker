@@ -3,7 +3,7 @@
 angular.module('seekerApp')
     .controller('SelectorCtrl', function ($scope, $modalInstance, node, getHeader, isNew) {
 
-        $scope.node = node;
+        $scope.thisNode = node;
         $scope.header = getHeader(node);
         $scope.isNew = isNew;
 
@@ -11,21 +11,43 @@ angular.module('seekerApp')
         $scope.child.type = '';
         $scope.child.value = [];
 
+        $scope.node = getNode();
+
+        function getNode() {
+            if (isNew) {
+                return $scope.child;
+            } else {
+                return $scope.thisNode;
+            }
+        }
+
+        function  getParent() {
+            if (isNew) {
+                return node;
+            } else {
+                return undefined;
+            }
+        }
+
         function getType() {
             if (isNew) {
                 return $scope.child.type;
             } else {
-                return $scope.node.type;
+                return $scope.thisNode.type;
             }
         }
 
-        $scope.getType = getType;
+        $scope.type = getNode().type;
 
         // modal functions
 
         $scope.ok = function () {
             removeAllEmpty();
             removeAllDuplicates();
+            // TODO: insert child as node, i.e.
+            if (isNew) {
+                node.appendChild({type: $scope.child.type, value: $scope.child.value});
+            }
             $modalInstance.close('something to return');
         };
 
@@ -49,10 +71,11 @@ angular.module('seekerApp')
         }
 
         function removeAllDuplicates() {
-            $scope.node.value = $scope.node.value.filter(function (elem, pos) {
+            var node = getNode();
+            node.value = node.value.filter(function (elem, pos) {
                 return findElem(node.value, 'value', elem.value) == pos;
             });
-            console.log('Check if there are any duplicates: ', $scope.node.value);
+            console.log('Check if there are any duplicates: ', node.value);
         }
 
         $scope.check = function(item, model, label) {
@@ -67,11 +90,11 @@ angular.module('seekerApp')
 
         // item functions
         $scope.remove = function (index) {
-            $scope.node.value.splice(index, 1);
+            getNode().value.splice(index, 1);
         };
 
         $scope.addEmpty = function () {
-            $scope.node.value.push({value: ''});
+            getNode().value.push({value: ''});
         }
 
         // TODO: move all this data to model (database)
@@ -86,7 +109,7 @@ angular.module('seekerApp')
         hint['country'] = ['Armenia', 'Austria', 'Bosnia and Herzegovina', 'Croatia', 'Cyprus', 'Czech Republic', 'Denmark', 'Finland', 'Germany', 'Hungary', 'Liechtenstein', 'Luxembourg', 'Montenegro', 'Netherlands', 'Norway', 'Poland', 'Romania', 'Serbia', 'Slovakia', 'Slovenia', 'Spain', 'Sweden', 'Switzerland', 'Ukraine', 'United Kingdom'];
 
         $scope.getHints = function () {
-            return hint[getType()] || [];
+            return hint[getNode().type] || [];
         };
 
         function objectify(lst) {
@@ -95,7 +118,7 @@ angular.module('seekerApp')
             });
         }
 
-        $scope.list = objectify(hint[getType()] || []);
+        $scope.list = objectify($scope.getHints());
 
         $scope.selected = '';
 
@@ -107,7 +130,7 @@ angular.module('seekerApp')
             { type: 'success', msg: 'Well done! You successfully read this important alert message.' } */
         ];
 
-        console.log('node.value:', $scope.node.value);
+        console.log('getNode().value:', getNode().value);
 
         function addAlert(type, msg) {
             $scope.alerts.push({type: type, msg: msg});
@@ -117,19 +140,24 @@ angular.module('seekerApp')
             $scope.alerts.splice(index, 1);
         };
 
+        // TODO: why not do that in-place? without return
         $scope.emptyFields = function () {
             var empty = [];
-            for (var i = 0; i < $scope.node.value.length; ++i) {
-                if (($scope.node.value[i].value || '').trim() === '') {
+            var node = getNode();
+
+            for (var i = 0; i < node.value.length; ++i) {
+                if ((node.value[i].value || '').trim() === '') {
                     empty.push(i);
                 }
             }
+
             return empty;
         };
 
         $scope.anyEmpty = function () {
-            for (var i = 0; i < $scope.node.value.length; ++i) {
-                if ($scope.node.value[i].value && $scope.node.value[i].value.trim() === '') {
+            var node = getNode();
+            for (var i = 0; i < node.value.length; ++i) {
+                if (node.value[i].value && node.value[i].value.trim() === '') {
                     return true;
                 }
             }
@@ -164,15 +192,21 @@ angular.module('seekerApp')
 
         $scope.typeTabs = [];
 
+        // if creating new children of parental node then display tabs of all legal children types (to choose from)
+        // otherwise return []
         function createTabs() {
-            var tabs = [];
-            var census = node.legalChildren();
-            for(var child in census) {
-                if (census[child]) {
-                    tabs.push({type: child, action: function () { $scope.child.type = child; } });
+            if (isNew) {
+                var tabs = [];
+                var census = node.legalChildren();
+                for(var childType in census) {
+                    if (census[childType]) {
+                        tabs.push({type: childType, action: function () { $scope.child.type = this.type; console.log('Changed type to', this.type); } });
+                    }
                 }
+                return tabs;
+            } else {
+                return [];
             }
-            return tabs;
         }
 
         $scope.typeTabs = createTabs();
@@ -208,12 +242,12 @@ angular.module('seekerApp')
 
         // list menu options
         $scope.listToolbox = [
-            {title: 'Select All', action: function () { node.value = angular.copy($scope.list); }},
-            {title: 'Select None', action: function () { node.value = []; }}
+            {title: 'Select All', action: function () { getNode().value = angular.copy($scope.list); }},
+            {title: 'Select None', action: function () { getNode().value = []; }}
         ];
 
         $scope.textToolbox = [
-            {title: 'Sort', action: function () { node.value.sort(function (a, b) { return a.value > b.value; } ); }}
+            {title: 'Sort', action: function () { getNode().value.sort(function (a, b) { return a.value > b.value; } ); }}
         ];
 
         if (isNew) {

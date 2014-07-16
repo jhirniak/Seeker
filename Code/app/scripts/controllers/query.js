@@ -122,6 +122,9 @@ angular.module('seekerApp')
                 controller =  'SelectorCtrl';
         }
 
+        var isNew = template === 'new';
+        console.log('isNew:', isNew);
+
         var modalInstance = $modal.open({
             templateUrl: templateUrl,
             controller: controller,
@@ -129,7 +132,7 @@ angular.module('seekerApp')
             resolve: {
                 node: function () { return node; },
                 getHeader: function () { return $scope.getHeader; },
-                isNew: function () { return template === 'new'; }
+                isNew: function () { return isNew; }
             }
         });
     };
@@ -398,7 +401,7 @@ angular.module('seekerApp')
             throw 'Expected root type, but found attempt to assign type ' + child.type + ' to parent' + parent;
         } else if (!legalChildren(parent)[child.type]) {
             // illegal children
-            throw 'Expected one of the legal children types, i.e. ' + legalChild(parent) + ', but found ' + children.type;
+            throw 'Expected one of the legal children types, i.e. ' + legalChildren(parent) + ', but found ' + child.type;
         } else {
             var child = Node(type, child.header, child.value, child.id);
             parent.children.push(child);
