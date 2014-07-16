@@ -17,6 +17,7 @@
     "morgan": "~1.0.0",
     "passport": "~0.2.0",
     "passport-local": "~0.1.6",
+    "pdf2json": "^0.6.7",
     "static-favicon": "~1.0.1"
   },
   "devDependencies": {
