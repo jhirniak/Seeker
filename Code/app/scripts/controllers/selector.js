@@ -11,8 +11,9 @@ angular.module('seekerApp')
         $scope.child.type = '';
         $scope.child.value = [];
 
-        $scope.node = getNode();
+        $scope.node = getNode(); // refers either to node being modified or created (for simplicity)
 
+        // returns reference to node being modified (either existing one or one being created)
         function getNode() {
             if (isNew) {
                 return $scope.child;
@@ -21,6 +22,7 @@ angular.module('seekerApp')
             }
         }
 
+        // return node parent if creating new one
         function  getParent() {
             if (isNew) {
                 return node;
@@ -29,31 +31,20 @@ angular.module('seekerApp')
             }
         }
 
-        function getType() {
-            if (isNew) {
-                return $scope.child.type;
-            } else {
-                return $scope.thisNode.type;
-            }
-        }
-
-        $scope.type = getNode().type;
-
         // modal functions
-
         $scope.ok = function () {
             removeAllEmpty();
             removeAllDuplicates();
             // TODO: insert child as node, i.e.
             if (isNew) {
-                node.appendChild({type: $scope.child.type, value: $scope.child.value});
+                node.appendChild({type: $scope.node.type, value: $scope.node.value});
             }
             $modalInstance.close('something to return');
         };
 
         function removeAllEmpty() {
-            for (var i = 0; i < node.value.length; ++i) {
-                if (('' + node.value[i].value).trim() === '') {
+            for (var i = 0; i < $scope.node.value.length; ++i) {
+                if (('' + $scope.node.value[i].value).trim() === '') {
                     $scope.remove(i--);
                 }
             }
@@ -71,11 +62,10 @@ angular.module('seekerApp')
         }
 
         function removeAllDuplicates() {
-            var node = getNode();
-            node.value = node.value.filter(function (elem, pos) {
-                return findElem(node.value, 'value', elem.value) == pos;
+            $scope.node.value = $scope.node.value.filter(function (elem, pos) {
+                return findElem($scope.node.value, 'value', elem.value) == pos;
             });
-            console.log('Check if there are any duplicates: ', node.value);
+            console.log('Check if there are any duplicates: ', $scope.node.value);
         }
 
         $scope.check = function(item, model, label) {
@@ -90,11 +80,11 @@ angular.module('seekerApp')
 
         // item functions
         $scope.remove = function (index) {
-            getNode().value.splice(index, 1);
+            $scope.node.value.splice(index, 1);
         };
 
         $scope.addEmpty = function () {
-            getNode().value.push({value: ''});
+            $scope.node.value.push({value: ''});
         }
 
         // TODO: move all this data to model (database)
@@ -109,7 +99,7 @@ angular.module('seekerApp')
         hint['country'] = ['Armenia', 'Austria', 'Bosnia and Herzegovina', 'Croatia', 'Cyprus', 'Czech Republic', 'Denmark', 'Finland', 'Germany', 'Hungary', 'Liechtenstein', 'Luxembourg', 'Montenegro', 'Netherlands', 'Norway', 'Poland', 'Romania', 'Serbia', 'Slovakia', 'Slovenia', 'Spain', 'Sweden', 'Switzerland', 'Ukraine', 'United Kingdom'];
 
         $scope.getHints = function () {
-            return hint[getNode().type] || [];
+            return hint[$scope.node.type] || [];
         };
 
         function objectify(lst) {
@@ -130,7 +120,7 @@ angular.module('seekerApp')
             { type: 'success', msg: 'Well done! You successfully read this important alert message.' } */
         ];
 
-        console.log('getNode().value:', getNode().value);
+        console.log('node.value:', $scope.node.value);
 
         function addAlert(type, msg) {
             $scope.alerts.push({type: type, msg: msg});
@@ -143,10 +133,9 @@ angular.module('seekerApp')
         // TODO: why not do that in-place? without return
         $scope.emptyFields = function () {
             var empty = [];
-            var node = getNode();
 
-            for (var i = 0; i < node.value.length; ++i) {
-                if ((node.value[i].value || '').trim() === '') {
+            for (var i = 0; i < $scope.node.value.length; ++i) {
+                if (($scope.node.value[i].value || '').trim() === '') {
                     empty.push(i);
                 }
             }
@@ -155,9 +144,8 @@ angular.module('seekerApp')
         };
 
         $scope.anyEmpty = function () {
-            var node = getNode();
-            for (var i = 0; i < node.value.length; ++i) {
-                if (node.value[i].value && node.value[i].value.trim() === '') {
+            for (var i = 0; i < $scope.node.value.length; ++i) {
+                if ($scope.node.value[i].value && $scope.node.value[i].value.trim() === '') {
                     return true;
                 }
             }
@@ -170,7 +158,7 @@ angular.module('seekerApp')
 
         // configuration
         $scope.config = {
-            validate: getType()
+            validate: function () { return $scope.node.type; }
         }
 
         $scope.listMode = $scope.getHints().length <= 10 || getType() === 'text';
@@ -200,13 +188,17 @@ angular.module('seekerApp')
                 var census = node.legalChildren();
                 for(var childType in census) {
                     if (census[childType]) {
-                        tabs.push({type: childType, action: function () { $scope.child.type = this.type; console.log('Changed type to', this.type); } });
+                        tabs.push({type: childType, action: function () { $scope.node.type = this.type; console.log('Changed type to', $scope.node.type); refreshView();} });
                     }
                 }
                 return tabs;
             } else {
                 return [];
             }
+        }
+
+        function refreshView() {
+            $scope.list = objectify($scope.getHints()); // refresh list of hints
         }
 
         $scope.typeTabs = createTabs();

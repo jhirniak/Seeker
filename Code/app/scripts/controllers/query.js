@@ -403,7 +403,7 @@ angular.module('seekerApp')
             // illegal children
             throw 'Expected one of the legal children types, i.e. ' + legalChildren(parent) + ', but found ' + child.type;
         } else {
-            var child = Node(type, child.header, child.value, child.id);
+            var child = Node(child.type, child.header, child.value, child.id);
             parent.children.push(child);
         }
     }
