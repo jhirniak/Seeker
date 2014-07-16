@@ -87,8 +87,8 @@ angular.module('seekerApp')
 
     // add history functionality to data and formatting (allows to undo/redo) on tree elements
     $scope.trees = {};
-    $scope.trees['data'] = nodify(example.data);
-    $scope.trees['formatting'] = nodify(example.formatting);
+    $scope.trees['data'] = []; //nodify(example.data);
+    $scope.trees['formatting'] = []; //nodify(example.formatting);
 
     History.watch('trees', $scope);
 
@@ -361,15 +361,6 @@ angular.module('seekerApp')
 
         return false;
     }
-
-    var testRoot = $scope.trees.data[0];
-    var testCountry = $scope.trees.data[0].children[0].children[0];
-    /*console.log('Looking for path from:', testRoot, 'to:', testGoal);
-    console.log('Path found:', getPathTo(testRoot, testGoal));
-    console.log('Is country on path from testRoot?', isOnPath(testCountry, 'text'));*/
-    console.log('%cTests:', "color:green");
-    console.log('Legal children of root:', testRoot.legalChildren());
-    console.log('Legal children of country:', testCountry.legalChildren());
 
     // TODO: rewrite to ng
     // returns list of types for given node, legal indicated by true, and illegal by false
