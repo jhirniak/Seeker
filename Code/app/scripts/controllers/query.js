@@ -208,7 +208,9 @@ angular.module('seekerApp')
     };
 
     $scope.resetQuery = function () {
-        $scope.trees = [];
+        for (var treeName in $scope.trees) {
+            $scope.trees[treeName] = [];
+        }
     };
 
     function plural(word) {
