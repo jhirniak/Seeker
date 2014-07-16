@@ -35,7 +35,7 @@ angular.module('seekerApp')
         $scope.ok = function () {
             removeAllEmpty();
             removeAllDuplicates();
-            // TODO: insert child as node, i.e.
+            sortValues();
             if (isNew) {
                 node.appendChild({type: $scope.node.type, value: $scope.node.value});
             }
