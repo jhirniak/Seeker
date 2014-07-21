@@ -9,8 +9,9 @@ var mongoose = require('mongoose'),
 var DocumentSchema = new Schema({
     title: String,
     cycle: Number,
+    country: String,
     section: [String]
 });
 
-module.exports = mongoose.model('docs', DocumentSchema); // docs is collection name
+module.exports = mongoose.model('doc', DocumentSchema); // doc is collection name
 
