@@ -1,0 +1,1398 @@
+Secretariat General
+Directorate General
+Human Rights and Rule of Law
+
+DG-I (2012) 4
+12 October 2012
+
+COMMENTS RELATING TO FREEDOM OF EXPRESSION AND FREEDOM OF
+ASSOCIATION WITH REGARD TO NEW GENERIC TOP LEVEL DOMAINS
+by1
+
+Mr Wolfgang Benedek, Professor for International Law and International Relations at
+the University of Graz, Austria (assisted by Paul Gragl and Matthias C.Kettemann)
+Ms Joy Liddicoat, Association for Progressive Communications, New Zealand
+Mr Nico van Eijk, Director of the Institute for Information Law at the University of
+Amsterdam, The Netherlands
+
+1
+
+The opinions expressed in this document are personal and do not engage the responsibility of the
+Council of Europe. They should not be regarded as placing upon the legal instruments mentioned in it
+any official interpretation capable of binding the governments of member states, the Council of
+Europe’s statutory organs or the European Court of Human Rights.
+
+Executive Summary ........................................................................................................... 3
+1. Introduction .................................................................................................................... 4
+2. Human rights obligations of states .................................................................................. 4
+3. Content-related aspects of new gTLDs............................................................................ 6
+3.1. The nature of domain names ................................................................................... 6
+3.2. Content-related choices and judgments ................................................................... 7
+3.2.1. Evaluation of applied-for new gTLD strings ....................................................... 7
+3.2.2. Second and third level domains ........................................................................ 8
+3.2.3. Editorial-like judgement .................................................................................... 9
+4. Permissible restrictions of the exercise of the right to freedom of expression and the right
+to freedom of assembly and association – a regional perspective......................................... 9
+4.1. Hate speech ......................................................................................................... 10
+4.2. The protection of morals and public order .............................................................. 11
+4.3. Commercial expression......................................................................................... 12
+4.4. Trademark protection ............................................................................................ 12
+4.5. Alternative means of expression ............................................................................ 13
+5. Sensitive expression and DNS stability ......................................................................... 14
+5.1. Sensitive expression ............................................................................................. 14
+5.2. DNS blocking and related risks to DNS resilience and stability ................................ 15
+5.3. Implications for GAC advice .................................................................................. 16
+5.3.1. Advice that an application not proceed ............................................................ 16
+5.3.2. Advice that an application not proceed unless remediated ............................... 17
+6. Conclusions ................................................................................................................. 19
+Glossary of terms used .................................................................................................... 20
+
+2
+
+Executive Summary
+Domain names are not only technical Internet resources. People may use them as a
+means of receiving and imparting information, ideas and opinions or to indicate
+association. Courts in various jurisdictions consider that freedom of expression and
+freedom of association apply to domain names. The protection of these human rights
+and fundamental freedoms is important in the context of the new gTLDs programme.
+The approvals of new gTLD strings for delegation as well as registrations at the
+second level are not expected to be mechanical actions but the result of evaluation
+processes where judgment will be exercised on a mix of technical, content-related
+and other considerations. These processes may involve editorial-like decisions,
+similar to those taken by media organisations, which necessitate reflection on the
+media-like freedoms and responsibilities of ICANN.
+The introduction of new gTLDs comprising words or expressions which might raise
+sensitivities of a national, cultural, religious or other nature is considered as a
+potential risk factor for domain name blocking and filtering with possible
+consequences for the Domain Name System (DNS) stability. Both a prohibition to
+delegate new gTLDs on grounds of their sensitivity as well as TLD blocking and
+filtering can affect Internet users’ ability to access online information of their choice
+and to connect with each other.
+Differences between national, cultural religious or other sensitivities and those of a
+political nature may be very difficult to determine. Where a decision regarding the
+introduction of sensitive new gTLDs needs to be taken, it is preferable to give priority
+to upholding the right to freedom of expression and the right to freedom of
+association. This can be done while managing related DNS risks rather than advising
+that a new gTLD application should not proceed or be unreasonably or unfairly
+remediated. A human rights approach would enable the GAC to explore a wide
+range of options which can reflect nuanced and complex considerations.
+Ultimately, in international human rights law, states have obligations to protect,
+respect and promote the human rights and fundamental freedoms of persons within
+their jurisdiction. In the member states of the Council of Europe any interference with
+these rights and freedoms should meet the conditions laid down in the European
+Convention on Human Rights as interpreted by the European Court of Human
+Rights. These obligations continue to exist when states participate in activities of
+entities with specialised technical mandates.
+While the GAC is neither the decision-maker on new gTLDs nor a human rights
+body, a human rights approach, if taken properly into account, will help substantiate
+GAC advice on a new gTLD and at the same time strengthen the overall human
+rights compliance with international standards. States, as public policy duty bearers,
+have genuine and legitimate reasons to avoid violating the rights and freedoms of
+the people within their jurisdiction. Consequently, GAC advice should be given
+special consideration by the ICANN Board.
+
+3
+
+1. Introduction
+1. ICANN’s remit does not generally extend to any examination of the content comprised in
+or to be hosted under TLDs. 1 Nonetheless, Internet content-related considerations do not
+fall completely outside ICANN authority and deliberations on new gTLDs delegations are not
+expected to be mechanical actions.
+2. The role of the GAC in ICANN is to provide advice on the activities of ICANN as they
+relate to concerns of governments and where ICANN activities may affect public policy
+issues, including those relating to freedom of expression as particularly referred to in the
+GAC Operating Principles.2
+3. GAC scrutiny of issues related to content or expressions contained in the new gTLDs is
+limited, primarily because GAC is not the decision-maker in relation to new gTLD
+applications. However, its consideration may extend to linkages between applied-for new
+gTLD strings and possible content to be hosted thereunder based on GAC’s interpretation
+of, or assumption about, the actual or implied meaning or purpose of particular TLDs.
+4. When acting in their advisory role, GAC members have unique
+human rights obligations that other stakeholders in the ICANN
+community do not. GAC members represent governments of
+United Nations member states; their duties apply regardless of
+the government of the day in any particular country or the
+individual official participating in the GAC. These unique state
+obligations should inform the role of governments in Internet
+governance and public policy making as referred to in the Tunis
+Agenda for the Information Society. 3
+
+When acting in their
+advisory role, GAC
+members have
+unique human
+rights obligations
+that other
+stakeholders in the
+ICANN community
+do not.
+
+5. In a Council of Europe context, the special responsibilities of
+Council of Europe member states in Internet governance have been affirmed explicitly in the
+Declaration of the Committee of Ministers on Internet governance principles.4
+6. This paper aims at providing background information on human rights standards, notably
+those on the right to freedom of expression and the right to freedom of association, in line
+with the Council of Europe’s Committee of Ministers Declaration on the protection of freedom
+of expression and information and freedom of assembly and association with regard to
+domain names and name strings 5. It reflects on international law obligations to protect and
+promote these rights and freedoms and how these obligations could be taken into account in
+GAC’s interactions with the ICANN Board.
+7. In this context, the role of the GAC is considered from the perspective of its consensusbased advice as a group of governments rather than from the perspective of individual
+governments’ human rights obligations and how these may be raised or considered within
+the GAC. This is because there are a variety of processes for individual governments to
+provide input to new gTLD applications and a separate dispute resolution procedure
+available to individual governments who wish to object to a specific new gTLD application. 6
+In this paper, a deliberate choice has been made not to comment on any particular new
+gTLD application or applied-for new gTLD string.
+
+2. Human rights obligations of states
+8. States are duty bearers and have obligations to respect, promote and protect the human
+rights and freedoms of their citizens. They have these obligations when acting in relation to
+their respective national matters and, collectively, share an international consensus on core
+
+4
+
+human rights standards. These are laid down in non-binding instruments including the
+Universal Declaration on Human Rights (UDHR) and binding instruments such as the
+International Covenant on Civil and Political Rights (ICCPR) as well as other instruments.
+States may also have human rights obligations agreed at a regional or multi-lateral context
+such as those provided in the European Convention on Human Rights (ECHR) as regards
+the 47 Council of Europe member states.
+9. Recently, the United Nations Human Rights Council adopted the Resolution ‘The
+Promotion, Protection and Enjoyment of Human Rights on the Internet’ which affirmed “that
+the same rights that people have offline must also be protected online, in particular freedom
+of expression, which is applicable regardless of frontiers and through any media of one’s
+choice, in accordance with articles 19 of the Universal Declaration of Human Rights and the
+International Covenant on Civil and Political Rights.” 7
+10. GAC has stated in the GAC Principles Regarding new gTLDs, that new gTLDs should
+respect “the provisions of the Universal Declaration of Human Rights which seeks to affirm
+“fundamental human rights, in the dignity and worth of all human beings and in the equal
+rights of men and women” 8.
+11. When states participate in specialised bodies with a
+primarily technical mandate such as GAC does in ICANN –
+states do not divest themselves of their human rights
+obligations. In this regard, several considerations should be
+noted.
+12. Firstly, while GAC can provide advice to the ICANN Board
+on public policy issues which may relate to human rights,
+GAC is not a human rights standards-making body (for
+example in a Council of Europe context, the European Court
+of Human Rights (ECtHR) could render a judgment which
+conflicts with GAC advice and provides a precedent to follow
+and to be respected by Council of Europe member states).
+
+When states participate
+in specialised bodies
+with a primarily
+technical mandate such
+as GAC does in ICANN
+– states do not divest
+themselves of their
+human rights
+obligations.
+
+13. Secondly, when developing advice in a GAC context, states are bound by internationally
+agreed human rights standards as well as regional or multi-lateral agreements they may
+have entered into.
+14. Thirdly, while there are universal international human rights standards which
+governments must protect, respect and promote – in the particular context of this paper,
+such as the right to freedom of expression and the right to freedom of association – 9 there
+is no universal single way or any single correct way to give effect to those standards. 10 The
+UDHR is the most commonly agreed standard among states.
+15. The reference to the UDHR in the GAC Principles regarding new gTLDs is, therefore,
+appropriate because the UDHR is a non-binding instrument which defines, for the purposes
+of the Charter of the United Nations,11 the meaning of the words “fundamental freedoms”
+and “human rights”. The United Nations Charter is binding on all UN Members.
+16. The guarantees on the right to freedom of expression, the right to freedom of association
+and other fundamental rights and freedoms are further elaborated in the ICCPR, the
+International Convention on the Elimination of all Forms of Racial Discrimination and the
+Convention on the Elimination of all Forms of Discrimination against Women and in other
+international instruments. While not fully binding on all GAC members, these offer good
+guidance when interpreting GAC’s principles of respect for the UDHR and could be a basis
+when providing advice to the ICANN Board. These instruments are specifically referred in
+
+5
+
+the new gTLDs Applicant Guidebook (the Guidebook) in connection with the Limited Public
+Policy objections procedures 12.
+
+3. Content-related aspects of new gTLDs
+3.1. The nature of domain names
+17. For Internet users at large, domain names represent an important way to find and access
+information on the Internet. 13 Domain names have both an addressing function and an
+expressive dimension. The relationship between these two may vary in scope and strength.
+Words or forms of expression included in a TLD offer possible associations with the nature
+of activities and content available on websites registered with that particular TLD. For
+example .com initially yields an association with commercial activities although a wide
+variety of organisations use this TLD. By contrast .org and .net are rather associated with
+non-profit or civil society activities. More closed TLDs, such as .museum and .travel, have an
+even stronger relationship with what is represented by ‘museum’ and ‘travel’.
+18. National courts in different jurisdictions have reviewed, mostly in the context of
+trademark cases, questions related to use of second level domain names as means of
+expression, some of which are referred below 14. In a case involving usage of a trademark in
+second level domain names for criticism purposes, the Paris Court of Appeal considered that
+this was done in the exercise of the right to freedom of expression and upheld such
+expressive use of trademarks by stating that:
+"[…] freedom of expression, a principle of constitutional status, as recognised in the
+treaties and conventions recalled by [one of the appellants] has the implication that
+[the appellants] could denounce, on the Internet websites concerned in this case, in
+the form that they deem appropriate the social consequences of [plans] implemented
+by the defendants; that even though this freedom is not absolute, it can only be
+subject to restrictions made necessary by the respect of rights of others" 15
+19. Moreover, the French Constitutional Council has affirmed the need to protect freedom of
+expression in the context of the French country code TLD (ccTLD). On grounds of, inter alia,
+absence of safeguards for constitutional freedoms, notably freedom of expression, the
+Council declared unconstitutional a legal provision of the Postal and Electronic
+Communications Code, which designated ccTLD registries and authorised them to attribute
+domain names. 16
+20. In a Dutch case, the court of The Hague in a summary procedure denied a protest
+website (www.injeholland.nl) the right to use a ccTLD domain name that resembled the
+name of the organisation that was the object of the protest (www.inholland.nl). According to
+the court – supporting the trade name protection arguments put forward – it was not justified
+to damage the trade name by including it in the name of the protest website. However, the
+court pointed out that the protesters’ right to freedom of expression remained intact because
+it was allowed to use the name on the website itself as part of the discussion about the
+reputation of the organisation. 17
+21. In other jurisdictions, the relationship between the functionality and expression
+dimensions of domain names has been considered more specifically. The United States
+Court of Appeal of the Second Circuit Court, considered in the case Name.Space, Inc. v.
+Network Solutions, Inc., that:
+“[…] the functionality of domain names does not automatically place them beyond the
+reach of the First Amendment. Although domain names do have a functional
+
+6
+
+purpose, whether the mix of functionality and expression is "sufficiently imbued with
+the elements of communication" depends on the domain name in question, the
+intentions of the registrant, the contents of the website, and the technical protocols
+that govern the DNS.”18
+22. Other lower courts case-law in Europe move in the same direction and recognise the
+relationship between expression function of domain names and freedom of expression. 19
+23. The expected introduction of new gTLDs may provide
+new opportunities for further enhancement of the expressive
+dimension of domain names. Words or forms of expressions
+contained in applied-for new gTLD strings may be seen as
+useful by different individuals or communities for purposes
+of expressing ideas or views by simply adding words or
+expressions through registrations at the second or third
+level. The relationship between expressions included in the
+top, second and third level domains may thus entail
+expressive and communication elements, from which it
+follows that TLDs should not be considered in isolation.
+
+The relationship between
+expressions included in
+the top, second and third
+level domains may thus
+entail expressive and
+communication
+elements, from which it
+follows that TLDs should
+not be considered in
+isolation.
+
+24. Domain names are key elements for Internet information
+indexing and selection systems especially those enabled by search engines. Queries made
+on search engines which consist of words, combinations of words or entire sentences are an
+important means of finding domain names of websites, which might include those words, as
+well as of accessing content hosted by them. The question to what extent search engines’
+indexing of website contents can substitute domain names’ role regarding access to
+information falls beyond the scope of this paper. Suffice it to say here that the functionality
+dimension and expression dimension of domain names cannot be strictly separated from
+each other or that there is a gradual transition from one into the other.
+
+3.2. Content-related choices and judgments
+3.2.1. Evaluation of applied-for new gTLD strings
+25. The approval or rejection of applied-for new gTLD strings for delegation, which comprise
+words, names or forms of expression, will not be a mechanical action but the result of an
+evaluation process where judgment will be exercised and choices made. The Guidebook
+provides for three cases when such judgments and choices may directly relate to Internet
+content.
+26. First, the Guidebook contains a list of names and words which are ineligible for
+delegation. 20 This constitutes a content-related choice made a priori by ICANN which is
+expected to result in content-related judgment whenever questions involving usage of any of
+those ineligible words may arise.
+27. Second, the string review, which is part of the evaluation procedure, includes an
+assessment as to whether an applied-for new gTLD string might have an adverse impact on
+the DNS stability and security.21 This is likely to include considerations of TLD-blocking risks
+which might be envisaged as a consequence of different sensitivities relating to words,
+names or forms of expression included in applied for strings. This was the case in
+deliberations on the controversial .xxx applied-for TLD where the ICANN Board stated that
+the risk of blocking was not such as to justify non approval of that string. 22
+28. Generally, TLD-blocking impact assessments cannot be strictly separated from
+considerations as to what content users, communities or governmental authorities in one or
+
+7
+
+more parts of the world may find useful or harmful. In this regard, ICANN’s possible role in
+content-related assessments was signalled in the San Francisco GAC Communiqué. 23 Thus,
+applied-for string reviews may involve judgments as to what content might fit or not fit for
+inclusion in domain names and by implication in websites (a more detailed analysis of this
+question is included in the fifth part of this paper).
+29. Third, the Guidebook provides objection procedures in the context of which contentrelated questions and potential tension between the right to freedom of expression and the
+right to freedom of association, on the one hand, and other legitimate interests and rights, on
+the other hand, may arise. 24
+30. The first two grounds for initiating objection procedures – namely String Confusion
+Objection25 and Legal Rights Objection26 – are clearly focused on the protection of traditional
+trademark rights. A delicate balance is at stake where freedom of expression needs to be
+weighed against the property rights of trademark owners. Invoking trademark protection
+should not be used as a means to limit the freedom of expression and to stifle public
+debate. 27
+31. The third objection ground, namely the Limited Public Interest Objection, is concerned
+with cases when the applied-for gTLD string is considered to be contrary to generally
+accepted legal norms of morality and public order that are recognised under principles of
+international law. The Guidebook states that “[u]nder these principles [of international law],
+everyone has the right to freedom of expression, but the exercise of this right carries with it
+special duties and responsibilities. Accordingly, certain limited restrictions may apply”. 28
+32. In this particular objection procedure the string applied-for will be tested against a list of
+morality and public order considerations which relate to incitement and promotion of violence
+and lawless action, discrimination, child pornography as well as a determination that an
+applied-for string would be contrary to specific principles of international law. 29
+33. Given the general nature of these considerations and the
+lack of a uniform international interpretation thereof,
+deliberations may involve judgment as to whether Internet users
+or communities are likely to find a particular applied-for string
+against norms of morality and public order and therefore of a
+limited public interest. These judgements may have a direct
+impact on Internet content availability. Moreover, the specific
+reference to the right of freedom of expression contained in the
+Guidebook is an acknowledgement of the fact that deliberations
+in this context intersect with issues related to the exercise of
+expression.
+
+The implementation
+of the Guidebook’s
+rules and
+procedures may
+involve contentrelated choices and
+judgment.
+the right to freedom of
+
+34. The fourth ground for refusal – Community Objections – relates to cases when “there is a
+substantial opposition to the gTLD application from a significant portion of the community to
+which the gTLD string may be explicitly or implicitly targeted”. This allows for an ample
+margin of discretion, as illustrated by the approval of the controversial .xxx TLD. Although,
+many objections were filed, they were not decisive for the final deliberation of the ICANN
+Board.30
+
+3.2.2. Second and third level domains
+35. Registries and registrants are expected to set out their own policies regarding
+registrations of domain names in the second and third level domains. Subject to legal
+requirements applying in their jurisdictions and certain content-related specifications
+mandated by ICANN31, policies on registrations at the second and third levels are expected
+
+8
+
+to involve content- related choices and judgments exercised freely by their operators. 32
+While stating that it has no role in respect of Internet content ICANN has maintained that
+content-related issues will likely be a matter to be addressed by registrants. 33
+
+3.2.3. Editorial-like judgement
+36. The content-related judgments and choices explained above, to the extent that they may
+result in decisions on the availability of information on the Internet, are similar to editorial
+judgments made by media routinely in respect of what content is relevant for purposes of the
+public interest and what content to project in the public domain.
+37. This issue is relevant, as from the perspective of the right to freedom of expression and
+access to information, editorial activities may entail special guarantees and responsibilities.
+These relate to freedom from interference by governments or other actors and
+responsibilities to protect rights and freedoms (editorial responsibilities, respect for dignity
+and privacy, respect for the presumption of innocence and fair trial, respect for intellectual
+property, remedies for third parties) and to serve the public interest in accessing diverse
+information.
+38. The notion of editorial-like activities by Internet intermediaries in the new
+communications environment is not new. 34 The Council of Europe’s Recommendation
+CM/Rec(2011)7 of the Committee of Ministers to member states on a new notion of media
+affirms that editorial functions can be evidenced by the actors’ own policy decisions on the
+content to make available or to promote, and on the manner in which to present or arrange
+it. Editorial policies can be embedded in mission statements or in terms and conditions of
+use or may be expressed informally as a commitment to certain principles. The lack of an
+explicit assertion of editorial control by the media should not, by itself, be considered as an
+indication of its absence. 35
+
+4. Permissible restrictions of the exercise of the right to freedom of expression
+and the right to freedom of assembly and association – a regional perspective
+39. All 47 member states of the Council of Europe have undertaken to secure the civil and
+political rights and freedoms provided in the ECHR. The initial and primary responsibility for
+the protection of the rights set forth in the ECHR lies with the member states. Any individual
+claiming to be the victim of a violation of his/her rights and freedoms by any of the ECHR
+Contracting states may apply to the ECtHR after exhausting domestic courses of action.
+40. In respect of the right to freedom of expression, Article 10 of the ECHR provides:
+“1. Everyone has the right to freedom of expression. This right shall include freedom
+to hold opinions and to receive and impart information and ideas without interference
+by public authority and regardless of frontiers. This Article shall not prevent States
+from requiring the licensing of broadcasting, television or cinema enterprises.
+2. The exercise of these freedoms, since it carries with it duties and responsibilities,
+may be subject to such formalities, conditions, restrictions or penalties as are
+prescribed by law and are necessary in a democratic society, in the interests of
+national security, territorial integrity or public safety, for the prevention of disorder or
+crime, for the protection of health or morals, for the protection of the reputation or
+rights of others, for preventing the disclosure of information received in confidence, or
+for maintaining the authority and impartiality of the judiciary.”
+
+9
+
+41. In respect of the right to freedom of assembly and freedom of association, Article 11 of
+the ECHR provides:
+1. Everyone has the right to freedom of peaceful assembly and to freedom of
+association with others, including the right to form and to join trade unions for the
+protection of his interest
+2. No restrictions shall be placed on the exercise of these rights other than such as
+are prescribed by law and are necessary in a democratic society in the interests of
+national security or public safety, for the prevention of disorder or crime, for the
+protection of health or morals or for the protection of the rights and freedoms of
+others. This article shall not prevent the imposition of lawful restrictions on the
+exercise of these rights by members of the armed forces, of the police or of the
+administration of the State.”
+42. Any interference with the exercise of these rights and freedoms must (1) be prescribed
+by law, (2) be pursued for one of the legitimate aims listed in an exhaustive way in the ECHR
+and (3) be necessary in a democratic society (proportional to the aims pursued).
+43. In determining whether a member state’s action or failure to act is compatible with the
+conditions laid down in the ECHR, the ECtHR acknowledges that national authorities have a
+certain degree of discretion to assess whether there is a pressing social need which makes
+a restriction on fundamental rights and freedoms necessary according to conditions laid
+down in the ECHR. In the ECtHR’s jurisprudence this is known as the margin of appreciation
+doctrine. The degree of discretion allowed to member states varies according to the
+circumstances, the subject matter and other factors.
+44. This section of the paper focuses on the ECtHR construction of certain notions such as
+hate speech, protection of morals, significance of religion and public order in the context of
+Article 10 and Article 11 cases. It also highlights some of the main considerations of the
+ECtHR where the right to freedom of expression and the right to freedom of association
+should be balanced with other rights. This information is relevant for informing deliberations
+where similar notions and balancing exercises may be at stake when evaluating applied-for
+new gTLD strings. The comments included in this part of the paper stand without prejudice
+to any possible future interpretation by the ECtHR and should not be taken as suggestions
+on possible applications of human rights standards to any particular applied-for new gTLD
+string.
+
+4.1. Hate speech
+45. The expression of views which negate the fundamental values of the ECHR is excluded
+from the protective realm of the ECHR as an abuse of rights on the basis of Article 17 of the
+ECHR.36 In examining alleged violations of the right to freedom of expression on the basis of
+Article 10 of the ECHR, the ECtHR may find certain restrictions on expression of views as
+necessary in a democratic society, in the interests of national security, public safety, the
+prevention of disorder or crime, the protection of health or morals and the protection of the
+rights and freedoms of others. 37
+46. The expression of views that constitute incitement to racial hatred 38 and support for
+terrorism are not protected by Article 10.39 Reports on proponents of hate speech, even if
+this includes airing their views, however, are permissible. 40 Texts that are merely polemical
+without actually constituting hate speech fall within the scope of ECHR protections. 41 Speech
+favouring the introduction (or restoration) of non-democratic, totalitarian regimes, especially
+when including calls to violence, is not protected by Articles 10 and 11. 42 However, fierce
+critique of secular and democratic principles is protected as part of a political discourse. 43
+
+10
+
+47. Holocaust denial (negationism) is considered
+as one of the “most serious forms of racial
+defamation of Jews and of incitement to hatred of
+them” and is therefore not protected by Article
+10.44 Rather Article 17 is applied when the goals of
+the views are manifestly incompatible with the
+Convention’s fundamental values. Anti-Semitism
+and stirring up “hatred towards the Jewish people”,
+as a particular ethnic group, is also not
+protected.45 General vehement attacks against
+religious groups (for example linking Muslims
+generally to the 11 September 2001 terrorist
+attacks) are also incompatible with the ECHR’s
+values. 46
+
+Freedom of expression as
+guaranteed by Article 10 of the
+ECHR is applicable not only to
+information or ideas that are
+favourably received or regarded
+as inoffensive or as a matter of
+indifference, but also those that
+offend, shock or disturb; such
+are the demands of that
+pluralism, tolerance and broadmindedness without which
+there is no democratic society
+(Handyside v. UK).
+
+48. Political speech, especially when contributing
+to a wider debate on the issues raised, which is in consonance with the ECHR’s aims, is
+protected,47 as is political speech that neither calls for nor condones violence. 48 The
+expression of views that might “offend, shock or disturb” others may, in compliance with the
+conditions of Article 10 of the ECHR, constitute protected speech according to ECtHR
+jurisprudence. 49
+
+4.2. The protection of morals and public order
+49. The Court has consistently held in different cases regarding the exercise of the right to
+freedom of expression in the context of publications 50 and exhibitions51 that it was not
+possible to find a uniform conception of morals among the domestic laws of ECHR
+Contracting states. Given that the views taken by their respective laws of the requirements of
+morals vary from time to time and from place to place, state authorities “are in principle in a
+better position than the international judge to give an opinion on the exact content of these
+requirements as well as on the "necessity" of a "restriction" or "penalty" intended to meet
+them.”52
+50. As in the case of "morals" the ECtHR has stated that
+throughout Europe a uniform conception of the significance
+of religion in society. Consequently “it is not possible to
+arrive at a comprehensive definition of what constitutes a
+permissible interference with the exercise of the right to
+freedom of expression where such expression is directed
+against the religious feelings of others. A certain margin of
+appreciation is therefore to be left to the national authorities
+in assessing the existence and extent of the necessity of
+such interference.” 53 The ECtHR has found that “a wider
+margin of appreciation is generally available to the ECHR
+contracting states when regulating freedom of expression
+in relation to matters liable to offend intimate personal
+convictions within the sphere of morals or, especially,
+religion54
+
+it is not possible to discern
+The ECtHR has
+consistently held that it
+was not possible to find a
+uniform conception of
+morals or to discern a
+uniform conception of the
+significance of religion in
+society among the ECHR
+Contracting states.
+
+51. In these fields, the margin of appreciation of national authorities is wide but not unlimited
+and their discretion is not unfettered. The ECtHR strictly examines whether the restrictions
+applied by the national authorities are compatible with the conditions of Article 10 of the
+ECHR, including whether they are proportional to the legitimate aims pursued. 55
+
+11
+
+52. The prevention of disorder or crime is one of the legitimate aims provided for by Articles
+10 and 11 of the ECHR. The ECtHR has ruled that an exception to Article 10 can be made in
+the interest of preventing disorder and protecting the rights of the immigrant community. 56 In
+this case, the Court highlighted the importance of the circumstances of the expression of the
+view (in this particular case during an election contest).
+53. Although the notion of public order is not specifically provided in Article 10, the ECtHR
+has referred to it in its jurisprudence. “Denying crimes against humanity is therefore one of
+the most serious forms of racial defamation of Jews and of incitement to hatred of them. The
+denial or rewriting of this type of historical fact undermines the values on which the fight
+against racism and anti-Semitism is based and constitutes a serious threat to public order.” 57
+
+4.3. Commercial expression
+54. Commercial expressions in the context of advertising may be protected under the ECHR
+and consequently their prohibition may constitute an interference with the right to freedom of
+expression.58 The ECtHR has also found that general prohibitions of pejorative statements in
+comparative newspaper advertising may constitute a disproportionate intrusion into freedom
+of commercial speech of the media sector. 59
+55. Commercial expression is, however, imbued with less protection than the expression of
+political or religious ideas 60 and states are granted a wide margin of appreciation with regard
+to treatment of commercial expression 61. Generally, if not only (or even mainly) commercial
+interests are at stake, but rather the contribution of ideas to a more general debate on issues
+of public interest, the margin of appreciation acknowledged by the ECtHR can be greatly
+reduced. 62
+56. In order to distinguish between commercial and non-commercial elements of expression
+the ECtHR examines the purpose of expression 63 as well as whether the advertising purpose
+is primary or secondary.64 It is not sufficient for expression to take the form of
+advertisements to consider it to be commercial in nature. The ECtHR reviews the content
+and the purpose of the views expressed in an advertisement. 65
+57. Also, the ECtHR takes into account the target audience and the role of the press for
+purposes of determining the level of protection. 66 If expression is directed at the public as a
+whole (rather than at a limited group of readers) and conveys not only information of a
+commercial nature, it will more likely be considered non-commercial speech.67 If expressions
+concerned are not only “commercial statements”, but they contribute to a societal debate,
+the ECtHR will limit the margin of appreciation. 68 Under this view critique of a product can
+thus be considered non-commercial speech, when no alternative products are promoted and
+the topic is of general societal interest.
+58. In hybrid speech cases – when commercial and non-commercial elements of expression
+cannot be disassociated – they have to be assessed together and considered as part of a
+whole.69
+
+4.4. Trademark protection
+59. In a right to property complaint (Article 1 of Protocol No. 1 of the ECHR) against national
+measures prohibiting the use of domain names on grounds of trademark protection the
+ECtHR found that the exclusive right to use the domains in question had an economic value
+and therefore constituted a “possession”. 70 In examining whether the interference with this
+right was justified under Article 1 of Protocol No. 1, the ECtHR referred to the need to meet
+the demands of the general interest in protecting trademarks and/or (business) names,
+affirmed the states’ wide margin of appreciation in this field and was satisfied that the
+
+12
+
+national authorities had struck a fair balance between the protection of possession and the
+requirements of the general interest. 71
+60. The ECtHR has examined the conflict between trademarks and the right to freedom of
+expression outside the domain name context. In this line of cases the Court has
+systematically held that trademarks constitute intellectual property and thus a “possession”
+within the meaning of Article 1 of Protocol No. 1 of the ECHR.72 A prohibition for investigative
+journalists to submit negative statements regarding a certain trademark was not considered
+as preventive censorship. Taking into account a number of factors the ECtHR stated that this
+would only be the case if the applicants were obliged to submit statements which they
+wished to publish to authorities for approval in advance.73
+61. Misleading commercial expression included in advertising has been considered by the
+ECtHR as not protected by Article 10 guarantees of the right to freedom of expression since
+advertising was considered as a means of discovering the characteristics of services and
+goods offered to the public. 74 Under this line of cases most forms of expressive use of
+trademarks fall within the scope of Article 10 but they can be subjected to restrictions in
+order to protect the “rights of others”, i.e. trademark rights, in accordance with Article 10,
+paragraph 2.75
+
+4.5. Alternative means of expression
+62. Where there is a conflict between property rights on the one hand and the exercise of the
+right to freedom of expression or the right to freedom of assembly on the other hand, the
+ECtHR has in certain instances inquired whether alternative means of expression were
+available to the concerned party.
+63. In a case where applicants had been prevented from collecting signatures for a petition
+inside a shopping mall owned by a private company, the ECtHR did not find a violation of the
+right to freedom of expression of the applicants. In examining whether the interference had
+complied with Article 10 requirements, the ECtHR opined that applicants were only
+prohibited from communicating their views in certain locations and they could have
+employed alternative means including campaigning in the town centre, calling door-to-door
+or seeking exposure in the local press, radio and television.” 76
+64. Also, the ECtHR examines whether a different terminology from that actually used for
+purposes of expressing points of view is available when the use of alternative term inology is
+considered as “necessary in a democratic society” for the protection of the reputation and
+rights of others. In a case involving an injunction against a politician not to use certain words
+– i.e. “Nazi-journalism” against a defamatory article in a powerful newspaper – the ECtHR
+concluded that the injunction had merely prohibited the repetition of the statement or the
+making of similar statements while the applicant right to voice an opinion had been
+retained. 77
+65. In a case involving a prohibition on members of armed forces, police and security
+services to join any political party and engage in any political activity justified by the need to
+ensure the political neutrality of state officers, the ECtHR considered that there had been no
+interference with the officers’ right to freedom of expression or freedom of assembly,
+especially as the police are offered alternative means of expressing their ideas or forming
+associations than joining a political party. 78
+66. The existence of alternative means of expression does not, however, preclude a
+thorough and exhaustive examination of whether the guarantees on freedom of expression
+and the freedom of association as provided for in Article 10 and Article 11 are respected. In
+fact, the ECtHR carefully examines whether the strict requirements of these provisions of the
+
+13
+
+ECHR have been respected, namely whether the interference is prescribed by law, whether
+the interference pursues legitimate aims provided by the ECHR and whether such
+interference is necessary in a democratic society.79
+
+5. Sensitive expression and DNS stability
+67. The potential adverse impact of applied-for new gTLD strings on the DNS stability and
+resilience is critical for the evaluation of and deliberations on those strings. 80 The GAC
+seems to attach particular importance to the issue of culturally objectionable and/or sensitive
+strings, the absence of which is believed to contribute to the security and stability of the
+DNS.”81
+68. Considerations this context appear to stem from concerns about TLD-blocking or
+filtering, which could take place if sensitive expression would be included in new gTLDs.
+Where such risks exist82 it would appear that a choice would have to be made between two
+options; first, not approving any particular applied-for new gTLD string that comprises
+sensitive expression in order to preserve the DNS stability and security and second,
+approving it, which in turn could create DNS stability risks.
+69. This part of the paper looks at these issues from the perspective of protecting the right to
+freedom of expression and the right to freedom of association. It focuses on TLD- blocking
+issues and implications of non-approval of applied-for sensitive strings with a view to
+highlighting considerations which may be relevant for GAC advice.
+
+5.1. Sensitive expression
+70. For purposes of this paper, sensitive expression is understood, in accordance with the
+GAC Principles Regarding new gTLDs, as all forms of expression to which “sensitivities
+regarding terms with national, cultural, geographic and religious significance” might apply.83
+71. When evaluating sensitivity concerns in this context GAC might consider possible
+content that would be hosted under a domain such as
+thematic content or service descriptions. The broad nature of
+sensitivities referred to in the GAC’s Principles Regarding …content will not yet
+new gTLDs does make a focus on the potential content of a exist at the time of any
+gTLD and sub-domains an area of risk for GAC in terms of particular new gTLD
+human rights obligations. This is because such content will application and any
+not yet exist at the time of any particular new gTLD future content cannot
+be accurately known or
+application and any future content cannot be accurately
+predicted until the
+known or predicted until the gTLD is operating. Predictions of
+nd
+rd
+th
+gTLD is operating.
+actual specific content in the future and at 2 , 3 , or 4
+levels would be largely impossible. GAC advice in this
+context is likely to be based on assumptions and deduction
+and, for that reason, problematic. Further, a particular gTLD may not be adequately
+suggestive of specific content or may be so generic, for example dotreligion, that clear
+advice about human rights implications is not possible.
+72. At the same time, concerns about sensitive expression may be real and significant in
+particular cases. For example, an application may be very sensitive if it relates to a particular
+geographic area where there has been armed conflict or war or where geographic or
+national boundaries are in dispute between countries or within a country. Some insight might
+be gained from checks on the applicants and statements about the purpose of the proposed
+gTLD and other requirements in the application process. For example, there were 320
+religious organisations with United Nations ECOSOC status in 2010. 84 GAC sensitivities
+
+14
+
+about any particular dotreligion application may vary widely depending on whether an
+applicant was one of these, a member state or some other private company or civil society
+organisation.
+73. States are well aware of their human rights obligations and many express grave concern
+at online content which violates human rights, including the right to freedom of expression.
+Concerns about sensitive expression are significant particularly those related to xenophobia
+and racism.85 GAC consideration of new gTLDs must take into account its obligations to
+protect and promote human rights and fundamental freedoms. Threats of violence, for
+example, or violent reactions to a proposed application or against a particular applicant
+might lead a government to have real and serious concerns for the safety and security of its
+citizens. GAC, as a whole, and the ICANN Board, should be attuned to these sensitivities
+and consider how best to take these into account in the new gTLD process. However, it is for
+sovereign states to determine how best to ensure safety and security and uphold the rule of
+law within their national borders.
+74. These matters are relevant when considering sensitive expression where this is
+comprised in applied-for new gTLD strings, as gTLDs are global public resources.
+Sensitivities may arise among some but not all GAC members or they may vary widely in
+nature and degree among GAC members. To determine the nature and degree of any
+sensitive expression, such expression must be considered in context, including its global
+context.
+
+5.2. DNS blocking and related risks to DNS resilience and stability
+75. Concerns about sensitive expression in new gTLDs might result in some or all GAC
+members seeking to prevent access to a new gTLD by their citizens and/or by the citizens of
+other countries by means of DNS blocking and/or filtering (this applies to both TLDs and
+second level domains). Such measures are aimed at preventing access to Internet content. 86
+76. There are increasing concerns about the level of blocking and filtering on DNS resilience
+and stability.87 It is suggested that from a purely technical perspective it is difficult to draw a
+line between “good DNS blocking” and “bad DNS blocking”. 88 Also, there seem to be
+concerns about the unintended adverse effects of country level blocking of entire TLDs on
+broader communities.89
+77. Nonetheless, DNS filtering and blocking by governments is widespread and common. 90
+The United Nations Special Rapporteur on the promotion and protection of the right to
+freedom of opinion and expression has noted that many filtering and blocking measures are
+in violation of international human rights standards, notably those on the right to freedom of
+expression and the right to freedom of association as well as due process. 91 For example,
+justification for blocking specific content may be unfounded or may be done in an “overly
+broad and vague manner” so that blocking and filtering is arbitrary and excessive. 92 The
+blocking or filtering may be done to pursue objectives which are not lawful or which are
+unclear, and, finally, content is often blocked without the possibility for independent review.93
+78. The Council of Europe has adopted guidelines addressed to its member states in respect
+of using and controlling Internet filters in order to fully exercise and enjoy the right to freedom
+of expression and information. 94 Where domain name blocking or filtering is necessary to
+respond to abuse or other types of illegal activities and cyber-crime, the provisions of the
+Budapest Convention on Cybercrime are fully applicable. 95
+79. Governments in certain cases act to prevent access to online content including sensitive
+domains. An applied-for new gTLD string might involve expression which is sensitive for
+some or all GAC members to the extent that there may be a high risk of multiple and diverse
+
+15
+
+filtering and blocking measures seeking to block or filter the TLD by individual governments
+within their sovereign boundaries or governments acting together. Such action carries risks
+for DNS resilience and stability about which there are increasing concerns and raises
+questions in respect of international standards on freedom of expression and access to
+information as well as freedom of association.
+
+5.3. Implications for GAC advice
+80. GAC advice might canvas a wide range of considerations some of which are included in
+the GAC Principles on New gTLDs, notably the importance of “the security, reliability, global
+interoperability and stability” of the DNS, promoting consumer choice and geographical
+diversity and ensuring fairness, transparency and non-discrimination between applicants in
+the new gTLD process.96 Concerns relating particularly to sensitive expression should be
+balanced with these and possibly with a number of other factors. In the light of a human
+rights-based approach there are a number of specific considerations and factors, which are
+given below.
+81. As noted above, specific GAC sensitivities will depend on the context of each application
+and will likely vary widely across GAC members. Sensitivities may be expressed in Early
+Warning notices which need not be from all GAC members or have GAC consensus support
+and do not formally constitute an objection to an applied-for new gTLD string. Hence, the
+focus is primarily on GAC advice, in particular on advice that an application not proceed and
+on advice that an application not proceed unless remediated. 97
+
+5.3.1. Advice that an application not proceed
+82. GAC’s approach to expression which might raise strong sensitivities to the extent that
+the GAC should offer advice that the gTLD not proceed is expected to be a new area for
+both ICANN and GAC. Existing methods for dealing with such expression, in national
+contexts, may not be appropriate in relation to global public policy on the DNS. 98
+83. From a human rights perspective it is important to recall the United Nations Human
+Rights Council Resolution: The Promotion, Protection and Enjoyment of Human Rights on
+the Internet which affirms that the same rights that people have offline must also be
+protected online in particular freedom of expression. 99 Also, the United Nations Human
+Rights Committee has recently provided guidance on government action in relation to
+prohibitions on online content and internet systems.100 The Committee noted that
+“[p]ermissible restrictions generally should be content-specific; generic bans on the operation
+of certain sites and systems are not compatible with permissible limits on Article 19.” It went
+further by stating that “[i]t is [also] inconsistent with [permissible limits in Article 19] to prohibit
+a site or an information dissemination system from publishing material solely on the basis
+that it may be critical of the government or the political social system espoused by the
+government.”101
+
+16
+
+84. The differences between and among sensitivities of a
+national, cultural or religious nature and those of a
+political nature may be difficult to determine. Frequent
+areas of contention are allegations of corruption and
+political satire or commentary. 102 The Council of Europe
+declaration on protection of freedom of expression and
+domain names is a helpful guide to the application of
+human rights standards in this area. 103
+
+Council of Europe
+Declaration: “Expressions
+contained in the names of
+Internet websites, such as
+domain names and name
+strings, should not, a priori,
+be excluded from the scope
+of application of legal
+standards on freedom of
+expression and the right to
+receive and impart
+information and should,
+therefore, benefit from a
+presumption in their
+favour.”
+
+85. What is clear is that the GAC principle of respecting
+sensitivities regarding terms of national, cultural,
+geographic and religious significance could not, from a
+human rights perspective, be a basis for advising
+prohibition of politically sensitive gTLDs. This is
+particularly so as it relates to the question of access to a
+global public resource (a new gTLD) which would affect
+all Internet users in all countries, not only those in
+specific countries or regions. In the Council of Europe
+context, member states of the Organisation have agreed to a commitment to protect the
+universality, integrity and openness of the Internet by, inter alia, “tak[ing] all reasonable
+measures to ensure that the development and application of standards, policies, procedures
+or practices in connection with the management of resources that are critical for the
+functioning of the Internet incorporate protection for human rights and fundamental freedoms
+of Internet users in compliance with the standards recognised in international human rights
+law.”104
+86. GAC advice against sensitive political expression would likely raise questions in respect
+of upholding international human rights standards which prohibit generic bans on content
+and information. ICANN Board decisions might be open to strong legal challenge if GAC
+advice of that kind were the basis of a decision to decline or otherwise disadvantage an
+application. Precisely where this line is to be drawn in any particular case may be difficult to
+determine. States do, however, have positive obligations to ensure that the right to freedom
+of expression is guaranteed even in the context of activities carried out by private entities
+(such as ICANN), inter alia, by ensuring that no unreasonable limitations on freedom of
+expression or censorship are imposed. For these reasons the ICANN Board should engage
+carefully and constructively with the GAC in order to understand fully the basis for GAC
+concerns about sensitive expression and to be able to address those in full compliance with
+requirements of international human rights standards.
+
+5.3.2. Advice that an application not proceed unless remediated
+87. An affirmative human rights approach would suggest that, where advice that an
+application not proceed unless remediated is considered, remediation steps should be
+consistent with international human rights standards. For example, remediation measures
+should be consistent with reasonable limitations permitted in the UDHR and other public
+policy standards referred to in the Guidebook. In case of doubt, guidance should be drawn
+from other standards such as Articles 19 and 20 of the ICCPR.
+88. The GAC principles on new gTLDs require applicants to pledge that they will adopt,
+before a new gTLD’s introduction, procedures to enable blocking of names of national and
+geographic significance at the second level. 105 In this respect, the required commitment by
+the applicants should not exceed the conditions of international human rights standards.
+89. Also, a strong evidence-based approach could be considered to establish a cogent
+causal connection between the sensitivities, the gTLD application and actual harm to
+
+17
+
+identifiable persons. The weaker the direct causal connection is the weaker and less
+sustainable is the justification for any interference or limitation or broadly based
+recommendations for remediation. In this respect, some insight can be gained from checks
+on the applicants and statements about the purpose of the proposed gTLD and other
+requirements in the application process.
+90. GAC concerns about applicants and the purpose of a new gTLDs, however, need to link
+to human rights standards. Questions relating to the nature of the applicant, his/her location,
+the purpose of the gTLD and the relevance of these to sensitivities should be given due
+consideration with regard to freedom of expression and freedom of association, particularly
+in community applications cases.
+91. The protection of the right to freedom of association is not limited to the traditional notion
+of public spaces (such as public highways, roads or other tangible spaces). The United
+Nations Special Rapporteur on the rights to freedom of peaceful assembly and association
+has recently concluded that the rights to freedom of peaceful assembly and association
+apply to online spaces 106 and has called on states to recognise that these rights and
+freedoms can be exercised through new technologies, including the Internet. 107
+92. A community based gTLD application may raise specific issues concerning freedom
+association for groups. This is especially the case where a gTLD relates to affirming the
+rights of communities of interest or free expression which cannot be fully exercised or
+enjoyed in specific states. Such factors would weigh against advice that an application not
+proceed. 108
+93. Thus, a human rights compliant approach to GAC
+advice would be preferable. This would provide the
+GAC with opportunities to explore a wider range of
+options for advice which can reflect more nuanced and
+complex considerations. For example, a tiered set of
+options for remediation that comply with international
+human rights standards on freedom of expression and
+freedom of association when offering advice on new
+gTLDs would appear to be appropriate. Remediation
+requests and suggested areas for applicants to address
+should only move from the most permissive and most
+rights affirming approach to a more restrictive approach
+when appropriate.
+
+A human rights affirming
+approach would suggest that
+it is better to accept a
+sensitive expression and
+deal with consequences,
+including national internal
+political ones, where human
+rights holders, ordinary
+citizens, may have an
+opportunity to debate their
+concerns, participate in
+national dialogue on actions
+to address these and seek
+effective remedies.
+
+94. In sum, advice that an application should not
+proceed would be expected to be a rare and
+exceptional case, taken only where expression is
+manifestly illegal, just as complete prior censorship and blanket prohibitions on expression
+are forbidden under international law.
+95. On balance, it would be preferable for GAC to develop advice to the ICANN Board which
+upholds the right to freedom of expression and the right to freedom of association while
+accepting and managing any risks related to sensitive strings, than to a priori limit the rights
+and freedoms of their citizens (and global Internet users) by advising that a new gTLD
+application not proceed or be unreasonably or unfairly remediated.
+96. As duty bearers states must, when in doubt, favour upholding the rights and freedoms of
+persons under their jurisdiction, rather than their own sensitivities. The Council of Europe
+declaration on freedom of expression and domain names emphasises this point, noting that
+
+18
+
+final decisions on blocking domain names must be undertaken by competent authorities,
+relate to clearly identifiable content and be proportionate.109
+
+6. Conclusions
+97. In international human rights law, states are duty bearers and have obligations to protect,
+respect and promote the human rights and freedoms of persons under their jurisdictions.
+States have these obligations when they participate in entities with specialised technical
+mandates. In light of this role of states, the GAC advice must be given special consideration
+by the ICANN Board.
+98. Where new gTLDs can be used as means of expressing views or as spaces for online
+association they have a human rights and fundamental freedoms dimension which should be
+considered together with other technical matters. The evaluation of applied-for new gTLD
+strings as well as registrations at the second and third level domains may involve contentrelated judgments and choices. While ICANN’s judgment should not be interfered with
+unjustifiably, ICANN should exercise its role with due regard for fundamental rights and
+freedoms and in full compliance with international standards. In particular, any interference
+with the exercise of the right to freedom of expression and the right to freedom of association
+should be tested against the requirements of international human rights law.
+99. In a Council of Europe context, such interferences must meet the conditions of Articles
+10 and 11 of the ECHR, notably be prescribed by law, pursued for one of the legitimate aims
+specifically provided in those provisions and be necessary in a democratic society. In
+supervising the compatibility of Council of Europe member states measures with these
+conditions the ECtHR recognises national authorities’ margin of appreciation to make the
+initial assessment of the pressing social need which makes a restriction on these rights and
+freedoms necessary under Articles 10 and 11. The ECtHR has found that certain notions,
+such as morals and significance of religion, lack a uniform conception and interpretation in
+the Council of Europe member states and therefore benefit from a larger margin of
+appreciation.
+100. In respect of applied-for new gTLDs strings which raise sensitivities, it is important to
+take into account the specific context bearing in mind the global nature of gTLDs and the
+DNS. Blanket prohibitions on the use of words, names or forms of expression on a gl obal
+public resource on the grounds of political sensitivity would raise questions in respect of
+international human rights standards on the right to freedom of expression and the right to
+freedom of association. GAC advice that an applied new gTLD string should not proceed on
+grounds of other sensitivities would need to be considered on a case by case basis.
+Differences between sensitivities of a national, cultural or religious nature and those of a
+political nature may frequently be very difficult to determine. A human rights approach to
+GAC advice would provide the GAC with opportunities to explore a wider range of options for
+advice which can reflect more nuanced and complex considerations.
+
+19
+
+Glossary of terms used
+ccTLD – country code Top Level Domain
+DNS – Domain Name System
+ECHR – European Convention on Human Rights
+ECtHR – European Court of Human Rights
+gTLD – generic Top Level Domain
+ICCPR – International Covenant on Civil and Political Rights
+IDN – Internationalised Domain Name
+New gTLDs – new generic Top Level Domains
+TLD – Top Level Domain
+UDHR – Universal Declaration on Human Rights
+
+20
+
+1
+
+In order to resolve domain name disputes at the second level ICANN has developed a limited policy, on a narrow set of
+grounds with a small number of dispute resolutio n providers, i.e. the Universal Dispute Resolution Policy, available at
+http://www.icann.org/en/help/dndr/udrp/policy. Many other legal remedies an d dispute mechanisms for TLD disputes exist in
+many countries via judicial and non-judicial mechanisms.
+2
+See GAC Operating Principles. The Preamble states that “ICANN’s decision making should take into account public policy
+objectives including, among other things, […] freedom of expression”, see also Principle 1, available at
+https://gacweb.icann.org/download/attachments/4817162/GAC_Operating_Principles_1.pdf?version=1&modificationDate=1321
+640996000 .
+3
+See WSIS-05/TUNIS/DOC/6(Rev. 1)-E. See also, Report of the Working Group on Internet Governance (2005), page 4 at
+para 10. For the specific suggested roles of governments see para 30, Internet governance is the development and application
+by Governments, the private sector and civil society, in their respective roles, of shared principles, norms, rules, decisionmaking procedures, and programmes that shape the evolution and use of the Internet.
+4
+This Declaration is available at
+https://wcd.coe.int/ViewDoc.jsp?id=1835773&Site=CM&BackColorInternet=C3C3C3&BackColorIntranet=EDB021&BackColorL
+ogged=F5D383 .
+5
+This Declaration is available at
+https://wcd.coe.int/ViewDoc.jsp?id=1835805&Site=CM&BackColorInternet=C3C3C3&BackColorIntranet=EDB021&BackColorL
+ogged=F5D383 .
+6
+The new gTLDs Applicant Guidebook (the Guidebook), available at http://newgtlds.icann.org/en/applicants/agb/ see, Dispute
+Resolution Procedures, Module 3, section 3.5.3, page 3-22. GAC members may raise concerns with the GAC about any
+application and “The GAC as a whole will consider concerns raised by GAC members and agree on GAC advice to forward to
+the ICANN Board of Directors”. Early Warning Notices by individual states are also possible; see Applicant Guidebook, Module
+1, sub-section 1.1.2.4.
+7
+Resolution A/HRC/20/L.13 of 2012 by the Human Rights Council on 5 July 2012, available at http://daccess-ddsny.un.org/doc/UNDOC/LTD/G12/147/10/PDF/G1214710.pdf?OpenElement .
+8
+Governmental Advisory Committee “GAC Principles Regarding New gTLDs” 28 March 2007, Clause 2.1(a) and (b).
+9
+Articles 19 and 20 of the UDHR, Articles 19, 20 and 21 of the ICCPR.
+10
+Compare, for example, Article 10 of the European Convention on Human Rights and Article 9 of the African Charter on
+Human and Peoples’ Rights. These regional standards are, in turn, f urther elaborated as each sovereign nation determines in
+national legislation.
+11
+Charter of the United Nations, 1945, available at: https://www.un.org/en/documents/charter/ .
+12
+See for example and by way of analogy, those listed in the Applicant Guidebook, note 6 above. See in particular, Module 3,
+section 3.5.3, pg 3.
+13
+Although it is the underlying Internet Protocol address on the World Wide Web which provides direct access to a website, it is
+little or hardly used. Domain names are not unique as a system for increased identification functionality. A comparable effect is
+provided by alphanumeric use of telephone numbers, for example 0800-FLOWERS, or the use of local geographical names
+instead of house numbers for finding geographical locations.
+14
+This part of the paper should not be taken as an exhaustive overview of the case law in the subject area.
+15
+Cour d’Appel de Paris, Arrêt du 20 Avril 2003 Société Groupe Danone ct. Association Le Réseau Voltaire pour la liberté
+d’expression, p.12, available at http://www.foruminternet.org/telechargement/documents/ca-par20030430.pdf. This case
+concerned the usage of domain names www.jeboycottedanone.com and www.jeboycottedanone.net.
+16
+Décision n° 2010-45 QPC du 6 octobre 2010, official translation into English is available at http://www.conseilconstitutionnel.fr/conseil-constitutionnel/root/bank/download/201045QPCen201045qpc.pdf, see paragraph 6. “Article L.45 of
+the Postal and Electronic Communications Code vests bodies appointed by the Minister in charge of electronic communications
+with the task of assigning and managing domain names "of first level internet domain addresses corresponding to the national
+territory". It merely provides that the assigning by said bodies of a domain name is carried out "in the general interest, under
+publicised non discriminatory rules designed to ensure compliance by the applicant with intellectual property rights". This article
+then leaves it to a Decree issued after consultation with the Conseil d'Etat to specify the conditions of application of this
+provision. Although Parliament has thus protected intellectual property rights, it has entirely delegated the power to supervise
+the conditions in which domain names are assigned, refused or withdrawn. No other statutory provision offers guarantees
+ensuring the absence of any infringement of freedom of enterprise and Article 11 of the Declaration of 1789. Parliament thus
+failed to exercise its powers to the full. Article 45 of the Postal and Electronic Communications Code must thus be held to
+unconstitutional.”(emphasis added). Article 11 of Declaration of Human and Civil Rights of 26 August 1789 reads: “The free
+communication of ideas and of opinions is one of the most precious rights of man. Any citizen may therefore speak, write and
+publish freely, except what is tantamount to the abuse of this liberty in the cases determined by Law.”
+17
+President of the Court in The Hague, Inholland vs. Kaasjager, KG 05/447, 21 June 2005. Available at www.domjur.nl .
+18
+Name.Space, Inc., v. Network Solutions, Inc. and National Science Foundation, 202 F.3d 573, 577 (2d Cir. 2000), available
+at http://www.yale.edu/lawweb/jbalkin/telecom/namespace.pdf .
+19
+Various cases are mentioned in for example: V. Karavas & G. Teubner, ‘http://www.CompanyNameSucks.com: The
+Horizontal Effect of Fundamental Rights on ‘Private Parties’ within Autonomous Internet Law’ in: German Law Journal, 04/12,
+pp.
+1335-1358.
+Online:
+http://www.germanlawjournal.com/pdfs/Vol04No12/PDF_Vol_04_No_12_13351358_European_Teubner_Karavas.pdf; W. Sakulin, ‘Trademark Protection and Freedom of Expression: An Inquiry into the
+Conflict between Trademark Rights and Freedom of Expression under European, German, and Dutch Law’, Amsterdam, 2010.
+Online: http://dare.uva.nl/document/169804, p. 13, 207-213, 223-224, 286-289.
+20
+See the Guidebook, note 6 above, Module 2, section 2.2.1.2.3. For example the use of the word ‘olympic’ is prohibited
+among others.
+21
+Ibid. See Module 1, section 2.2.1.3.1.
+22
+The ICANN Board in explaining reasons for not following GAC advice regarding the potential risk/threat of TLD blocking to
+the universal resolvability and stability of the DNS stated that “[t]he issue of governments (or any other entity) blocking or
+filtering access to a specific TLD is not unique to the issue of the .XXX sTLD. Such blocking and filtering exists today. Whi le we
+agree that blocking of TLDs is generally undesirable, if some blocking of the .XXX sTLD does occur there's no evidence the
+
+21
+
+result will be different from the blocking that already occurs.” See 18 March 2011 ICANN Board Rationale for Approving
+Registry Agreement with ICM’s for .XXX sTLD, Section V, 4, c, at page 16.
+23
+See GAC Communiqué - San Francisco, March 16, 2011, stating that “with the revised proposed ICANN ICM Registry
+agreement, the Corporation could be moving towards assuming an ongoing management and oversight role reg arding Internet
+content” available at
+https://gacweb.icann.org/download/attachments/1540152/GAC_40_San_Francisco_Communique.pdf?version=1&modification
+Date=1312225023000 .
+24
+Guidebook, note 6 above, see Module 3, section 3.2.
+25
+Ibid. section 3.2.2.1.The gTLD string applied for is confusingly similar to an existing TLD or to another gTLD string applied for
+in the same round of applications.
+26
+Ibid.,section 3.2.2.2. The gTLD string applied for, infringes on the existing legal rights of the objector
+27
+W. Sakulin, Trademark Protection and Freedom of Expression: An Inquiry into the Conflict between Trademark Rights and
+Freedom
+of
+Expression
+under
+European,
+German,
+and
+Dutch
+Law,
+Amsterdam,
+2010.
+Online:
+http://dare.uva.nl/document/169804, p. 210.
+28
+Guidebook, note 6 above, see Module 3, section 3.5.3.
+29
+Ibid.
+30
+See 18 March 2011 ICANN Board Rationale for Approving Registry Agreement with ICM’s for .XXX sTLD, Section V, A, pg.
+18 “The negative community impact will most likely be on those that do not support the idea of the introduction of the .XXX
+sTLD. However, refusing to approve registry agreements with strings that do not have unanimous community support, is not an
+acceptable option as ICANN continues to move toward the introduction of even more new gTLDs.”.
+31
+The model registry agreement between ICANN and a new gTLD Registry Operator covers issues related to words or names
+that are reserved for purposes of registration, see Specification 5‘Schedule of Reserved Names at the Second Level in gTLD
+Registries of the Model Registry Agreeement, available at http://newgtlds.icann.org/en/applicants/agb/base-agreement-specs11jan12-en.pdf . Certain words could be also excluced from use in order to comply with name protection mechanisms
+mandated by ICANN or established by Registry Operators themselves for purposes of protection of legal rights in trademarks,
+ibid., see Specification 7 ‘Minimum Requirements for Rights Protection Mechanisms’
+32
+For example, the Charter of the .xxx TLD states, inter alia, that the Registry Operator will “protect free expression rights as
+defined in the United Nations Declaration of Human Rights”. See .XXX Registry Agreement between the Internet Corporation
+for Assigned Names and Numbers, a California nonprofit public benefit corporation ("ICANN"), and ICM Registry LLC of 31
+March 2011, Appendix S, Part 1, 2, available at http://www.icann.org/en/about/agreements/registries/xxx
+33
+See 18 March 2011 ICANN Board Rationale for Approving Registry Agreement with ICM’s for .XXX sTLD, available at
+www.icann.org/en/groups/board/.../icm-rationale-18mar11-en.pdf. In its rationale for approving this Registry Agreement, the
+ICANN Board stated that “placing further specification regarding other types of “offensive” material would require ICANN to take
+a role in content management”, see section 1, pg. 12. “ICANN’s compliance role is not about content per se but about registry
+compliance with and enforcement of its policies regarding the use of second -level registrations. As with any other TLD,
+registrants and others will likely turn to ICANN for assistance with content-related issues, regardless of the merit of such
+requests. Therefore, entering into the proposed registry agreement for the .XXX sTLD, while it may increase the overall
+numbers of requests to ICANN for content-related assistance, does not represent ICANN’s movement towards a content
+management or oversight role.” Section 4.c, page 18.
+34
+In this context, see the discussion on the first amendment protection for intermediaries, such as search engines E. Volokh &
+D. Falk, Google, First Amendment Protection for Search Engine Search Results, 20 April 2012. Online:
+http://ssrn.com/abstract=2055364; J. van Hoboken, Search Engine Freedom, on the implications of the right to freedom of
+expression for the legal governance of Web search engines, Thesis defended 23 March 2012, pp. 320-328. Online:
+http://dare.uva.nl/record/411972.
+35
+See paragraph 30 of Recommendation CM/Rec(2011)7, available at
+https://wcd.coe.int/ViewDoc.jsp?id=1835645&Site=CM&BackColorInternet=C3C3C3&BackColorIntranet=EDB021&BackColorL
+ogged=F5D383
+36
+Garaudy v. France (no. 65831/01), 24.06.2003, admissibility decision.
+37
+See also Recommendation No. R 97 (20) of the Committee of Ministers of the Council of Europe on "hate speech” states that
+"hate speech" is understood as covering all forms of expression which spread, incite, promote or justify racial hatred,
+xenophobia, antisemitism or other forms of hatred based on intolerance, including: intolerance expressed by aggressive
+nationalism and ethnocentrism, discrimination and hostility against minorities, migrants and people of immigrant origin.
+38
+Féret v. Belgium (no. 15615/07), 16.07.2009.
+39
+Leroy v. France (no. 36109/03), 02.10.2008.
+40
+Jersild v. Denmark (no. 15890/89), 23.09.1994.
+41
+Lehideux et Isorni v. France (no. 24662/94), 23.09.1998.
+42
+Refah Partisi (The Welfare Party) and Others v. Turkey (nos. 41340/98, 41342/98, 41343/98 and 41344/98), 13.02.2003;
+Communist Party of Germany v. the Federal Republic of Germany (no. 250/57), 20.07.1957 ; B.H; M.W; H.P; G.K. v. Austria
+(no. 12774/87), 12.10.1989.
+43
+Gündüz v. Turkey (no. 35071/97), 04.12.2003.
+44
+Garaudy v. France (no. 65831/01), 24.06.2003, admissibility decision.
+45
+Pavel Ivanov v. Russia (no. 35222/04), 20.02.2007, admissibility decision.
+46
+Norwood v. the United Kingdom (no. 23131/03), 16.11.2004, admissibility decision.
+47
+Otegi Mondragon v. Spain (no. 2034/07), 15.03.2011.
+48
+Faruk Temel v. Turkey (no. 16853/05), 01.02.2011.
+49
+Handyside v. the United Kingdom (no. 5493/72), 07.12.1976, para. 49.
+50
+Ibid., para. 48.
+51
+Muller and others v. Switzerland, (No. 10757/84, 24.05.1988, para.35.
+52
+Ibid.
+53
+Otto-Perminger-Institut v. Austria (no. 13470/87) 20.09.1994, para.50.
+54
+Wingrove v. United Kingdom (no. 17419/90), 25.11.1996, para. 58.
+55
+In Open Door and Dublin Well Woman v. Ireland (no. 14234/88 ) 29.10.1992, para.68. involving allegations on restrictions on
+the right to receive and impart information on issues related to abortion the ECtHR found that the imposition by the concerne d
+state of a permanent prohibition to provide advice in this context was too large and disproportionate
+
+22
+
+56
+
+Féret v. Belgium (no. 15615/07), 16.07.2009.
+Garaudy v. France (no. 65831/01), 24.06.2003.
+58
+Casado Coca v. Spain (no. 15450/89), 24.02.1994). The distribution of advertising materials by a barrister which resulted in
+disciplinary proceedings against him was considered by the Court as commercial expression that was protected by the ECHR.
+59
+Krone Verlag GmbH & Co KG v. Austria (no. 3) (no. 39069/97), 11.12.2003.
+60
+X and Church of Scientology v Sweden (no. 7805/77), 05.05.1979, admissibility decision; Casado Coca v. Spain (no.
+15450/89), 24.02.1994).
+61
+Dichand and Others v. Austria (no. 29271/95), 26.02.2002, para. 39.
+62
+VgT Verein gegen Tierfabriken v. Switzerland (no. 24699/94), 28.06.2001, para. 71.
+63
+In X and Church of Scientology v Sweden (no. 7805/77), 05.05.1979, admissibility decision, the Commission introduced the
+distinction between advertisements aimed at promoting a religion and those aimed at selling a product.
+64
+Stambuk v. Germany (no. 37928/97), 17.10.2002, para. 41.
+65
+Lehideux et Isorni v. France (no. 24662/94), 23.09.1998.
+66
+Markt Intern Verlag GmbH and Klaus Beermann v. Germany (no. 10572/83), 20.11.1989.
+67
+Jacubowski v. Germany (no. 15088/89), 23.06.1994.
+68
+Hertel v. Switzerland (no. 25181/94), 25.08.1998.
+69
+Lehideux et Isorni v. France (no. 24662/94), 23.09.1998.
+70
+Paeffgen GmbH v. Germany, decision as to the admissibility of application nos. 25379/04, 21688/05, 21722/05 and 21770/05,
+18.09.2007.
+71
+Ibid.
+72
+Anheuser-Busch Inc. v. Portugal, (no. 73049/01), 11.01.2007, para. 46.
+73
+Markt Intern Verlag GmbH, Günter Weber and Hans-Wilhelm Beyen v. Germany (no. 12278/86), 27.05.1991, admissibility
+decision.
+74
+Krone Verlag GmbH & Co KG v. Austria (no. 3), (no. 39069/97), 11.12.2003, para. 31.
+75
+See Wolfgang Sakulin, Trademark Protection and Freedom of Expression, Wolters Kluwer 2011, at 113.
+76
+Appleby and others v. the United Kingdom (no. 44306/98), 06.05.2003, para.48.
+77
+Wabl v. Austria, (no. 24773/94), 21.03.200, para. 44.
+78
+Rekvényi v. Hungary (25390/94) 20.05.199, para. 49, the Court considered that applicants could freely articulate their political
+opinions and preferences for instance by expounding election programmes, promoting and nominating candidates, organising
+election campaign meetings, voting and standing for elections to Parliament, local authorities and the office of mayor,
+participating in referenda, joining trade unions, associations and other organisations, participating in peaceful asse mblies,
+making statements to the press, participating in radio or television programmes or publishing works on politics.
+79
+Ibid, paras. 27-62.
+80
+The Guidebook note 6 above. See Module 1, section 2.2.1.3.1
+81
+See note 8 above, in particular Clause 2.1 (b): New gTLDs should respect a) the provisions of the Universal Declaration of
+Human Rights which seeks to affirm “fundamental human rights, in the dignity and worth of all human beings and in the equal
+rights of men and women” b) the sensitivities regarding terms with national, cultural, geographic and religious significance.” See
+also GAC letter to ICANN Board, 4 August 2010 Re: Procedures for Addressing Culturally Objectionable and/or Sensitive
+Strings: The GAC firmly believes that the absence of any controversial strings in the current universe of top level domains
+(TLDs) to date contributes directly to the security and stability of the domain name addressing system (DNS) and the universa l
+resolvability of the system”. Available at http://www.icann.org/en/correspondence/gac-to-dengate-thrush-04aug10-en.pdf
+82
+Although it appears that more than the mere existence of TLD blocking risks could be demanded to justify non-approval of a
+TLD. In the case of the .xxx TLD, the ICANN Board responded to GAC concerns regarding threats to the universal resolvability
+and stability of the Internet, by stating that there was lack of evidence that the blocking of this TLD would be different from
+blocking that was already happening. See 18 March 2011 ICANN Board Rationale for Approving Registry Agreement with
+ICM’s for .XXX sTLD, Section V, 4, at page 16.
+83
+See note 8 above, clause 2.1 (b).
+84
+Marie Juul Petersen, “International Religious NGOs at the United Nations: A study of groups of religious organisations” in The
+Journal of Humanitarian Assistance (Feinstein International Centre, 17 November 2010).
+85
+See, for example, the statements of Philippines and China (on behalf of 40 countries) at the Human Rights Council Panel on
+Freedom of Expression and the Internet, 29 February 2012, available at:
+http://www.ohchr.org/EN/HRBodies/HRC/RegularSessions/Session19.
+86
+Frank La Rue “Report of the Special Rapporteur on the promotion and protection of the right to freedom of opinion and
+expression” (26 April 2011, A/HRC/17/27) para 29. Blocking refers to measures taken to prevent certain content from reaching
+an end-user. This includes preventing users from accessing specific websites, Internet Protocol (IP) addresses, domain name
+extensions, the taking down of websites from the web server where they are hosted, or using filtering technologies to exclude
+pages containing keywords or other specific content from appearing. See also, ICANN Security and Stability Committee “DNS
+Blocking: Benefits Versus Harms – An Advisory from the Security and Stability Advisory Committee on Blocking of Top Level
+Domains at the Domain Name System” ICANN SAC 050, 14 June 2011 which states that “technical approaches to DNS
+blocking are intended to affect users”; See also “Security and Other Technical Concerns Raised by DNS Filtering Requirements
+in the PROTECT IP Bill”. (Crocker S, and others, May 2011), available at http://domainincite.com/docs/PROTECT-IP-TechnicalWhitepaper-Final.pdf
+87
+For example, Internet Society Internet Society Perspectives on Domain Name System (DNS) Filtering 15 September 2011,
+available at http://www.internetsociety.org/sites/default/files/pdf/dns-filtering_20110915.pdf; Frank La Rue Report, above note
+86.
+88
+Ibid, SSAC Advisory note 86 above: “All technical approaches to DNS blocking, and even more so attempts to circumvent the
+blocking, will have some impact on the security and/or stability of users and applications, and on the coherency or universal
+resolvability of the global namespace. The SSAC cannot draw a line between "good DNS blocking" and "bad DNS blocking," at
+any TLD layer, although the Committee can offer to investigate the observable impacts of various approaches to blocking, and
+it can suggest guidelines to use in evaluating which approaches to blocking are likely to incur the fewest unintended
+consequences and least harm outside the blocked domain.”
+89
+Ibid. “If implemented without some formal ethical framework to minimize harm to external parties, blocking may induce more
+adverse effects than intended on broader communities, exacerbating the problem(s) that such blocking is intended to solve.”
+57
+
+23
+
+90
+
+Global Information Society Watch 2011 “Internet Rights and Democratisation: focus on freedom of expression and
+association online (Association for Progressive Communications and Hivos 2011).
+91
+See note 86 above, para 31.
+92
+Ibid.
+93
+Ibid.
+94
+See Recommendation CM/Rec(2008)6 of the Committee of Ministers to member states on measures to promote the respect
+for freedom of expression and information with regard to Internet filters, adopted on 26 March 2008.
+95
+Council of Europe Convention on Cyber Crime, 2004. According to article 15(1) of this Convention “Each Party shall ensure
+that the establishment, implementation and application of the powers and procedures provided for in this Section are subject to
+conditions and safeguards provided for under its domestic law, which shall provide for the adequate protection of human rights
+and liberties, including rights arising pursuant to obligations it has undertaken under the 1950 Council of Europe Convention for
+the Protection of Human Rights and Fundamental Freedoms, the 1966 United Nations International Covenant on Civil and
+Political Rights, and other applicable international human rights instruments, and which shall incorporate the principle of
+proportionality.”
+96
+See note 8 above, principles 2.5 and 2.6.
+97
+The Guidebook, note 6 above, see Module 3, section 3.1, page 3-2.
+98
+Above note 86. The United Nations Special Rapporteur on Freedom of Expression, for example, has emphasised that “[…]
+due to the unique characteristics of the Internet, regulations or restrictions which may be deemed legitimate and proportionate
+for traditional media are often not the case with regard to the Internet […]The Special Rapporteur also comments, in a footno te,
+that “this does not apply to registration with a domain name authority for purely technical reasons or rules of general application
+which apply without distinction to any kind of commercial operation” This reference is confusing but appears to suggest that
+domain naming authorities can require registration or licensing in some respects
+99
+See above note 7.
+100
+Human Rights Committee, General Comment 34, 21 July 2011 CCPR/C/GC/34.
+101
+Ibid, paras 39 and 43.
+102
+See, for example the controversy concerning objections to The Spear a painting by Brett Murray which removed from the
+Goodman Art Gallery, Johannesburg, in May 2012 following threats of violence against gallery staff. Defamation action was
+filed gallery by the African National Congress: Govender, Peroshni. "Presidential penis portrait riles S. Africa's ANC". Reuters.
+Retrieved 19 May 2012
+103
+See note 5 above.
+104
+Recommendaiton CM/Rec (2011)8 of the Committee of Ministers to member states on the protection and promotion of the
+universality, integrity and openness of the Internet, adopted on 21 September 2011, available at
+https://wcd.coe.int/ViewDoc.jsp?id=1835707&Site=CM&BackColorInternet=C3C3C3&BackColorIntranet=EDB021&BackColorL
+ogged=F5D383
+105
+See note 8 above, Principle 2.7(a)
+106
+Special Rapporteur on the rights to freedom of peaceful assembly and association, 21 May 2012, A/HRC/20/27, paras 32
+and 52.
+107
+Ibid at para 84(k)
+108
+See also the Recommendation CM/Rec(2010)5 of the Committee of Ministers to member states
+on measures to combat discrimination on grounds of sexual orientation or gender identity , available at
+https://wcd.coe.int/ViewDoc.jsp?id=1606669
+109
+See note 5 above.
+
+24
+
+

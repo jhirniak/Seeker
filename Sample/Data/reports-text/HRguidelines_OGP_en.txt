@@ -1,0 +1,1402 @@
+COUNCIL
+OF EUROPE
+
+CONSEIL
+DE L’EUROPE
+H/Inf (2008) 8
+
+Human rights guidelines
+for online games providers
+Developed by the Council of Europe
+in co-operation with
+the Interactive Software Federation of Europe
+
+H/Inf (2008) 8
+
+Human rights guidelines
+for online games providers
+Developed by the Council of Europe in co-operation with the
+Interactive Software Federation of Europe
+
+Directorate General
+of Human Rights and Legal Affairs
+Council of Europe
+2008
+
+Directorate General of Human Rights and Legal Affairs
+Council of Europe
+F-67075 Strasbourg Cedex
+
+© Council of Europe 2008
+1st printing, July 2008
+Printed at the Council of Europe
+
+Developed by the Council of Europe in close co-operation with the Interactive Software Federation of Europe (ISFE), these guidelines provide human rights benchmarks for online games
+providers and developers. While underlining the primary value of games as tools for expression
+and communication, they stress the importance of gamers safety and their right to privacy and
+freedom of expression and, in this connection, the importance for the games industry to be
+aware of the human rights impact that games can have.
+For more information on the activities of the Council of Europe and ISFE: www.coe.int •
+www.isfe-eu.org
+
+Contents
+Understanding the role and position of online games providers in respecting and
+promoting human rights, page 5
+Scope of the guidelines . . . . . . . . . 5
+
+Human rights guidelines for online games providers, page 7
+Extracts from existing Council of Europe standards relevant to the roles and
+responsibilities of games providers, page 9
+Recommendation No. R (92) 19 on
+video games with a racist content 9
+Recommendation No. R (97) 19 on
+the portrayal of violence in the
+electronic media. . . . . . . . . . . . . . . 9
+
+Declaration of the Committee of
+Ministers on protecting the dignity,
+security and privacy of children on
+the Internet . . . . . . . . . . . . . . . . . . 12
+
+Recommendation No. CM/Rec
+(2008) 6 on measures to promote the
+respect for freedom of expression
+and information with regard to
+Internet filters . . . . . . . . . . . . . . . .13
+
+Everyone has the right to freedom of expression and information. This
+right shall include freedom to hold opinions and to receive and impart
+information and ideas without interference by public authorities and
+regardless of frontiers. This article shall not prevent States from requiring
+the licensing of broadcasting, television or cinema enterprises.
+The exercise of these freedoms, since it carries with it duties and responsibilities, may be subject to such formalities, conditions, restrictions or
+penalties as are prescribed by law and are necessary in a democratic society, in the interests of national security, territorial integrity or public
+safety, for the prevention of disorder or crime, for the protection of health
+or morals, for the protection of the reputation or rights of others, for preventing the disclosure of information received in confidence, or for maintaining the authority and impartiality of the judiciary.
+
+Article 10 of the European Convention on Human Rights
+
+Everyone has the right to respect for his private and family life, his home
+and his correspondence.
+There shall be no interference by a public authority with the exercise of
+this right except such as is in accordance with the law and is necessary in a
+democratic society in the interests of national security, public safety or
+the economic well being of the country, for the prevention of disorder or
+crime, for the protection of health or morals, or for the protection of the
+rights and freedoms of others.
+
+Article 8 of the European Convention on Human Rights
+
+Understanding the role and position of online games
+providers in respecting and promoting human rights
+1. Providers (designers and publishers) of online games design and
+make available products which can
+promote the exercise and enjoyment
+of human rights and fundamental
+freedoms, in particular the freedom
+to express, to create and to exchange
+content and communications while
+respecting the rights of others.
+Designed and provided in an appropriate manner, games can be powerful tools to enhance learning, creativity and social interaction, thereby
+helping users to benefit from the
+information society.
+2. However, like other content,
+online games may also inadvertently
+impact on the rights and sensibilities
+of individuals, in particular children,
+as well as their dignity. The potential
+impact of such games may increase
+as they allow the gaming experience
+to become more creative and interactive (as the possibilities for expression, interaction and exchange of
+content with other gamers increase)
+
+and ever more realistic (as the visual
+effects of games develop).
+3. Online games can play an
+important positive role in the lives
+and development of individuals,
+especially for children and young
+people. It suffices to consider the
+importance of rights and freedoms,
+values and dignity, into the embedded design and marketing of games.
+In this regard, it is recalled that the
+exercise of freedom of expression
+carries with it duties and responsibilities, in particular as regards the protection of health and morals and the
+rights of others, which publishers of
+online games are encouraged to bear
+in mind when deciding on the content of their games.
+4. Games designers and publishers
+are therefore encouraged to promote and facilitate gamers’ wellbeing and should regularly assess
+and evaluate their information policies and practices, in particular
+regarding child safety and responsible use, while respecting fundamen-
+
+tal rights, in particular the right to
+freedom of expression and the right
+to privacy and secrecy of correspondence. At the same time it
+should be noted that member states,
+civil society, other private sector
+actors, parents and gamers themselves have important roles to play in
+engaging in multi-stakeholder cooperation, promoting gaming literacy for children and assisting game
+providers in fulfilling their role.
+5. In this regard, designers and
+publishers of online games are
+encouraged to take note of, discuss
+and make their best efforts to comply
+with the following guidelines (below)
+and to consider making reference to
+them within their games and in their
+end-user agreements.
+6. The appended guidelines are
+without prejudice to and must be
+read in conjunction with the obligations applicable to online games providers and their activities under
+national, European and international law.
+
+Scope of the guidelines
+7. The main focus of the following
+guidelines is online games although
+some of the guidelines can also be
+applied to games which are only
+playable offline. These online games
+include (i) classic board and card
+games mostly offered by web portals; (ii) personal computer (PC) or
+console games with network options;
+(iii) multiplayer games i.e. Massively
+Multiplayer Online Games where
+players play individually or in teams
+
+in a virtual evolving world, and (iv)
+entertainment games that provide a
+platform for other types of learning,
+training and interactive applications.
+It should be noted that these guidelines are applicable to all online
+games irrespective of the platform
+used for delivery of the gaming content (fixed or mobile gaming console,
+PC or mobile phone).
+8. These guidelines are mainly
+directed towards developers and
+
+publishers of online games. Some
+guidelines, such as those concerning
+the development of parental control
+tools, may also be applied by producers of gaming consoles and platforms
+in their activities.
+9. Although online virtual universes, such as Second Life, are confronted with some of the same issues
+connected with online social interaction as games, they are, for the purposes of these guidelines, not seen as
+
+Human rights guidelines for online games providers
+
+5
+
+online games. In comparison with
+online games, such universes only to
+a lesser degree constitute a programmed experience under the control of a game publisher. Virtual uni-
+
+verses also lack a specified gaming
+scenario and set of goals to achieve
+for the gamer, characteristics which
+are normally found in online video
+games.
+
+10. Finally, the guidelines are not
+intended to apply to online gambling
+sites, such as online casino or online
+bookmaking websites.
+
+Human rights guidelines for online games providers
+11.
+Before publishing your game,
+take care to consider and evaluate
+how the game content may impact
+on human dignity, the sensibilities
+and values of gamers, in particular
+children. In this regard specific
+attention should be paid to the risks
+connected with the dissemination of
+the following gaming content:
+
+ism, references to drugs, strong language, horror, or gambling;
+
+• gratuitous portrayal of violence
+(physical, mental or sexual violence),
+especially in games targeting minors
+whose physical, mental or moral
+development may be impaired by
+exposure to such portrayal;
+
+13. When publishing games targeted for children and young people,
+provide appropriate information to
+gamers, parent and carers of the risks
+connected with online gaming. Such
+information, which should be available in the local language of the country where the game is marketed and
+could usefully be provided in an educational guide written for parents, in
+the game manual and/or the game
+itself, may in particular concern:
+
+• other content which, on account
+of its inhuman, cruel, sexist or
+degrading nature, may impact on the
+physical, mental or moral development of minors;
+• content which may be seen as
+advocating criminal or harmful
+behaviour (theft, violence, sale and
+abuse of drugs etc.);
+• content which conveys messages
+of aggressive nationalism, ethnocentrism, xenophobia, racism or intolerance in general including when such
+messages are concealed;
+12. Consider promoting and applying independent, including combined, labelling and rating systems to
+your game, especially the Pan-European Game Information (PEGI) system and the PEGI Online Safety
+Code (POSC), to help inform gamers, parents and carers about games
+containing content which may affect
+their sensibilities and values, in particular by:
+• using easily recognisable labels for
+sensitive content (for example using
+symbols or pictograms), in particular with regard to violence, sex, rac-
+
+• ensuring that such labels are
+clearly indicated and visible on the
+packaging of games and the game
+website, as well as in the references
+to them such as in catalogues, advertisements and in the materials provided with the game itself.
+
+assment or stalking), and information and guidance about how to
+identify and deal with such risks;
+• the risks to privacy of exchanging
+personal data (name, address, credit
+card details, images or videos) when
+playing the game online.
+
+• the risk of excessive use of online
+games and the potential negative
+physical and psychological effects of
+such excessive use (e.g. isolation, loss
+of the sense of reality, disturbed sleep
+patterns, etc.);
+
+14. Consider developing in-game
+parental control tools to assist parent
+and carers in protecting minors.
+Such parental control tools could
+include facilities for setting time-limits and slots for gaming thereby limiting the risks of excessive use and
+addiction. If the parental tool include
+the option of filtering or blocking
+certain content, make sure that the
+filtering process is transparent both
+to the parent and gamer and can be
+adjusted to the level of protection
+required for the individual gamer, in
+accordance with the guidelines in
+Council of Europe Recommendation
+CM/Rec (2008) 6 on measures to
+promote the respect for freedom of
+expression and information with
+regard to Internet filters.
+
+• the fact that the game is a work of
+fiction which can be a simulation of
+reality but is not comparable to the
+real world, and therefore that actions
+and behaviours in the game should
+not necessarily be re-enacted in the
+real lives of gamers;
+
+15. Consider developing in-game
+mechanisms
+allowing
+gamers
+encountering illegal or harmful content or behaviour easy access to a
+facility to report the problems
+encountered, notify a game moderator and seek assistance.
+
+• the risk of encountering illegal or
+harmful content uploaded by other
+gamers when playing the game
+online, and information and guidance for parents and carers on where
+to report the existence of such content within the game;
+
+16. Before removing gamer-generated content from a game, you
+should take care to verify the illegality or harmfulness of the content, for
+instance by contacting the competent authority law-enforcement
+authorities. Acting without first
+checking and verifying may be considered as an interference with legal
+content and with the rights and free-
+
+• the risk of harm associated with
+interaction with other gamers (for
+example with regard to bullying, har-
+
+Human rights guidelines for online games providers
+
+7
+
+doms of those gamers creating and
+communicating such content, in particular the right to freedom of
+expression and information.
+
+could challenge their dignity, security and privacy or otherwise render
+them vulnerable now or at a later
+stage in their lives.
+
+17. Consider developing mechanisms for the automatic removal of
+gamer-generated content after a certain time of inactivity, in particular
+for games targeting children and
+young people. Creating a lasting or
+permanently accessible online record
+of the content created by gamers
+
+18. Provide gamers with clear information about the presence of advertisements or product placements
+within the game along the lines of
+the principles contained in Article 10
+of the PEGI Online Safety Code.
+When the game is targeted for
+minors, ensure that the content of
+
+advertisements and product placements is appropriate having regard
+to the age of the target group. As far
+as in-game advertising is concerned,
+make sure that there is no confusion
+between games for children and
+games for adults by respecting the
+labelling of the game, in particular by
+not including advertising for or clips
+from games treating mature subjects
+in children’s games.
+
+Extracts from existing Council of Europe standards
+relevant to the roles and responsibilities of games
+providers
+Recommendation No. R (92) 19 on video games with a racist content
+The Committee of Ministers, under
+the terms of Article 15.b of the Statute of the Council of Europe,
+Considering that the aim of the
+Council of Europe is to achieve a
+greater unity between its members,
+particularly for the purpose of safeguarding and realising the ideals and
+principles which are their common
+heritage;
+Being aware that video games with a
+racist content, whose existence in
+member countries is unfortunately
+beyond doubt, convey a message of
+aggressive nationalism, ethnocentrism, xenophobia, anti-Semitism or
+intolerance in general, concealed
+behind or combined with violence or
+mockery;
+Considering therefore that such
+games cannot be tolerated in democratic societies, which respect inter
+alia the right to be different, whether
+
+that difference be racial, religious or
+other;
+Convinced that it is all the more necessary to take measures designed to
+put an end to the production and
+distribution of these games as they
+are used mainly by young people;
+Recalling the terms of its Resolution
+(68) 30 relating to measures to be
+taken against incitement to racial,
+national and religious hatred and its
+Resolution (72) 22 on the suppression of and guaranteeing against
+unjustifiable discrimination;
+Bearing in mind the Declaration
+regarding intolerance – a threat to
+democracy which it adopted on
+14 May 1981;
+Having regard to Recommendation
+No. R (89) 7 concerning principles
+on the distribution of videograms
+having a violent, brutal or pornographic content, and the European
+
+Convention on Transfrontier Television (European Treaty Series,
+No 132),
+Recommends that the governments
+of member states:
+a. review the scope of their legislation in the fields of racial discrimination and hatred, violence and the
+protection of young people, in order
+to ensure that it applies without
+restriction to the production and distribution of video games with a racist
+content;
+b. treat video games as mass media
+for the purposes of the application,
+inter alia, of Recommendation No. R
+(89) 7 concerning principles relating
+to the distribution of videograms
+having a violent, brutal or pornographic content, and of the European
+Convention on Transfrontier Television (European Treaty Series, No.
+132).
+
+Recommendation No. R (97) 19 on the portrayal of violence in the
+electronic media
+The Committee of Ministers, under
+the terms of Article 15.b of the Statute of the Council of Europe,
+Considering that the aim of the
+Council of Europe is to achieve a
+greater unity between its members
+for the purpose of safeguarding and
+realising the ideals and principles
+which are their common heritage;
+
+Recalling its commitment to the fundamental right to freedom of expression as guaranteed by Article 10 of
+the Convention for the Protection of
+Human Rights and Fundamental
+Freedoms, and to the principles of
+the free flow of information and
+ideas and the independence of media
+operators as expressed, in particular,
+in its Declaration on the freedom of
+
+expression and information of 29
+April 1982;
+Bearing in mind the international
+dimension of the gratuitous portrayal of violence and the relevant
+provisions of the European Convention on Transfrontier Television
+(1989);
+Recalling that at the 4th European
+Ministerial Conference on Mass
+
+Human rights guidelines for online games providers
+
+9
+
+Extracts from existing Council of Europe standards
+Media Policy (Prague, 7-8 December
+1994), the Ministers responsible for
+media policy addressed to the Committee of Ministers of the Council of
+Europe an Action plan containing
+strategies for the promotion of the
+media in a democratic society, in
+which they requested the Committee
+of Ministers to “prepare, in close
+consultation with media professionals and regulatory authorities, possible guidelines on the portrayal of violence in the media”;
+Recalling that the exercise of freedom of expression carries with it
+duties and responsibilities, which
+media professionals must bear in
+mind, and that it may legitimately be
+restricted in order to maintain a balance between the exercise of this
+right and the respect for other fundamental rights, freedoms and interests
+protected by the European Convention on Human Rights;
+Concerned at the overall increase in
+the portrayal of violence in the electronic media, which makes it an
+important social issue;
+Recalling that violence cannot be
+considered a proper means for conflict-resolution of any kind, including
+inter-personal conflicts;
+Noting, nevertheless, that violence is
+part of the daily reality of society and
+that the right of the public to be
+informed also covers the right to be
+informed about various manifestations of violence;
+Noting that there are many ways in
+which violence may be portrayed by
+the media, corresponding to different contexts, ranging from information to entertainment and that, especially in the latter case, violence is
+sometimes trivialised or even glorified so as to attract large audiences;
+Noting also that, regardless of the
+aim invoked, violence is sometimes
+portrayed in the electronic media in
+a gratuitous manner, in no way justified by the context, reaching unacceptable inhuman and degrading levels as well as an excessive overall
+volume;
+Aware that this may impair the physical, mental or moral development of
+the public, particularly young people,
+by creating, for instance, growing
+
+10
+
+insensitivity to suffering, feelings of
+insecurity and mistrust;
+Noting that not all persons in charge
+of the various electronic media perceive the increased portrayal of violence as a problem;
+Considering that the economic reasons advanced by certain persons in
+charge of electronic media cannot
+justify the gratuitous portrayal of
+violence;
+Convinced that the various sectors of
+society should assume their responsibilities in regard to the portrayal of
+violence in the electronic media;
+Convinced also that all electronic
+media professionals must assume
+their responsibilities and that they
+are best placed to address the question of gratuitous portrayal of violence; and welcoming efforts already
+made by certain professionals and
+sectors,
+Recommends that the governments
+of the member States:
+a. draw the attention of the professionals in the electronic media sector, the regulatory bodies for this
+sector, the educational authorities
+and the general public, to the overall
+policy framework represented by the
+appended guidelines;
+b. take concrete measures to implement these;
+c. ensure, by all appropriate means,
+that these guidelines are known by
+the persons and bodies concerned,
+and encourage general debate on this
+subject;
+d. keep the effective application of
+them in their internal legal orders
+under review.
+Instructs the Secretary General of
+the Council of Europe to transmit
+this recommendation to the governments of those States party to the
+European
+Cultural
+Convention
+which are not members of the Council of Europe.
+
+Scope
+This recommendation concerns the
+gratuitous portrayal of violence in
+the various electronic media at
+national and transfrontier level. The
+gratuitous nature is to be assessed
+
+with reference to the parameters
+contained in the appendix to this
+recommendation.
+
+Definitions
+For the purposes of this recommendation:
+a. the term “gratuitous portrayal of
+violence” denotes the dissemination
+of messages, words and images, the
+violent content or presentation of
+which is given a prominence which is
+not justified in the context;
+b. the term “electronic media”
+denotes radio and television programme services, services such as
+video-on-demand, Internet, interactive television, and so on, and
+products such as video games, CDROMs, and so on, with the exception of private communications
+which are not accessible to the public;
+c. the term “those responsible for
+the content” denotes natural or legal
+persons responsible for the content
+of messages, words and images made
+available to the public by the various
+electronic media.
+
+Guidelines
+Guideline No. 1 – General framework
+Article 10 of the European Convention on Human Rights, as interpreted
+in the case-law of the European
+Court of Human Rights, must constitute the general legal framework for
+addressing questions concerning the
+portrayal of violence in the electronic media.
+Freedom of expression also includes,
+in principle, the right to impart and
+receive information and ideas which
+constitute portrayal of violence.
+However, certain forms of gratuitous
+portrayal of violence may lawfully be
+restricted, taking into account the
+duties and responsibilities which the
+exercise of freedom of expression
+carries with it, provided that such
+interferences with freedom of
+expression are prescribed by law and
+are necessary in a democratic society.
+More specifically, measures taken to
+counter gratuitous portrayal of vio-
+
+Human rights guidelines for online games providers
+
+The portrayal of violence in the electronic media
+lence in the electronic media may
+legitimately aim at upholding respect
+for human dignity and at the protection of vulnerable groups, such as
+children and adolescents, whose
+physical, mental or moral development may be impaired by exposure
+to such portrayal.
+
+Guideline No. 2 – Responsibilities
+and means of action of non-state
+actors
+Those responsible for the content
+Member states should recognise and
+take into account that it is first and
+foremost for those responsible for
+the content to assume the duties and
+responsibilities which the exercise of
+their freedom of expression entails,
+since they have primary responsibility for the content of the messages,
+words and images they disseminate.
+In particular, operators of electronic
+media have certain responsibilities
+when they decide to disseminate
+messages, words and images portraying violence, in view of the potentially harmful effects on the public,
+especially young people, as well as on
+society as a whole. These responsibilities have been assumed by media
+professionals in various ways,
+depending on the kind of electronic
+media, including, for example:
+i. ensuring, through appropriate
+means, that the public is made sufficiently aware in advance of messages,
+words and images of a violent content which they will make available;
+ii. the establishment of sectoral
+codes of conduct which specify the
+concrete responsibilities of the professional sector concerned;
+iii. the establishment of internal
+guidelines, including standards for
+evaluating content, in the various
+electronic media enterprises;
+iv. the establishment, at both sectoral level and within individual media
+enterprises, of appropriate consultation and control mechanisms for
+monitoring the implementation of
+self-regulatory standards;
+v. taking self-regulatory standards
+into account in contracts with other
+sectors, such as audiovisual produc-
+
+vi. regular contacts and exchange of
+information with national regulatory
+authorities, as well as with self-regulatory authorities, in other countries.
+
+respect for human dignity. However,
+as concerns the gratuitous portrayal
+of violence in the electronic media,
+member states only bear subsidiary
+responsibility, since the primary
+responsibility lies with those responsible for the content.
+
+The various sectors of society
+
+National media policy
+
+Member states should recognise and
+take into account the fact that various sectors of society have responsibilities in their own fields of activity.
+They may assume their responsibilities in various ways, for example by
+approaching those responsible for
+the content, in particular by awareness-raising campaigns; by promoting and providing media education;
+by promoting or undertaking
+research on the portrayal of violence, and so on.
+
+Member states should adopt a global
+approach which is not limited to
+those responsible for the content but
+addresses the professional and social
+sectors concerned as a whole. This
+approach should, where appropriate,
+aim to:
+
+ers, manufacturers of video games,
+advertising agencies, and so on;
+
+As regards access to and the use of
+electronic media by children and
+adolescents at home and at school, as
+well as with respect to their understanding of violent messages, words
+and images transmitted by these
+media, parents and teachers have a
+special responsibility. They may
+assume this responsibility in various
+ways, including by:
+i. developing and maintaining a
+critical attitude towards the gratuitous portrayal of violence;
+ii. using the electronic media in a
+conscious and selective manner, as
+well as by demanding quality products and services;
+iii. stimulating children and adolescents to develop a critical attitude,
+for example through media education within the family and in schools;
+iv. examining ways of restricting
+access of children and adolescents to
+the violence portrayed in the electronic media where this is likely to
+impair the latter’s physical, mental or
+moral development.
+
+Guideline No. 3 – Responsibilities
+and means of action of member
+states
+Member states bear general responsibility for, inter alia, the well-being
+of their population, for protecting
+human rights and for upholding
+
+i. promote the establishment of
+independent regulatory authorities
+for the various electronic media.
+These
+authorities
+should
+be
+endowed with appropriate competence and means for regulating the
+portrayal of violence at national
+level;
+ii. enable electronic media consumers, both national and foreign, who
+criticise the violent content of certain services or products, to lodge a
+complaint with the regulatory
+authority or another competent
+national body;
+iii. include among the licensing conditions for broadcasters certain obligations concerning the portrayal of
+violence, accompanied by dissuasive
+measures of an administrative
+nature, such as non-renewal of the
+licence when these obligations are
+not respected;
+iv. establish methods to facilitate
+the division of responsibilities
+between those responsible for the
+content and the public (warnings,
+“watersheds”, and so on);
+v. raise the electronic media professionals’ awareness of the problems
+connected with the gratuitous portrayal of violence and the public’s
+concern about them;
+vi. promote research on the portrayal of violence in the electronic
+media, in particular on trends in the
+various media, and studies of the
+effects of such portrayal on the public.
+
+Human rights guidelines for online games providers
+
+11
+
+Extracts from existing Council of Europe standards
+International co-operation
+In addition to their existing international obligations and activities carried out within the framework of the
+Council of Europe, member States
+should co-operate bilaterally and
+multilaterally as well as within the
+framework of competent international organisations, with a view to
+developing policies for addressing
+problems related, in particular, to the
+international dimension of the gratuitous portrayal of violence in the
+electronic media.
+In this respect, they should facilitate
+the exchange of information and cooperation between competent regulatory authorities, in particular as
+concerns content classification and
+the handling of any complaints
+lodged from abroad.
+
+Legal measures
+Where those responsible for the content engage in the gratuitous portrayal of violence which grossly
+offends human dignity or which, on
+account of its inhuman or degrading
+
+nature, impairs the physical, mental
+or moral development of the public,
+particularly young people, member
+States should effectively apply relevant civil, criminal or administrative
+sanctions.
+Member states which are not yet
+Parties to the European Convention
+on Transfrontier Television (1989)
+are invited to accede to this instrument. All States Parties to the Convention should ensure its effective
+implementation, in particular as concerns the provisions dealing with the
+portrayal of violence, and regularly
+evaluate its effectiveness. Member
+states are also invited to give an
+appropriate follow-up to Recommendation No. R (89) 7 of the Committee of Ministers on principles on
+the distribution of videograms having a violent, brutal or pornographic
+content.
+
+Promotion of non-violent quality
+programmes, services and products
+Within the framework in particular
+of the various national and Euro-
+
+pean programmes of support for the
+production and distribution of
+audiovisual works, and in close cooperation with European bodies and
+professional
+circles
+concerned,
+member states should promote the
+principle of non-violent quality programmes, services and products
+which reflect the cultural diversity
+and richness of European countries.
+
+Guideline No. 4 – Shared
+responsibility for electronic media
+education
+States should consider electronic
+media education as a responsibility
+shared between themselves, those
+responsible for the content and the
+various sectors of society. Such education constitutes a particularly
+appropriate way of helping the public, especially the young, to develop a
+critical attitude in regard to different
+forms of portrayal of violence in
+these media and to make informed
+choices.
+
+Declaration of the Committee of Ministers on protecting the dignity,
+security and privacy of children on the Internet1
+The Committee of Ministers of the
+Council of Europe,
+Recalling the fundamental right to
+freedom of expression and to receive
+and impart information and ideas
+without interference by public
+authorities and regardless of frontiers, as guaranteed by Article 10 of
+the Convention for the Protection of
+Human Rights and Fundamental
+Freedoms (European Convention on
+Human Rights – ETS No. 5);
+Recalling the 1989 United Nations
+Convention of the Rights of the
+Child, in particular the inherent right
+for children to dignity, to special protection and care as is necessary for
+their well-being, to protection
+against all forms of discrimination or
+arbitrary or unlawful interference
+with their privacy and to unlawful
+attacks on their honour and reputation;
+
+Convinced that the well-being and
+best interests of children are fundamental values shared by all member
+states, which must be promoted
+without any discrimination;
+Convinced that the Internet is an
+important tool for children’s everyday activities, such as communication, information, knowledge, education and entertainment;
+Concerned however by the enduring
+presence of content created by children which can be damaging to their
+dignity, security, privacy and honour
+both now and in the future as adults;
+Recalling the Committee of Ministers’ Declaration on freedom of communication on the Internet, adopted
+on 28 May 2003, which stresses that
+the exercise of such freedom should
+not prejudice the dignity or fundamental rights and freedoms of others, especially children;
+
+Conscious that the traceability of
+children’s activities via the Internet
+may expose them to criminal activities, such as the solicitation of children for sexual purposes, or otherwise illegal or harmful activities,
+such as discrimination, bullying,
+stalking and other forms of harassment, by others;
+Recalling the measures to protect
+children referred to in the 2001 Convention on Cybercrime (ETS No.
+185), in particular concerning child
+pornography, and the 2007 Convention on the Protection of Children
+against Sexual Exploitation and Sexual Abuse (CETS No. 201), in particular concerning the solicitation of
+children for sexual purposes;
+Convinced of the need to inform
+children about the enduring presence and risks of the content they
+create on the Internet and, in this
+connection, of the need to develop
+
+1. Adopted on 20 February 2008.
+
+12
+
+Human rights guidelines for online games providers
+
+Measures to promote the respect for freedom of expression and information with regard to Internet filters
+and promote their information literacy, defined as the competent use of
+tools providing access to information, the development of critical
+analysis of content and the appropriation of communication skills to foster citizenship and creativity, as
+referred to in Recommendation Rec
+(2006) 12 of the Committee of Ministers on empowering children in the
+new information and communications environment;
+Aware that communication using
+new technologies and new information and communication services
+must respect the right to privacy and
+to secrecy of correspondence, as
+guaranteed by Article 8 of the European Convention on Human Rights
+and as elaborated by the case-law of
+the European Court of Human
+Rights, as well as the Convention for
+the Protection of Individuals with
+regard to Automatic Processing of
+Personal Data (ETS No. 108);
+
+Concerned by the profiling of information and the retention of personal
+data regarding children’s activities
+for commercial purposes;
+Noting the outcome documents of
+the United Nations World Summit
+on the Information Society (Geneva,
+2003/Tunis, 2005), in particular the
+2005 Tunis Agenda for the Information Society which reaffirmed the
+commitment to effective policies and
+frameworks to protect children and
+young people from abuse and exploitation through information and communication technologies;
+Noting also the mandate of the
+United Nations Internet Governance Forum, in particular to identify
+emerging issues regarding the development and security of the Internet
+and to help find solutions to the
+issues arising from the use and misuse of the Internet, of concern to
+everyday users;
+
+Aware of the emerging tendency for
+certain types of institutions, such as
+educational establishments, and prospective employers to seek information about children and young people when deciding on important
+issues concerning their lives,
+Declares that, other than in the context of law enforcement, there should
+be no lasting or permanently accessible record of the content created by
+children on the Internet which challenges their dignity, security and privacy or otherwise renders them vulnerable now or at a later stage in
+their lives;
+Invites member states, together,
+where appropriate, with other relevant stakeholders, to explore the feasibility of removing or deleting such
+content, including its traces (logs,
+records and processing), within a
+reasonably short period of time.
+
+Recommendation No. CM/Rec (2008) 6 on measures to promote the
+respect for freedom of expression and information with regard to
+Internet filters
+The Committee of Ministers, under
+the terms of Article 15.b of the Statute of the Council of Europe,
+Considering that the aim of the
+Council of Europe is to achieve
+greater unity between its members
+for the purpose of safeguarding and
+realising the ideals and principles
+which are their common heritage;
+Recalling that States Parties to the
+Convention for the Protection of
+Human Rights and Fundamental
+Freedoms (European Convention on
+Human Rights, ETS No. 5) have
+undertaken to secure to everyone
+within their jurisdiction the human
+rights and fundamental freedoms
+defined in the Convention;
+Reaffirming the commitment of
+member states to the fundamental
+right to freedom of expression and to
+receive and impart information and
+ideas without interference by public
+authorities and regardless of frontiers, as guaranteed by Article 10 of
+the European Convention on Human
+Rights;
+
+Aware that any intervention by
+member states that forbids access to
+specific Internet content may constitute a restriction on freedom of
+expression and access to information in the online environment and
+that such a restriction would have to
+fulfil the conditions in Article 10,
+paragraph 2, of the European Convention on Human Rights and the
+relevant case-law of the European
+Court of Human Rights;
+Recalling in this respect the Declaration on human rights and the rule of
+law in the information society,
+adopted by the Committee of Ministers on 13 May 2005, according to
+which member states should maintain and enhance legal and practical
+measures to prevent state and private
+censorship;
+Recalling Recommendation Rec
+(2007) 11 of the Committee of Ministers to member states on promoting freedom of expression and information in the new information and
+communications
+environment,
+according to which member states,
+
+the private sector and civil society
+are encouraged to develop common
+standards and strategies to promote
+transparency and the provision of
+information, guidance and assistance to the individual users of technologies and services concerning,
+inter alia, the blocking of access to
+and filtering of content and services
+with regard to the right to receive
+and impart information;
+Noting that the voluntary and
+responsible use of Internet filters
+(products, systems and measures to
+block or filter Internet content) can
+promote confidence and security on
+the Internet for users, in particular
+children and young people, while
+also aware that the use of such filters
+can impact on the right to freedom
+of expression and information, as
+protected by Article 10 of the European Convention on Human Rights;
+Recalling Recommendation Rec
+(2006) 12 of the Committee of Ministers on empowering children in the
+new information and communications environment, which under-
+
+Human rights guidelines for online games providers
+
+13
+
+Extracts from existing Council of Europe standards
+lines the importance of information
+literacy and training strategies for
+children to enable them to better
+understand and deal with content
+(for example violence and self-harm,
+pornography, discrimination and
+racism) and behaviours (such as
+grooming, bullying, harassment or
+stalking) carrying a risk of harm,
+thereby promoting a greater sense of
+confidence, well-being and respect
+for others in the new information
+and communications environment;
+Convinced of the necessity to ensure
+that users are made aware of, understand and are able to effectively use,
+adjust and control filters according
+to their individual needs;
+Recalling Recommendation Rec
+(2001) 8 of the Committee of Ministers on self-regulation concerning
+cybercontent (self-regulation and
+user protection against illegal or
+harmful content on new communications and information services),
+which encourages the neutral labelling of content to enable users to
+make their own value judgements
+over such content and the development of a wide range of search tools
+and filtering profiles, which provide
+users with the ability to select content on the basis of content descriptors;
+Aware of the public service value of
+the Internet, understood as people’s
+significant reliance on the Internet as
+an essential tool for their everyday
+activities (communication, information, knowledge, commercial transactions, entertainment) and the
+resulting legitimate expectation that
+Internet services be accessible,
+affordable, secure, reliable and ongoing and recalling in this regard Recommendation Rec (2007) 16 of the
+Committee of Ministers on measures
+to promote the public service value
+of the Internet;
+Recalling the Declaration of the
+Committee of Ministers on freedom
+of communication on the Internet of
+28 May 2003, which stresses that
+public authorities should not,
+through general blocking or filtering
+measures, deny access by the public
+to information and other communication on the Internet, regardless of
+frontiers, but that this does not pre-
+
+14
+
+vent the installation of filters for the
+protection of minors, in particular in
+places accessible to them, such as
+schools or libraries;
+Reaffirming the commitment of
+member states to everyone’s right to
+private life and secrecy of correspondence, as protected by Article 8
+of the European Convention on
+Human Rights, and recalling the
+Convention for the Protection of
+Individuals with regard to Automatic Processing of Personal Data
+(ETS No. 108) and its Additional
+Protocol regarding supervisory
+authorities and transborder data
+flows (ETS No. 181) as well as Recommendation No. R (99) 5 of the
+Committee of Ministers on the protection of privacy on the Internet,
+Recommends that member states
+adopt common standards and strategies with regard to Internet filters to
+promote the full exercise and enjoyment of the right to freedom of
+expression and information and
+related rights and freedoms in the
+European Convention on Human
+Rights, in particular by:
+• taking measures with regard to
+Internet filters in line with the guidelines set out in the appendix to this
+recommendation;
+• bringing these guidelines to the
+attention of all relevant private and
+public sector stakeholders, in particular those who design, use (install,
+activate, deactivate and implement)
+and monitor Internet filters, and to
+civil society, so that they may contribute to their implementation.
+
+Appendix to
+Recommendation CM/Rec
+(2008) 6: Guidelines
+Using and controlling Internet filters
+in order to fully exercise and enjoy
+the right to freedom of expression
+and information
+Users’ awareness, understanding of
+and ability to effectively use Internet
+filters are key factors which enable
+them to fully exercise and enjoy their
+human rights and fundamental
+freedoms, in particular the right to
+freedom of expression and information, and to participate actively in
+
+democratic processes. When confronted with filters, users must be
+informed that a filter is active and,
+where appropriate, be able to identify
+and to control the level of filtering
+the content they access is subject to.
+Moreover, they should have the possibility to challenge the blocking or
+filtering of content and to seek clarifications and remedies.
+In co-operation with the private sector and civil society, member states
+should ensure that users are made
+aware of activated filters and, where
+appropriate, are able to activate and
+deactivate them and be assisted in
+varying the level of filtering in operation, in particular by:
+i. developing and promoting a
+minimum level of information for
+users to enable them to identify
+when filtering has been activated and
+to understand how, and according to
+which criteria, the filtering operates
+(for example, blacklists, whitelists,
+keyword blocking, content rating,
+etc., or combinations thereof );
+ii. developing minimum levels of
+and standards for the information
+provided to the user to explain why a
+specific type of content has been filtered;
+iii. regularly reviewing and updating filters in order to improve their
+effectiveness, proportionality and
+legitimacy in relation to their
+intended purpose;
+iv. providing clear and concise
+information and guidance regarding
+the manual overriding of an activated filter, namely whom to contact
+when it appears that content has
+been unreasonably blocked and the
+reasons which may allow a filter to be
+overridden for a specific type of content or Uniform Resource Locator
+(URL);
+v. ensuring that content filtered by
+mistake or error can be accessed
+without undue difficulty and within a
+reasonable time;
+vi. promoting initiatives to raise
+awareness of the social and ethical
+responsibilities of those actors who
+design, use and monitor filters with
+particular regard to the right to freedom of expression and information
+and to the right to private life, as well
+
+Human rights guidelines for online games providers
+
+Measures to promote the respect for freedom of expression and information with regard to Internet filters
+as to the active participation in public life and democratic processes;
+vii. raising awareness of the potential
+limitations to freedom of expression
+and information and the right to private life resulting from the use of filters and of the need to ensure proportionality of such limitations;
+viii.facilitating an exchange of experiences and best practices with
+regard to the design, use and monitoring of filters;
+ix. encouraging the provision of
+training courses for network administrators, parents, educators and
+other people using and monitoring
+filters;
+x. promoting and co-operating with
+existing initiatives to foster responsible use of filters in compliance with
+human rights, democracy and the
+rule of law;
+xi. fostering filtering standards and
+benchmarks to help users choose
+and best control filters.
+In this context, civil society should
+be encouraged to raise users’ awareness of the potential benefits and
+dangers of filters. This should
+include promoting the importance
+and significance of free and unhindered access to the Internet so that
+every individual user may fully exercise and enjoy their human rights
+and fundamental freedoms, in particular the right to freedom of
+expression and information and the
+right to private life, as well as to
+effectively participate in public life
+and democratic processes.
+
+Appropriate filtering for children and
+young people
+The Internet has significantly
+increased the number and diversity
+of ideas, information and opinions
+which people may receive and impart
+in the fulfilment of their right to freedom of expression and information
+without interference by public
+authorities and regardless of frontiers. At the same time, it has
+increased the amount of readily
+available content carrying a risk of
+harm, particularly for children and
+young people. To satisfy the legitimate desire and duty of member
+states to protect children and young
+
+people from content carrying a risk
+of harm, the proportionate use of filters can constitute an appropriate
+means of encouraging access to and
+confident use of the Internet and be a
+complement to other strategies on
+how to tackle harmful content, such
+as the development and provision of
+information literacy.
+
+into account the diversity of cultures,
+values and opinions;
+
+In this context, member states
+should:
+
+iv. promote the interoperability of
+systems for the self-classification of
+content by providers and help to
+increase awareness about the potential benefits and dangers of such classification models.
+
+i. facilitate the development of
+strategies to identify content carrying a risk of harm for children and
+young people, taking into account
+the diversity of cultures, values and
+opinions;
+ii. co-operate with the private sector and civil society to avoid overprotection of children and young
+people by, inter alia, supporting
+research and development for the
+production of “intelligent” filters that
+take more account of the context in
+which the information is provided
+(for example by differentiating
+between harmful content itself and
+unproblematic references to it, such
+as may be found on scientific websites);
+iii. facilitate and promote initiatives
+that assist parents and educators in
+the selection and use of developmental-age appropriate filters for children and young people;
+iv. inform children and young people about the benefits and dangers of
+Internet content and its filtering as
+part of media education strategies in
+formal and non-formal education.
+Furthermore, the private
+should be encouraged to:
+
+sector
+
+i. develop “intelligent” filters offering
+developmental-age appropriate filtering which can be adapted to follow the child’s progress and age
+while, at the same time, ensuring that
+filtering does not occur when the
+content is deemed neither harmful
+nor unsuitable for the group which
+the filter has been activated to protect;
+ii. co-operate with self- and co-regulatory bodies in order to develop
+standards for developmental-age
+appropriate rating systems for content carrying a risk of harm, taking
+
+iii. develop, in co-operation with
+civil society, common labels for filters to assist parents and educators
+in making informed choices when
+acquiring filters and to certify that
+they meet certain quality requirements;
+
+Moreover, civil society should be
+encouraged to:
+i. debate and share their experiences and knowledge when assessing and raising awareness of the
+development and use of filters as a
+protective measure for children and
+young people;
+ii. regularly monitor and analyse
+the use and impact of filters for children and young people, with particular regard to their effectiveness and
+their contribution to the exercise and
+enjoyment of the rights and
+freedoms guaranteed by Article 10
+and other provisions of the European
+Convention on Human Rights.
+
+Use and application of Internet filters
+by the public and private sector
+Notwithstanding the importance of
+empowering users to use and control filters as mentioned above, and
+noting the wider public service value
+of the Internet, public actors on all
+levels (such as administrations,
+libraries and educational institutions) which introduce filters or use
+them when delivering services to the
+public, should ensure full respect for
+all users’ right to freedom of expression and information and their right
+to private life and secrecy of correspondence.
+In this context, member states
+should:
+i. refrain from filtering Internet
+content in electronic communications networks operated by public
+actors for reasons other than those
+laid down in Article 10, paragraph 2,
+of the European Convention on
+
+Human rights guidelines for online games providers
+
+15
+
+Extracts from existing Council of Europe standards
+Human Rights, as interpreted by the
+European Court of Human Rights;
+ii. guarantee that nationwide general blocking or filtering measures
+are only introduced by the state if the
+conditions of Article 10, paragraph 2,
+of the European Convention on
+Human Rights are fulfilled. Such
+action by the state should only be
+taken if the filtering concerns specific and clearly identifiable content,
+a competent national authority has
+taken a decision on its illegality and
+the decision can be reviewed by an
+independent and impartial tribunal
+or regulatory body, in accordance
+with the requirements of Article 6 of
+the European Convention on Human
+Rights;
+iii. introduce, where appropriate
+and necessary, provisions under
+national law for the prevention of
+intentional abuse of filters to restrict
+citizens’ access to lawful content;
+iv. ensure that all filters are assessed
+both before and during their implementation to ensure that the effects
+of the filtering are proportionate to
+the purpose of the restriction and
+
+16
+
+thus necessary in a democratic society, in order to avoid unreasonable
+blocking of content;
+
+i. regularly assess and review the
+effectiveness and proportionality
+regarding the introduction of filters;
+
+v. provide for effective and readily
+accessible means of recourse and
+remedy, including suspension of filters, in cases where users and/or
+authors of content claim that content
+has been blocked unreasonably;
+
+ii. strengthen the information and
+guidance to users who are subject to
+filters in private networks, including
+information about the existence of,
+and reasons for, the use of a filter and
+the criteria upon which the filter
+operates;
+
+vi. avoid the universal and general
+blocking of offensive or harmful content for users who are not part of the
+group which a filter has been activated to protect, and of illegal content for users who justifiably demonstrate a legitimate interest or need to
+access such content under exceptional circumstances, particularly for
+research purposes;
+vii. ensure that the right to private
+life and secrecy of correspondence is
+respected when using and applying
+filters and that personal data logged,
+recorded and processed via filters are
+only used for legitimate and noncommercial purposes.
+Furthermore, member states and the
+private sector are encouraged to:
+
+iii. co-operate with users (customers, employees, etc.) to improve the
+transparency, effectiveness and proportionality of filters.
+In this context, civil society should
+be encouraged to follow the development and deployment of filters both
+by key state and private sector actors.
+It should, where appropriate, call
+upon member states and the private
+sector, respectively, to ensure and to
+facilitate all users’ right to freedom of
+expression and information, in particular as regards their freedom to
+receive information without interference by public authorities and
+regardless of frontiers in the new
+information and communications
+environment.
+
+Human rights guidelines for online games providers
+
+Developed by the Council of Europe in close co-operation with the Interactive
+Software Federation of Europe (ISFE), these guidelines provide human rights
+benchmarks for online games providers and developers. While underlining the
+primary value of games as tools for expression and communication, they stress the
+importance of gamers safety and their right to privacy and freedom of expression
+and, in this connection, the importance for the games industry to be aware of the
+human rights impact that games can have.
+
+For more information on the activities
+of the Council of Europe and ISFE:
+www.coe.int • www.isfe-eu.org
+
+Directorate General
+of Human Rights and Legal Affairs
+Council of Europe
+F-67075 Strasbourg Cedex
+
+
