@@ -1,6 +1,7 @@
 'use strict';
 
 var api = require('./controllers/api'),
+    Document = require('./models/document'),
     index = require('./controllers'),
     users = require('./controllers/users'),
     session = require('./controllers/session'),
@@ -27,6 +28,15 @@ module.exports = function(app) {
     .post(session.login)
     .delete(session.logout);
 
+  // MongoDB models
+  app.route('/api/documents')
+    .get(function (req, res) {
+        Document.find(function (err, components) {
+            if (err) res.send(err);
+            res.json(components);
+        });
+    });
+
   // All undefined api routes should return a 404
   app.route('/api/*')
     .get(function(req, res) {
@@ -38,4 +48,5 @@ module.exports = function(app) {
     .get(index.partials);
   app.route('/*')
     .get( middleware.setUserCookie, index.index);
+
 };
