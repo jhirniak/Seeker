@@ -34,6 +34,10 @@ var seekerApp = angular.module('seekerApp', [
         templateUrl: 'partials/feedback',
         controller: 'FeedbackCtrl'
       })
+      .when('/result', {
+        templateUrl: 'partials/result',
+        controller: 'ResultCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -12,8 +12,7 @@ var express = require('express'),
     path = require('path'),
     config = require('./config'),
     passport = require('passport'),
-    mongoStore = require('connect-mongo')(session),
-    cors = require('cors');
+    mongoStore = require('connect-mongo')(session);
 
 /**
  * Express configuration
@@ -67,9 +66,6 @@ module.exports = function(app) {
   // Use passport session
   app.use(passport.initialize());
   app.use(passport.session());
-
-  // Use CORS (Cross Origin Resource Sharing) to enable port data exchange (to enable implemented MongoDB API to AngularJS)
-  app.use(cors);
 
   // Error handler - has to be last
   if ('development' === app.get('env')) {

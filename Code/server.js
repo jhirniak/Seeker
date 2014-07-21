@@ -3,8 +3,7 @@
 var express = require('express'),
     path = require('path'),
     fs = require('fs'),
-    mongoose = require('mongoose'),
-    cors = require('cors');
+    mongoose = require('mongoose');
 
 /**
  * Main application file
