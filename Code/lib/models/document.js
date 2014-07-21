@@ -13,5 +13,5 @@ var DocumentSchema = new Schema({
     section: [String]
 });
 
-module.exports = mongoose.model('doc', DocumentSchema); // doc is collection name
+module.exports = mongoose.model('Document', DocumentSchema, 'doc'); // doc is collection name
 
