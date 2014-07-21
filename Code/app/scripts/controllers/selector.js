@@ -3,6 +3,9 @@
 angular.module('seekerApp')
     .controller('SelectorCtrl', function ($scope, $modalInstance, params) {
 
+        // TODO: when pressed enter new field in text mode appear
+        // TODO: always initial field in text mode
+
         // initialize variables
 
         var isNew = params.isNew;
@@ -68,6 +71,24 @@ angular.module('seekerApp')
         $scope.addEmpty = function () {
             $scope.node.value.push({value: ''});
         };
+
+        $scope.enterNext = function () {
+                removeAllEmpty();
+                $scope.addEmpty();
+        }
+
+        $scope.empty = function () {
+            if (isNew) {
+                for (var i = 0; i < $scope.node.value.length; ++i) {
+                    if (('' + $scope.node.value[i].value).trim() !== '') {
+                        return false;
+                    }
+                }
+                return true;
+            } else {
+                return false;
+            }
+        }
 
         // value operations
 
@@ -189,7 +210,7 @@ angular.module('seekerApp')
                 active: !$scope.listMode,
                 show: function () { return true; },
                 //content: 'surprise',
-                action: function () { sortValues(); refreshView('switch-conditional'); }
+                action: function () { $scope.listMode = false; refreshView('switch-conditional'); }
             });
 
             tabs.push({
@@ -197,7 +218,7 @@ angular.module('seekerApp')
                 active: $scope.listMode,
                 show: function () { return listAvailable(); },
                 //content: 'list',
-                action: function () { refreshView('switch-conditional'); }
+                action: function () { $scope.listMode = true; refreshView('switch-conditional'); }
             });
 
             return tabs;
@@ -237,7 +258,10 @@ angular.module('seekerApp')
         }
 
         function refreshView(action) {
-            console.log('action', action, 'listAvailable()', listAvailable(), '$scope.listMode', $scope.listMode);
+            console.log('Sort, remove duplicates, remove empty.');
+            sortValues(); removeAllDuplicates(); removeAllEmpty();
+            console.log('%c--- Refresh view ---', 'color: blue, font-weight: bold');
+            console.log('%cBefore state:', 'color: orange', '\n - action', action, '\n - listAvailable()', listAvailable(), '\n - $scope.listMode', $scope.listMode);
             if (action === 'types') {
                 $scope.list = objectify($scope.getHints()); // refresh list of hints
             }
@@ -247,6 +271,10 @@ angular.module('seekerApp')
                 $scope.tabs[0]['active'] = true;
                 $scope.tabs[1]['active'] = false;
             }
+            if ($scope.empty) {
+                $scope.node.value.push({value: ''});
+            }
+            console.log('%cAfter state:', 'color: red', '\naction', action, '\nlistAvailable()', listAvailable(), '\n$scope.listMode', $scope.listMode);
         }
 
         $scope.typeTabs = createTabs();

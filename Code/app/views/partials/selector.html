@@ -1,7 +1,9 @@
 <div>
+    <!--
     <div class="modal-header">
-        <h3>{{header}}</h3>
+        <h3>{{node.type | titleCase}}</h3>
     </div>
+    -->
 
     <div class="modal-body">
         <alert type="warning" ng-show="modifyDataForm.$invalid">You must select one of the available values.</alert>
@@ -32,7 +34,7 @@
 
                 <!-- <label>Group</label> -->
                 <div class="row" style="padding-bottom:12px;" ng-repeat="item in node.value">
-                    <span class="col-sm-6"><input type="text" name="{{$index}}" ng-model-options="{ updateOn: 'mousedown blur' }" class="form-control" style="width: none" ng-model="item.value" typeahead="hint for hint in getHints() | filter:$viewValue | limitTo:8" typeahead-min-length="1" placeholder="Enter source" typeahead-editable="true" typeahead-on-select="check($item, $model, $label)"/></span>
+                    <span class="col-sm-6"><input type="text" name="{{$index}}" ng-model-options="{ updateOn: 'mousedown blur' }" ng-enter="enterNext()" class="form-control" style="width: none" ng-model="item.value" typeahead="hint for hint in getHints() | filter:$viewValue | limitTo:8" typeahead-min-length="1" placeholder="Enter source" typeahead-editable="true" typeahead-on-select="check($item, $model, $label)"/></span>
                     <a class="pull-left btn btn-danger btn-xs" data-nodrag ng-click="remove($index)"><span class="glyphicon glyphicon-remove"></span></a>
                 </div>
                 <a class="pull-left btn btn-success btn-xs" data-nodrag ng-click="addEmpty()"><span class="glyphicon glyphicon-plus"></span></a>
@@ -62,7 +64,7 @@
     </div>
 
     <div class="modal-footer">
-        <button class="btn btn-primary" ng-click="ok()" ng-disabled="modifyDataForm.$invalid">OK</button>
+        <button class="btn btn-primary" ng-click="ok()" ng-disabled="modifyDataForm.$invalid || empty()">OK</button>
         <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
     </div>
 </div>
