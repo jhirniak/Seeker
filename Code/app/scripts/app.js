@@ -42,7 +42,7 @@ var seekerApp = angular.module('seekerApp', [
         redirectTo: '/'
       });
       
-    $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(true).hashPrefix('!');
       
     // Intercept 401s and redirect you to login
     $httpProvider.interceptors.push(['$q', '$location', function($q, $location) {

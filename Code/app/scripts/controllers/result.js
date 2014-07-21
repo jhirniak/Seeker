@@ -4,9 +4,9 @@ angular.module('seekerApp')
     .controller('ResultCtrl', function ($scope, $http) {
 
         $scope.doc = {};
-        o
+        $scope.doc.header = 'Search result';
 
-        $http.get('http://localhost:9000/api/documents')
+        $http.get('/api/documents')
             .success(function (result) {
                $scope.doc.content = result;
             });

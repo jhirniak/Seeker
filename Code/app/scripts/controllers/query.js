@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('seekerApp')
-  .controller('QueryCtrl', function ($scope, $http, Bokeh, $timeout, History, $modal) {
+  .controller('QueryCtrl', function ($scope, $http, Bokeh, $timeout, History, $modal, $location) {
     /* $http.get('/api/awesomeThings').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;
     }); */
@@ -474,8 +474,10 @@ angular.module('seekerApp')
         }
     };
 
+    var baseUrl = '';
+
     $scope.process = function () {
         Bokeh.set();
-        $timeout(function () {Bokeh.reset()}, 2000);
+        $timeout(function () {Bokeh.reset(); $location.path('/result'); $scope.apply(); }, 2000);
     };
   });
