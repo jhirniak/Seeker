@@ -1,3 +1,0 @@
-User-Agent: *
-Disallow: /web/web-guidelines
-Disallow: /web/lfr-expo
