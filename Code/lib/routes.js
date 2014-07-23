@@ -40,6 +40,18 @@ module.exports = function(app) {
         });
     });
 
+  app.route('/api/document')
+    .get(function (req, res) {
+      console.log(req.query);
+      Document.find(req.query, function (err, components) {
+          if (err) {
+              res.send(err);
+          } else {
+              res.json(components);
+          }
+      });
+    });
+
   // All undefined api routes should return a 404
   app.route('/api/*')
     .get(function(req, res) {
