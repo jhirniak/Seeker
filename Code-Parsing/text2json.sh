@@ -9,6 +9,12 @@ START=`date +%s` # execution start time
 
 TXT=("$1/*.txt") # array of all PDFs
 
+$OUTDIR=$(dirname ${$2})
+if [ ! -d "$OUTDIR"]; then
+  echo "Target directory $OUTDIR doesn't exist, creating..."
+  mkdir -p "$OUTDIR"
+fi
+
 for txt in $TXT
 do
   bn=$(basename "$txt")

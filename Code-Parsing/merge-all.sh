@@ -12,11 +12,20 @@ IN=("$1/*.json")
 OUT="$2.json"
 FIRST=1
 
+OUTDIR=$(dirname ${OUT})
+
+if [ ! -d "$OUTDIR" ]; then
+  echo "Target directory $OUTDIR doesn't exist, creating..."
+  mkdir -p "$OUTDIR"
+fi
+
 if [ -e "$OUT" ]; then
   echo "Output file $OUT exist, overwriting!"
   rm "$OUT"
-  touch "$OUT"
 fi
+
+echo "Creating empty $OUT file..."
+touch "$OUT"
 
 echo "[" >> "$OUT"
 
