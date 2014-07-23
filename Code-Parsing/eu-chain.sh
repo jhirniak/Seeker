@@ -17,7 +17,7 @@ START=`date +%s`
 ./merge-all.sh reports-json reports-json-unified/Reports
 
 # Upload to MongoDB
-./upload2mongo.sh fullstack-dev doc reports-json-unified/Reports.json
+./upload2mongo.sh fullstack-dev doc reports-json-unified/Reports.json flush
 
 END=`date +%s`
 RUNTIME=$((END-START))
