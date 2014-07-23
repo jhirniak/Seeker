@@ -10,6 +10,12 @@ def txt2json(fn):
     js['sections'] = {}
     js['paragraphs'] = {}
 
+    # Get info from file, if proper file should include: country, source (producing committee), cycle, report-language
+    info = info_from_filename(fn)
+    if info:
+        for k in info.keys():
+            js[k] = info[k]
+
     with open(fn, 'r') as f:
         txt = f.read()
         for ch in create_map(txt, re_chapter):
@@ -28,7 +34,6 @@ def txt2json(fn):
             js[s][k] = list(set(js[s][k])) # remove duplicates
             js[s][k].sort(cmp=ref_cmp)
         
-
     return json.dumps(js)
 
 def ref_cmp(a, b):
@@ -43,6 +48,87 @@ re_chapter = r'Chapter \d+'
 re_section = r'(\d\.){2,}'
 re_paragraph = r'^\d+\.'
 re_config = re.DOTALL + re.MULTILINE
+
+# Country
+re_spec = r'^UK'
+re_country_candidate = r'^[A-Z][a-z]+'
+cre_spec = re.compile(re_spec)
+cre_country_candidate = re.compile(re_country_candidate)
+countries_lst = ['Armenia', 'Austria', 'Bosnia and Herzegovina', 'Croatia', 'Cyprus', 'Czech', 'Denmark', 'Finland', 'Germany', 'Hungary', 'Liechtenstein', 'Luxembourg', 'Montenegro', 'Netherlands', 'Norway', 'Poland', 'Romania', 'Serbia', 'Slovakia', 'Slovenia', 'Spain', 'Sweden', 'Switzerland', 'Ukraine', 'UK']
+countries_map = {
+    'Czech': 'Czech Republic',
+    'UK': 'United Kingdom'
+}
+
+# Committee
+re_committee = r'^(CMRec|ECRML|PR)'
+cre_committee = re.compile(re_committee)
+committee_map = {
+    'CMRec': 'Committee of Ministers',
+    'ECRML': 'Committee of Experts',
+    'PR': 'Periodical Report'
+}
+
+# Cycle
+re_cycle = r'\d+'
+cre_cycle = re.compile(re_cycle)
+
+# Language
+re_language = r'(?<=_)[a-z]+'
+cre_language = re.compile(re_language)
+
+def info_from_filename(fn):
+    country = None
+    committee = None
+    cycle = None
+    language = None
+
+    # Country
+    if cre_spec.search(fn):
+        # one of special (currently only UK)
+        country = countries_map['UK']
+        fn = fn[2:]
+    else:
+        # normal country name (big letter small letters)
+        cc = cre_country_candidate.search(fn)
+        if cc and cc.group() in countries_lst:
+            cc = cc.group()
+            fn = fn[fn.index(cc) + len(cc):] # move pointer
+            if cc in countries_map.keys():
+                country = countries_map[cc]
+            else:
+                country = cc
+
+    # Committee
+    com = cre_committee.search(fn)
+    if com:
+        com = com.group()
+        committee = committee_map[com]
+        fn = fn[fn.index(com) + len(com):]
+
+    # Cycle
+    cyc = cre_cycle.search(fn)
+    if cyc:
+        cyc = cyc.group()
+        cycle = int(cyc)
+        fn = fn[fn.index(cyc) + len(cyc):]
+
+    # Language
+    lang = cre_language.search(fn)
+    if lang:
+        lang = lang.group()
+        language = lang
+
+    if not country or not committee or not cycle or not language:
+        return None
+    else:
+        return {'country': country, 'source': committee, 'cycle': cycle, 'report-language': language}
+
+# Parse from filename
+re_country = r'' # one of
+re_reporttype = r'' #
+re_cycle = r''
+re_reportlang = r''
 
 def get_boundaries(stack, needle):
     sections = [m.start(0) for m in re.finditer(needle, stack, re_config)]
