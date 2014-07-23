@@ -32,8 +32,11 @@ module.exports = function(app) {
   app.route('/api/documents')
     .get(function (req, res) {
         Document.find(function (err, components) {
-            if (err) res.send(err);
-            res.json(components);
+            if (err) {
+                res.send(err);
+            } else {
+                res.json(components);
+            }
         });
     });
 

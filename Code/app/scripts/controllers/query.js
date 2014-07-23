@@ -474,10 +474,12 @@ angular.module('seekerApp')
         }
     };
 
-    var baseUrl = '';
-
     $scope.process = function () {
         Bokeh.set();
-        $timeout(function () {Bokeh.reset(); $location.path('/result'); $scope.apply(); }, 2000);
+        $timeout(function () {
+            Bokeh.reset();
+            $location.path('/result');
+            $scope.$apply();
+        }, 2000);
     };
   });
