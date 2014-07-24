@@ -560,22 +560,24 @@ class: center
 .logo-box[
   .logo-img[![AngularJS Logo](static/logos/angularjs.png)]
   .logo-txt[
-    
+    Web application framework, by Google, augmenting web apps with MVC, extending HTML's syntax, automatically synchronizing data from UI (view) with JavaScript object (model) through 2-way data binding, adding dependency injection and inversion of control, and providing great server-side communication via promises and deferreds.
   ]
 ]
 
 .logo-box[
   .logo-img[![Twitter Bootstrap Logo](static/logos/twitter-bootstrap-2.jpg)]
-  .logo-txt[]
+  .logo-txt[
+    Collection of tools for creating web applications, containing templates for typography, forms, buttons, navigation, and other interface components, providing consistent view on all devices. Used by **MSNBC** and **NASA**.
+  ]
 ]
 
 ???
 
 **AngularJS**:
-Web application by Google implementing MVC (by asking you to split app into MVC components), allowing to extend HTML's syntax to express web apps more clearly and succinctly, automatically synchronizing data from UI (view)  with JavaScript objects (model) through 2-way data binding, teaching browser how to do dependency injection and inversion of control allowing for better and easier testing, and providing great server-side communication taming async callbacks with promies and deferreds.
+Web application framework by Google implementing MVC (by asking you to split app into MVC components), allowing to extend HTML's syntax to express web apps more clearly and succinctly, automatically synchronizing data from UI (view)  with JavaScript objects (model) through 2-way data binding, teaching browser how to do dependency injection and inversion of control allowing for better and easier testing, and providing great server-side communication taming async callbacks with promies and deferreds. Used in **Google Maps** and **GMail**.
 
 **Twitter Bootstrap**:
-
+Collection of tools for creating web applications, containing templates for typography, forms, buttons, navigation, and other interface components, providing consistent view on all devices. Used by **MSNBC** and **NASA**.
 ---
 
 layout: false
@@ -585,25 +587,25 @@ class: center
 
 .logo-box[
   .logo-img[![HTML5 and CSS3 Logo](static/logos/html5_css3.png)]
-  .logo-txt[]
+  .logo-txt[
+    Latest HTML5 and CSS3 providing rich and responsive browsing experience. But, with shims and Modernizr making sure that it works on older browser.
+  ]
 ]
 
 .logo-box[
   .logo-img[![SASS Logo](static/logos/sass.png)]
-  .logo-txt[]
+  .logo-txt[
+    SASS (Syntactically Awesome Stylesheets) is a stylesheet language that compiles to CSS, providing what it lacks - variables, nesting, partials, import, mixins, extend/inheritance, operators.
+  ]
 ]
 
 ???
 
 **HTML5 and CSS3**:
+Latest HTML5 and CSS3 providing rich and responsive browsing experience. But, with shims and Modernizr making sure that it works on older browser.
 
 **SASS**:
-
-**Shims**:
-But it works in older browser or fails gracefully
-
-**Compass**:
-What can say about compass?
+SASS (Syntactically Awesome Stylesheets) is a stylesheet language that compiles to CSS, providing what it lacks - variables, nesting, partials, import, mixins, extend/inheritance, operators.
 
 ---
 
@@ -613,35 +615,42 @@ class: center
 # Testing
 .logo-box[
   .logo-img[![Karma Logo](static/logos/karma.png)]
-  .logo-txt[]
+  .logo-txt[
+    A test runner with livereload, testing on real devices, and providing easy debugging.
+  ]
 ]
 
 .logo-box[
   .logo-img[![Jasmine Logo](static/logos/jasmine.png)]
-  .logo-txt[]
+  .logo-txt[
+    Behavior-Driven testing framework for JavaScript, that does not rely on browsers, DOM, or any JavaScript framework, so well-suited for web applications and Node.js projects.
+  ]
 ]
 
 ???
+**Karma**:
+A test runner with livereload, testing on real devices, and providing easy debugging.
 
+**Jasmin**:
+Behavior-Driven testing framework for JavaScript, that does not rely on browsers, DOM, or any JavaScript framework, so well-suited for web applications and Node.js projects.
 ---
 
-# Reason behind chosen technologies
+# Why nothing more standard? Would not that work?
 
-0. Productivity - one language (JavaScript) for front-end, back-end, and querying database.
-1. Flexibility - MongoDB is schemless and document-oritented database.
-2.
+- Relational database such as MySQL, PostgreSQL are too restrictive for documents. EU Minority Language committees reports have common structure, but still they differ significantly - some are missing section numbers in chapters, number of chapters/sections/paragraphs is arbitrary, and not to mention that project is supposed to be adaptable. Traditional relation database is too restrictive with its schema and that would be daunting task to overcome, if not impossible, while MongoDB provides all needed features out of the box, with similar query power as SQL DBMS, and similar performance.
 
----
-
-# What would not work?
-
-Relational database such as MySQL, PostgreSQL - too restrictive for documents, EU are general, but anyway different formating (date placement, content, invisible chars).
-Babilion tower of languages (Python - server, client - JS, not to mention Tomcat etc.) - productivity.
-Queries take time so better dealt asyncs.
+- Python and Django/Flask, Java and Tomcat, or any other create makes distinction from client and server side code brutal as it is often written in different languages, and it is harder to make separate pieces to work together, with MEAN where only JavaScript is used all comes with greater easy, and that is much better for this project productivity.
 
 ---
 
 # Why were those good choices?
+
+###Yes!
+
+- Planned work was accomplished because work was very productive.
+- Project is well structured and codebase clean.
+- Work was very productive.
+- Project is modular and easy to modify/extend.
 
 ---
 
@@ -653,9 +662,10 @@ class: center, middle, seeker
 
 # What has been achieved
 
-0. All technologies were identified and documented.
-1. Architecture was planned.
-2. Proof of concept solution was developed.
+0. ###The problem was investigated and solved.
+1. ###All technologies best for the project implementation were identified.
+2. ###Proof of concept application that can help in Minority Language research was developed.
+3. ###The database contains parsed EU Minority Language documents and can be quered.
 
 ---
 
