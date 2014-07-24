@@ -381,14 +381,29 @@ Mock website was created faking all actions, and being quite crude (at this stag
 
 # Stage 2 - Goals identification
 
-0. 
-0. Tree-structure would be optimal for specifying query.
-1. Help should be available to the user at each stage, and no option should be confusing.
-1. Language used should not be intended for people with Computer Science / Mathematical background.
-1. Agile
-2. Should be able to save generated document as .doc, .pdf, .rtf.
+0. Easy to continue development:
+  - well-documented,
+  - well-organized codebase.
+1. Adaptable.
+2. Open source.
+3. Intuitive:
+  - easy to grasp for people without computing background,
+  - hinting everytime when user may need help.
+4. Query as a tree:
+  - gives idea how generated document will be structured,
+  - easy to grasp,
+  - expressive,
+  - handles many dependencies right-away.
+5. Graceful fail - no mistake should lead to a disaster, e.g. providing undo/redo buttons for query specification stage.
+6. Should be able to parse and generate popular format documents (e.g. .doc, .pdf, .rtf).
+7. Minimal amount of user work (e.g. remember past queries, user/admin panels).
+8. Gather feedback - provide a way to send feedback from the website.
 
 ???
+
+Selected, and most important goals.
+
+1. Adaptable - should be easy to adopt to differnet document format or source.
 
 **Tree-structure** because it resembles how generated documents looks like, so provides idea of what is going to be generated, and how everything is going to be laid out.
 
@@ -401,7 +416,21 @@ Mock website was created faking all actions, and being quite crude (at this stag
 ---
 
 # Stage 3 - Deciding on software stack
+Ideal software stack should be
+  - productive (develop and deploy with ease and fast) because project is constrained by time,
+  - modern, but application should not fail on older browsers,
+  - popular,
+  - up to the task (e.g. fast schemless database).
 
+<hr/>
+
+Hence, the stack of choice was **MEAN = MongoDB + Express.js + AngularJS + Node.js**.
+Advantages:
+  - one language (JavaScript) for all the code, and one data format (JSON),
+  - robust and asynchronous - ideal for the kind of heavy queries expected,
+  - productive - AngularJS helps with fast RESTful and MVC front-end development, and Express.js helps to handle all traffic with minimal effort,
+  - up to task - MongoDB provides all features seeked (can store arbitrary documents, is as fast as MySQL or PostgreSQL, has rich enough query language)
+  - and many, many, more...
 ---
 
 class: center, middle, matrix
