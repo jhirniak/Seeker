@@ -1,9 +1,9 @@
 #!/usr/bin/python
 
-import sys, json, re
+import sys, json, re, os
 
-def txt2json(fn):
-    txt = open(fn) # Add buffering? r, 1
+def txt2json(fp):
+    fn = os.path.split(fp)[1] # Get the filename without path component
     js = {}
     js['filename'] = fn
     js['chapters'] = {}
@@ -16,7 +16,7 @@ def txt2json(fn):
         for k in info.keys():
             js[k] = info[k]
 
-    with open(fn, 'r') as f:
+    with open(fp, 'r') as f:
         txt = f.read()
         for ch in create_map(txt, re_chapter):
             isec = []
@@ -123,12 +123,6 @@ def info_from_filename(fn):
         return None
     else:
         return {'country': country, 'source': committee, 'cycle': cycle, 'report-language': language}
-
-# Parse from filename
-re_country = r'' # one of
-re_reporttype = r'' #
-re_cycle = r''
-re_reportlang = r''
 
 def get_boundaries(stack, needle):
     sections = [m.start(0) for m in re.finditer(needle, stack, re_config)]
