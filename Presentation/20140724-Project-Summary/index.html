@@ -173,8 +173,8 @@
       }
 
       .logo img {
-        max-width: 80%;
-        max-height: 30%;
+        max-width: 600px;
+        max-height: 200px;
         clear: both;
         display: block;
         margin-top: 20px;
@@ -188,6 +188,35 @@
 
       .logo p {
         text-align: center;
+        margin-bottom: 10px;
+      }
+
+      /* Logo and comment columns */
+      .logo-box {
+        width: 100%;
+        display: block;
+        clear: both;
+      }
+      .logo-img {
+        width:50%;
+        height: 100%;
+        float: left;
+        margin-top: 20px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .logo-txt {
+        width: 45%;
+        float: right;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        vertical-align: middle;
+        position: relative;
+        height: 100%;
+        display: inline-block;
+      }
+      .logo-img img {
+        width: 90%;
       }
     </style>
   </head>
@@ -316,9 +345,122 @@ layout: false
 
 ---
 
-class: logo
+class: center, middle, seeker
 
-# What it is - technologies used
+# Technologies used
+
+---
+
+layout: false
+class: center
+
+# Database
+
+.logo-box[
+  .logo-img[![MongoDB Logo](static/logos/mongodb.png)]
+  .logo-txt[
+    From <q>hu**mongo**us</q>, document-oriented (NoSQL) database.
+    Used by many major companies such as **Craiglist**, **eBay**, **Foursquare**, **SourceForge**, **Viacom**, and **the New York Times**.
+  ]
+]
+
+.logo-box[
+  .logo-img[![Mongoose Logo](static/logos/mongoose.png)]
+  .logo-txt[Elegant MongoDB object modeling for Node.js.]
+]
+
+???
+
+**MongoDB**:
+
+From <q>hu**mongo**us</q>, document-oriented (NoSQL) database, featuring dynamic schemas, storing data as BSON (Binary JSON) and speaking JavaScript.
+Used by many major companies such as **Craiglist**, **eBay**, **Foursquare**, **SourceForge**, **Viacom**, and **the New York Times**.
+
+**Mongoose**:
+
+Elegant MongoDB object modeling for Node.js.
+
+---
+
+class: center
+
+# Back-end (server)
+
+.logo-box[
+  .logo-img[![Node.js Logo](static/logos/nodejs.png)]
+  .logo-txt[
+    Server runtime environemnt using Google V8 JavaScript engine.
+    Used by **LinkedIn**, **PayPal**, **eBay**, **the New York Times**.
+  ]
+]
+
+.logo-box[
+  .logo-img[![Express.js Logo](static/logos/express.png)]
+  .logo-txt[
+    Node.js framework used for robust routing, dynamic views, content negotiation, and more.
+    The upcoming new **MySpace** is powered by Express.js.
+    ]
+]
+
+.logo-box[
+  .logo-img[![Grunt Logo](static/logos/grunt.png)]
+  .logo-txt[
+    JavaScript task runner providing lots of automation - minifing, compiling, unit testing, building development / deployment site, failure recovery, and many more.
+    Used by **Adobe**, **jQuery**, **Twitter**, **Mozilla**, **WordPress**, **Walmart**, and others.
+  ]
+]
+
+???
+
+**Node.js**:
+Runtime environment (using Google V8 JavaScript engine) for running applications written in JavaScript outside the browser (here used for the server).
+Used by **LinkedIn** (entire mobile software stack built in Node for scale and performance gains), **PayPal** (noting how much faster application design is brought to live), **eBay** (to get free from locking and concurrency issues common with multithreaded async I/O using Nide's evented I/O),  **the New York Times**
+
+**Express.js**:
+Web application framework for Node.js providing a robust set of features for building web page applications.
+
+**Grunt.js**:
+JavaScript task runner providing lots of automation - minifing, compiling, unit testing, linting, running development (with autoreload) / deployment site, and making sure it stays alive (e.g. automatic recovery from failure).
+Used by **Adobe** (Brackets, CSS FilterLab), **Twitter** (Tweetdeck, Typeahead), **Mozilla** (Firefox Accounts project), **WordPress** (Build Process, bbPress, BuddyPress), **Walmart** (Thhorax, Lumbar), and others.
+
+---
+
+# Package management
+
+
+![NPM Logo](static/logos/npm.png)
+Package manager for Node.js (server-side) for managing all dependencies and keeping all modules up to date.
+
+![Bower Logo](static/logos/bower.png)
+Package manager for the web (client-side) for managing (client-facing) frameworks, libraries, assets, utilities, rainbows, and keeping them up to date.
+
+---
+
+# Front-end 
+
+![AngularJS Logo](static/logos/angularjs.png)
+Web application by Google implementing MVC (by asking you to split app into MVC components), allowing to extend HTML's syntax to express web apps more clearly and succinctly, automatically synchronizing data from UI (view)  with JavaScript objects (model) through 2-way data binding, teaching browser how to do dependency injection and inversion of control allowing for better and easier testing, and providing great server-side communication taming async callbacks with promies and deferreds.
+  
+![HTML5 and CSS3 Logo](static/logos/html5_css3.png)
+
+![SASS Logo](static/logos/sass.png)
+
+![Twitter Bootstrap Logo](static/logos/twitter-bootstrap-2.jpg)
+
+shims
+
+![Compass Logo](static/logos/compass.png)
+
+---
+
+# Testing
+![Karma Logo](static/logos/karma.png)
+
+![Jasmine Logo](static/logos/jasmine.png)
+
+---
+
+# 
 
 .scrollbox[
   ![MongoDB Logo](static/logos/mongodb.png)
@@ -332,7 +474,7 @@ class: logo
   ![Node.js Logo](static/logos/nodejs.png)
   Runtime environment (using Google V8 JavaScript engine) for running applications written in JavaScript outside the browser (here used for the server).
 
-  ![Express.js Logo](static/logos/expressio.png)
+  ![Express.js Logo](static/logos/express.png)
   Web application framework for Node.js providing a robust set of features for building web page applications.
 
   ![NPM Logo](static/logos/npm.png)
@@ -345,9 +487,10 @@ class: logo
   JavaScript task runner providing lots of automation - minifing, compiling, unit testing, linting, running development (with autoreload) / deployment site, and making sure it stays alive (e.g. automatic recovery from failure).
 
   ![AngularJS Logo](static/logos/angularjs.png)
-  
+  Web application by Google implementing MVC (by asking you to split app into MVC components), allowing to extend HTML's syntax to express web apps more clearly and succinctly, automatically synchronizing data from UI (view)  with JavaScript objects (model) through 2-way data binding, teaching browser how to do dependency injection and inversion of control allowing for better and easier testing, and providing great server-side communication taming async callbacks with promies and deferreds.
   
   ![HTML5 and CSS3 Logo](static/logos/html5_css3.png)
+
 
   ![SASS Logo](static/logos/sass.png)
 
