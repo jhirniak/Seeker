@@ -199,11 +199,9 @@
       }
       .logo-img {
         width:50%;
-        height: 100%;
         float: left;
         margin-top: 20px;
         display: inline-block;
-        vertical-align: middle;
       }
       .logo-txt {
         width: 45%;
@@ -216,7 +214,12 @@
         display: inline-block;
       }
       .logo-img img {
-        width: 90%;
+        max-height: 90%;
+        max-width: 90%;
+        vertical-align: middle;
+      }
+      .logo-txt p {
+        vertical-align: middle;
       }
     </style>
   </head>
@@ -381,7 +384,7 @@ Used by many major companies such as **Craiglist**, **eBay**, **Foursquare**, **
 Elegant MongoDB object modeling for Node.js.
 
 ---
-
+layout: false
 class: center
 
 # Back-end (server)
@@ -425,38 +428,109 @@ Used by **Adobe** (Brackets, CSS FilterLab), **Twitter** (Tweetdeck, Typeahead),
 
 ---
 
+layout: false
+class: center
+
 # Package management
 
+.logo-box[
+  .logo-img[![NPM Logo](static/logos/npm.png)]
+  .logo-txt[
+    Package manager for Node.js (server-side) managing all dependencies, installing new modules and keeping everything up to date.
+    ]
+]
 
-![NPM Logo](static/logos/npm.png)
-Package manager for Node.js (server-side) for managing all dependencies and keeping all modules up to date.
+.logo-box[
+  .logo-img[![Bower Logo](static/logos/bower.png)]
+  .logo-txt[
+    Package manager for the web (client-side) managing all (client-facing) dependencies (frameworks, libraries, assets, utilities, rainbows, etc.) and keeping everything up to date.
+  ]
+]
 
-![Bower Logo](static/logos/bower.png)
-Package manager for the web (client-side) for managing (client-facing) frameworks, libraries, assets, utilities, rainbows, and keeping them up to date.
+???
+
+**NPM**:
+Package manager for Node.js (server-side) managing all dependencies, installing new modules and keeping everything up to date. **Used by practically everyone who uses Node.js**.
+
+**Bower**:
+Package manager for the web (front-end) managing all (client-facing) dependencies (frameworks, libraries, assets, utilities, rainbows, etc.) and keeping everything up to date.
 
 ---
 
-# Front-end 
+layout: false
+class: center
 
-![AngularJS Logo](static/logos/angularjs.png)
+# Front-end (1)
+
+.logo-box[
+  .logo-img[![AngularJS Logo](static/logos/angularjs.png)]
+  .logo-txt[
+    
+  ]
+]
+
+.logo-box[
+  .logo-img[![Twitter Bootstrap Logo](static/logos/twitter-bootstrap-2.jpg)]
+  .logo-txt[]
+]
+
+???
+
+**AngularJS**:
 Web application by Google implementing MVC (by asking you to split app into MVC components), allowing to extend HTML's syntax to express web apps more clearly and succinctly, automatically synchronizing data from UI (view)  with JavaScript objects (model) through 2-way data binding, teaching browser how to do dependency injection and inversion of control allowing for better and easier testing, and providing great server-side communication taming async callbacks with promies and deferreds.
-  
-![HTML5 and CSS3 Logo](static/logos/html5_css3.png)
 
-![SASS Logo](static/logos/sass.png)
-
-![Twitter Bootstrap Logo](static/logos/twitter-bootstrap-2.jpg)
-
-shims
-
-![Compass Logo](static/logos/compass.png)
+**Twitter Bootstrap**:
 
 ---
+
+layout: false
+class: center
+
+# Front-end (2)
+
+.logo-box[
+  .logo-img[![HTML5 and CSS3 Logo](static/logos/html5_css3.png)]
+  .logo-txt[]
+]
+
+.logo-box[
+  .logo-img[![SASS Logo](static/logos/sass.png)]
+  .logo-txt[]
+]
+
+???
+
+**HTML5 and CSS3**:
+
+**SASS**:
+
+**Shims**:
+But it works in older browser or fails gracefully
+
+**Compass**:
+What can say about compass?
+
+---
+
+layout: false
+class: center
 
 # Testing
-![Karma Logo](static/logos/karma.png)
+.logo-box[
+  .logo-img[![Karma Logo](static/logos/karma.png)]
+  .logo-txt[]
+]
 
-![Jasmine Logo](static/logos/jasmine.png)
+.logo-box[
+  .logo-img[![Jasmine Logo](static/logos/jasmine.png)]
+  .logo-txt[]
+]
+
+???
+
+---
+
+# What would not work?
 
 ---
 
