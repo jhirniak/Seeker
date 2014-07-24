@@ -89,6 +89,7 @@
       .title .author {
         position: relative;
         top: -.5em;
+        color: #000040;
       }
 
       .icons img {
@@ -221,6 +222,20 @@
       .logo-txt p {
         vertical-align: middle;
       }
+
+      /* NyanCat surprise */
+      .nyan-surpise {
+        /* Set background image */
+        background-image: url('static/gifs/nyancat.gif');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% auto;
+      }
+
+      .big-image img{
+        max-width: 95%;
+        max-height: 95%;
+      }
     </style>
   </head>
   <body>
@@ -277,48 +292,53 @@ She’s a seeker, she’s a hawk, boys.<br />
 
 ???
 
-0. Hello, I am going to present <q>Seeker</q> project on which I and Kyriakos worked for the last 8 weeks.
-1. The Project name comes from a peom by George Campbell Hay called <q>Seeker, Repear</q> of which part you can see scrolling on the screen.
+0. Hello everyone, I am going to present <q>Seeker</q> project on which I and Kyriakos worked for the last 8 weeks.
+1. The Project name came from a peom by George Campbell Hay called <q>Seeker, Repear</q> of which part you can see scrolling on the screen.
 
 ---
 
 # Seeker - Idea
 
-Creating aggregate for resaerch and analysis is hard and daunting repetitive task.
-Humans are much better in mindful tasks, but computers love boring and repetitive work.
-Implement search engine for documents which based on query generates aggregated report and analysis.
+###0. Gathering aggregate data out of many sources and documents for resaerch or analysis is hard and daunting.
+###1. Humans are very good in creative work, but do not like repetitive tasks.
+###2. But! Computers love boring and repetitive work.
+###3. So, why not let computer do all the boring work?
 
----
+<hr/>
 
-# Seeker - Ultimate goal
-
-Goes in, specifies query, gets document and analysis.
+###**Idea:** build application that mines documents from specified websites, parses them, and saves them into database, providing query functionality that generates aggregate documents out of relevant documents' sections stored in database (and eventually provides some analysis / meta-data).
 
 ---
 
 # Seeker - Internship Goals
 
-0. Carry out research and recommend on appropriate tools.
-1. Implement proof of concept using EU Committee on Minority Language reports.
-2. Develop documentations alongside implementation.
+###But, it is long-term idea, requiring lots of work, so for 8 week internship goals need to be cut down to match up with the reality.
+
+<hr/>
+
+##Internship goals:
+###0. Carry out research and recommend on appropriate (open-source) tools.
+###1. Implement proof of concept using EU Committee on Minority Language reports.
+###2. Develop documentations alongside implementation allowing for **painless** continuation of work.
 
 ???
-
 
 
 ---
 
 # To be continued...
 
-This is longterm project and it will be continued...
+###This project is very likely to be continued as it responds to real need and demand of researches and can find others application as well.
+
+###The ultimate goal of the internship was to present proof of concept to show the idea feasibility.
 
 ---
 
 # Collaborative effort
 
-This project is developed in collaboration with Celtic & Scottish Studies at the University of Edinburgh.
+###This project was developed in collaboration with Celtic & Scottish Studies at the University of Edinburgh, where researches would be really interested in using such a tool for their language research and study.
 
-They are first user of the implemented solution. Rob Dunbar, ... of Celtic & Scottish Studies, assisted by specifing needs, gathering user requirements, and providing very constructive feedback.
+###Especially, Prof Rob Dunbar, Chair of Celtic Languages,Literatures, History & Antiquities, provided lots of feedback and useful information through user requirements gathering, and providing feedback on the presented prototypes.
 
 ---
 
@@ -333,18 +353,41 @@ layout: false
   ![User requirement: Query](static/images/000_Query.png)
 ]
 .txt-column[
-  Show pic
+  ###Multiple sheets of paper were filled during user requirement session, later on organized into LaTeX files, and served base for full stack software identification and work flow organization.
 ]
 
 ???
 
 ---
 
-# Full development stack indentification
+# Mock Website
 
-0. Productivity
+.big-image[![User requirement: Query](static/images/prototype.png)]
+
+???
+
+Mock website was created faking all actions, and being quite crude (at this stage). It was used to specify exactly the user needs, and the way user would like to interact with the interface.
+
+---
+
+# Goals identification
+
+0. 
+0. Tree-structure would be optimal for specifying query.
+1. Help should be available to the user at each stage, and no option should be confusing.
+1. Language used should not be intended for people with Computer Science / Mathematical background.
 1. Agile
-2. 
+2. Should be able to save generated document as .doc, .pdf, .rtf.
+
+???
+
+**Tree-structure** because it resembles how generated documents looks like, so provides idea of what is going to be generated, and how everything is going to be laid out.
+
+**Help** was provided using hinting (displayed when user hovers for >1s) and manual page.
+
+**Language** should not use works like <q>or</q> or <q>and</q> in confusing way.
+
+**Lots of work** from **downloading and parsing documents into JSON**, **storing them in database**, **indexing, etc.***, **developing actual life web-application**.
 
 ---
 
@@ -530,81 +573,60 @@ class: center
 
 ---
 
+# Reason behind chosen technologies
+
+0. Productivity - one language (JavaScript) for front-end, back-end, and querying database.
+1. Flexibility - MongoDB is schemless and document-oritented database.
+2.
+
+---
+
 # What would not work?
 
----
-
-# 
-
-.scrollbox[
-  ![MongoDB Logo](static/logos/mongodb.png)
-  From <q>hu**mongo**us</q>, document-oriented (NoSQL) database, featuring dynamic schemas, storing data as BSON (Binary JSON) and speaking JavaScript.
-
-  Used by many major companies such Craiglist, eBay Foursquare, SourceForge, Viacom, and the New York Times.
-
-  ![Mongoose Logo](static/logos/mongoose.png)
-  Elegant MongoDB object modeling for Node.js.
-
-  ![Node.js Logo](static/logos/nodejs.png)
-  Runtime environment (using Google V8 JavaScript engine) for running applications written in JavaScript outside the browser (here used for the server).
-
-  ![Express.js Logo](static/logos/express.png)
-  Web application framework for Node.js providing a robust set of features for building web page applications.
-
-  ![NPM Logo](static/logos/npm.png)
-  Package manager for Node.js (server-side) for managing all dependencies and keeping all modules up to date.
-
-  ![Bower Logo](static/logos/bower.png)
-  Package manager for the web (client-side) for managing (client-facing) frameworks, libraries, assets, utilities, rainbows, and keeping them up to date.
-
-  ![Grunt Logo](static/logos/grunt.png)
-  JavaScript task runner providing lots of automation - minifing, compiling, unit testing, linting, running development (with autoreload) / deployment site, and making sure it stays alive (e.g. automatic recovery from failure).
-
-  ![AngularJS Logo](static/logos/angularjs.png)
-  Web application by Google implementing MVC (by asking you to split app into MVC components), allowing to extend HTML's syntax to express web apps more clearly and succinctly, automatically synchronizing data from UI (view)  with JavaScript objects (model) through 2-way data binding, teaching browser how to do dependency injection and inversion of control allowing for better and easier testing, and providing great server-side communication taming async callbacks with promies and deferreds.
-  
-  ![HTML5 and CSS3 Logo](static/logos/html5_css3.png)
-
-
-  ![SASS Logo](static/logos/sass.png)
-
-  ![Twitter Bootstrap Logo](static/logos/twitter-bootstrap-2.jpg)
-
-  shims
-
-  ![Karma Logo](static/logos/karma.png)
-
-  ![Jasmine Logo](static/logos/jasmine.png)
-
-  ![Compass Logo](static/logos/compass.png)
-]
----
-
-# Reasons for techn used
+Relational database such as MySQL, PostgreSQL - too restrictive for documents, EU are general, but anyway different formating (date placement, content, invisible chars).
+Babilion tower of languages (Python - server, client - JS, not to mention Tomcat etc.) - productivity.
+Queries take time so better dealt asyncs.
 
 ---
 
-# What would not work
-
----
-
-# Why good choices
-
----
-
-# What has been achieved
-
-list
-
----
-
-# Demo
+# Why were those good choices?
 
 ---
 
 class: center, middle, seeker
 
-# Thank you for listening
+# Project Summary
+
+---
+
+# What has been achieved
+
+0. All technologies were identified and documented.
+1. Architecture was planned.
+2. Proof of concept solution was developed.
+
+---
+
+class: center, middle, seeker
+
+# Demo!
+
+---
+
+layout: false
+class: nyan-surpise
+
+---
+
+class: center, middle, seeker
+
+# Demo!
+
+---
+
+class: center, middle, seeker
+
+# Thank you for listening!
 
 ???
 
@@ -614,6 +636,13 @@ Could add a joke
 class: center, middle, seeker
 
 # Questions and answers
+
+---
+class: center, middle
+![Applaused](static/images/applaused.png)
+
+###It was fun and educating! So I would like to really thank LFCS institute for organizing these internships and Kyriakos for a great project to work on and fantastic collaboration throughout.
+
 
     </textarea>
     <script src="http://gnab.github.io/remark/downloads/remark-latest.min.js" type="text/javascript">
