@@ -7,10 +7,14 @@ var mongoose = require('mongoose'),
  * Document Schema
  */
 var DocumentSchema = new Schema({
-    title: String,
+    filename: String,
+    'report-language': String,
+    source: String,
     cycle: Number,
     country: String,
-    section: [String]
+    chapters: {},
+    section: {},
+    paragraphs: Array
 });
 
 module.exports = mongoose.model('Document', DocumentSchema, 'doc'); // doc is collection name

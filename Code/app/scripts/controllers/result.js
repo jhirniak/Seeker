@@ -6,7 +6,7 @@ angular.module('seekerApp')
         $scope.doc = {};
         $scope.doc.header = 'Search result';
 
-        $http.get('api/document', {params: {title: 'test document'}})
+        $http.get('api/document', {params: {cycle: 1}})
             .success(function (result) {
                 console.log('Worked and got', result);
                 $scope.doc.content = result;

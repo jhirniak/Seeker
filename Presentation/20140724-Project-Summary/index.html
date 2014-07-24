@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Seeker - Project Presentation on 24/07/2014 (internship conclusion)</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        -moz-border-radius: 5px;
+        -web-border-radius: 5px;
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Seeker motive slide */
+      .seeker {
+        /* Set background image */
+        background-image: url('static/images/bg-seastorm-beach-view.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% auto;
+      }
+
+      .title marquee {
+        color: #000080;
+      }
+
+      .title h1 {
+        color: #000040;
+        font-size: 4em;
+        position: relative;
+        top: -20px;
+      }
+
+      .title .author {
+        position: relative;
+        top: -.5em;
+      }
+
+      .icons img {
+        /* specify icon size */
+        width: 48px;
+        height: 48px;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+
+      /* Image on the left, description on the right layout */
+      .img-column {
+        width:50%;
+        float: left;
+      }
+      .text-column {
+        width: 45%;
+        float: right;
+        padding-top: 1em;
+        padding-bottom: 1em;
+      }
+      .img-column img {
+        width: 90%;
+        padding-top: 1em;
+        padding-bottom: 1em;
+      }
+
+      /* Scrollbox */
+      .scrollbox {
+        overflow: auto;
+        height: 80%;
+        width: 110%;
+      }
+
+      .logo img {
+        max-width: 80%;
+        max-height: 30%;
+        clear: both;
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+
+      .logo img {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .logo p {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, title, seeker
+
+# Seeker
+
+<marquee direction="up" height="140px" scrollamount="1">
+She’s a solan, she’s a tramper, she’s a sea-shaker,<br />
+she’s a hawk, she’s a hammer, she’s a big-sea-breaker,<br />
+she’s a falcon, she’s a kestrel, she’s a wide-night-seeker,<br />
+she’s a river, she’s a render, she’s a foam-spray-waker.<br />
+She’s a stieve sea-strider, she’s a storm-course-keeper,<br />
+she’s a tide-scour-bucker, she’s a quick-light-leaper,<br />
+she’s a stem-teerer, keel-teerer, seeker, finder, reaper.<br />
+She’s Cast off! Anchor up! deid anchor-weary,<br />
+she’s a chain-snubber, moorin’-strainer, restless herbour peerie.<br />
+She’s a skyline-raiser, skyline-sinker, hulldown horizon-crosser,<br />
+she’s foreland, foreland, on and on, a high-heid-tosser.<br />
+She’s a glint, she’s a glimmer, she’s a glimpse, she’s a fleeter,<br />
+she’s an overhauler, leave-astern, a hale-fleet-beater;<br />
+she’s a kyle-coulter, knot-reeler, thrang-speed-spinner,<br />
+her mood is moulded on her and the mind that made her’s in her.<br />
+She’s a wake-plough, foam-plough, spray-hammer, roarer,<br />
+she’s a wind-anvil, crest-batterer, deep-trough-soarer,<br />
+she’s a dance-step-turner, she’s a broad-wake-scorer.<br />
+she’s a sound-threider, bight-stringer, her hert runs oot afore her. <br />
+When the big long seas come on lik walls, cold-white-heided,<br />
+she doesna flinch a point for them. Straight her wake is threided.<br />
+<br />
+Though they come from the world’s rim<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;along wi’ a livin’ gale,<br />
+she’ll gap and batter through them<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and teer her chosen trail.<br />
+She’s stieve, thrawn, light, quick,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fast, wild, gay;<br />
+she’ll curtain the world wi hammered seas,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;she’ll drench the stars wi spray.<br />
+They can tower atween her and the sky –<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;she never felt their awe;<br />
+she’ll walk them aa, thon trampin’ boat,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;she’ll rise and walk them aa.<br />
+She’s a solan’s hert, a solan’s look;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;she canna thole a lee.<br />
+I’ll coil her ropes and redd her nets,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and ease her through a sea.<br />
+She’s a seeker, she’s a hawk, boys.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thon’s the boat for me.<br />
+<br /><br /><br />
+</marquee>
+<div class="author">from <q>Seeker, Reaper</q> by George Campbell Hay</div>
+
+???
+
+0. Hello, I am going to present <q>Seeker</q> project on which I and Kyriakos worked for the last 8 weeks.
+1. The Project name comes from a peom by George Campbell Hay called <q>Seeker, Repear</q> of which part you can see scrolling on the screen.
+
+---
+
+# Seeker - Idea
+
+Creating aggregate for resaerch and analysis is hard and daunting repetitive task.
+Humans are much better in mindful tasks, but computers love boring and repetitive work.
+Implement search engine for documents which based on query generates aggregated report and analysis.
+
+---
+
+# Seeker - Ultimate goal
+
+Goes in, specifies query, gets document and analysis.
+
+---
+
+# Seeker - Internship Goals
+
+0. Carry out research and recommend on appropriate tools.
+1. Implement proof of concept using EU Committee on Minority Language reports.
+2. Develop documentations alongside implementation.
+
+???
+
+
+
+---
+
+# To be continued...
+
+This is longterm project and it will be continued...
+
+---
+
+# Collaborative effort
+
+This project is developed in collaboration with Celtic & Scottish Studies at the University of Edinburgh.
+
+They are first user of the implemented solution. Rob Dunbar, ... of Celtic & Scottish Studies, assisted by specifing needs, gathering user requirements, and providing very constructive feedback.
+
+---
+
+class: center, middle, seeker
+
+# Project
+
+---
+layout: false
+# User requirements
+.img-column[
+  ![User requirement: Query](static/images/000_Query.png)
+]
+.txt-column[
+  Show pic
+]
+
+???
+
+---
+
+# Full development stack indentification
+
+0. Productivity
+1. Agile
+2. 
+
+---
+
+class: logo
+
+# What it is - technologies used
+
+.scrollbox[
+  ![MongoDB Logo](static/logos/mongodb.png)
+  From <q>hu**mongo**us</q>, document-oriented (NoSQL) database, featuring dynamic schemas, storing data as BSON (Binary JSON) and speaking JavaScript.
+
+  Used by many major companies such Craiglist, eBay Foursquare, SourceForge, Viacom, and the New York Times.
+
+  ![Mongoose Logo](static/logos/mongoose.png)
+  Elegant MongoDB object modeling for Node.js.
+
+  ![Node.js Logo](static/logos/nodejs.png)
+  Runtime environment (using Google V8 JavaScript engine) for running applications written in JavaScript outside the browser (here used for the server).
+
+  ![Express.js Logo](static/logos/expressio.png)
+  Web application framework for Node.js providing a robust set of features for building web page applications.
+
+  ![NPM Logo](static/logos/npm.png)
+  Package manager for Node.js (server-side) for managing all dependencies and keeping all modules up to date.
+
+  ![Bower Logo](static/logos/bower.png)
+  Package manager for the web (client-side) for managing (client-facing) frameworks, libraries, assets, utilities, rainbows, and keeping them up to date.
+
+  ![Grunt Logo](static/logos/grunt.png)
+  JavaScript task runner providing lots of automation - minifing, compiling, unit testing, linting, running development (with autoreload) / deployment site, and making sure it stays alive (e.g. automatic recovery from failure).
+
+  ![AngularJS Logo](static/logos/angularjs.png)
+  
+  
+  ![HTML5 and CSS3 Logo](static/logos/html5_css3.png)
+
+  ![SASS Logo](static/logos/sass.png)
+
+  ![Twitter Bootstrap Logo](static/logos/twitter-bootstrap-2.jpg)
+
+  shims
+
+  ![Karma Logo](static/logos/karma.png)
+
+  ![Jasmine Logo](static/logos/jasmine.png)
+
+  ![Compass Logo](static/logos/compass.png)
+]
+---
+
+# Reasons for techn used
+
+---
+
+# What would not work
+
+---
+
+# Why good choices
+
+---
+
+# What has been achieved
+
+list
+
+---
+
+# Demo
+
+---
+
+class: center, middle, seeker
+
+# Thank you for listening
+
+???
+
+Could add a joke
+
+---
+class: center, middle, seeker
+
+# Questions and answers
+
+    </textarea>
+    <script src="http://gnab.github.io/remark/downloads/remark-latest.min.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
