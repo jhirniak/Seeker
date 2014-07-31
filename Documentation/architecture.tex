@@ -18,7 +18,7 @@
 
 \usepackage{hyperref}
 
-\title{\textbf{Seeker\\Project Documentation}}
+\title{\textbf{Seeker\\\normalsize{Project Documentation}}}
 \author{Jaroslaw Hirniak}
 \date{Last updated on: \emph{\today}}
 \setcounter{tocdepth}{1}
@@ -32,11 +32,30 @@
 \chapter{Project}
  
 \section{Motivation}
+% TODO: make more general
+% TODO: move document data to document format section
 \paragraph{}
-The researches in minority languages need to extract comparative information from sources varying in format and the content. These sources of information are usually very rich, but lack common structure. Most often useful data is spread among documents in PDF. Usually the sources describe many languages (more than 50 for European Committee website) and have different organization and approach to presenting information. Therefore, extracting information from such source is very elaborative and repetitive, being exactly what computers are the best in.
+The World Wide Web is rich source of information and many excellent search engines exist that help to find interesting information in the matters of seconds. However, they only provide the link to the source of information and if user wants to compare data from many sources or gather it for analysis is left with daunting task of collecting all this information by hand.
 
 \paragraph{}
-The goal of the project is to provide easy access to all the documents using convinient query language.
+This is repetitive and daunting task, something that humans do not like, but computers love. It would be much better to let computer prepare data for the analysis for human and let human do the creative work.
+
+\paragraph{}
+The goal of this project is to research method and develop application to generate aggregate documents composed of sections of interest extracted from many sources (e.g. PDF, DOC, HTML, etc.) with proper annotations (about sources and their version) and provide those documents for analysis by humans.
+
+\section{Proof of concept}
+\paragraph{}
+The project idea originated as a solution to a problem faced by the researches in minority languages at the University of Edinburgh, who faced issue of gathering data from \href{http://www.coe.int/t/dg4/education/minlang/Report/default_en.asp}{European Charter for Regional or Minority Languages} website for comparative analysis and producing various reports based on that data.
+
+\paragraph{}
+Therefore, the proof of concept should solve the issue faced by the researches in minority languages, and provide them with a tool that enables easy aggregate document generation from source documents available on \href{http://www.coe.int/t/dg4/education/minlang/Report/default_en.asp}{European Charter for Regional or Minority Languages} website.
+
+\section{Data sources}
+\paragraph{}
+The sources of data come from specified list of websites\footnote{However, it could be adapted for more general approach with web crawler searching for interesting kind of data, but that would involve scalability issues of storing and parsing such large data set and automatic recognition of document structure.}, and are presented in various forms - PDF, DOC(X), ODT, RTF, TXT, HTML, etc. These sources of information are usually very content rich (e.g. 100 page report with tables and references). However, these sources lack common structure, often despite the fact that they come from the same website. Often documents from the same website will have similar organization, but when parsed some important differences will be discovered.
+
+\paragraph{}
+For this project proof of concept is using documents from \href{http://www.coe.int/t/dg4/education/minlang/Report/default_en.asp}{European Charter for Regional or Minority Languages} website, all of which are available in PDF format. There are 651 documents linked on the page, of which 309 documents are in English (some documents are produced also in French or country producing report official language), of which 300 documents are of actual interest (rest includes charter advertisements or more general texts). There are 25 countries producing reports, each adhering to general layout, but with subtle differences coming from the tool used or typesetting conventions, which should be taken into account during parsing PDF into JSON\footnote{The best parser would have simple regular expression and extract only relevant sections without specific formatting. This has been achieved for this project with context aware parser.}.
 
 \section{Stakeholders}
 
