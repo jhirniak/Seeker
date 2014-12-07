@@ -474,11 +474,28 @@ angular.module('seekerApp')
         }
     };
 
-    $scope.process = function () {
+    $scope.process = function (asa) {
         Bokeh.set();
         $timeout(function () {
             Bokeh.reset();
-            $location.path('/result');
+
+    /*        var queue = [asa];
+            var q = {};
+            while (queue.length > 0) {
+                var node = queue.shift();
+
+                if (node["type"] !== undefined && node["value"] !== undefined) {
+                    q[node["type"]] = node["value"];
+                }
+
+                if (node.children !== undefined) {
+                    node.children.forEach(function (n) {
+                        queue.push(n);
+                    });
+                }
+            }*/
+
+            $location.path('result');//.search(q);
             $scope.$apply();
         }, 2000);
     };
