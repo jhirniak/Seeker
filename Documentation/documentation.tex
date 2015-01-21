@@ -3,7 +3,7 @@
 \usepackage[final]{pdfpages}
 
 	\usepackage{tikz}
-\usetikzlibrary{arrows,calc,positioning,shadows,shapes,trees}
+\usetikzlibrary{arrows,calc,decorations.markings,positioning,shadows,shapes,trees}
 
 \tikzset{
   basic/.style  = {draw, text width=2cm, drop shadow, font=\sffamily, rectangle},
@@ -105,18 +105,90 @@ During the initial meeting on 26 May 2014 the below use cases were identified.
 \chapter{Requirements analysis}
 
 \section{Objectives}
+Based on the gathered requirements the following objectives were identified.
 \begin{itemize}
-  \item Contiunable - the project development should be easy to continue
+  \item Extendibility - the project should be implemented and handled in a way that potential development into a full system should be relatively easy, i.e.
     \begin{itemize}
-      \item Well-documented
-      \item Popular and well-documented technologies should be used
-      \item Well-organized code base
+      \item It should be \emph{documented} (this file) and the source code should be commented that the project modules and structure should be easy to understand by a developer unfamiliar with the project;
+      \item Popular technologies should be used that the potential group of developers would not be too much limit factor;
     \end{itemize}
-  \item Schemaless - documents (sometimes even from the same source) will have different structure, so it is important to not restrict the database to store one kind (structure) of information
-  \item Adaptability - it shoud be easy to adapt a project to a new kind of documents/task
-  \item Modularity - the distinguishable project parts should be implemented in modular fashion to increase clarity and make the future development easier
-  \item Open source - all technologies and tools used should be open source
+  \item Schemaless - documents (sometimes even from the same source) will have different structure, so it is important to not restrict the database to store one kind (structure) of information, thus relational database seem as unfit solution and one of NoSQL approaches should be adopted;
+  \item Open source - all technologies and tools used should be open source and the project itself should be published as open source that anyone interested should be able to use it.
 \end{itemize}
+
+\section{Structure}
+Based on the objectives and requirements it was concluded that the project should be split up into the following components:
+\begin{itemize}
+  \item Front-End: client side code for forming queries and presenting results.
+  \item Back-end: receiving queries, query processing, storing searchable data in the database and document copies.
+  \item Extractor: compiling documents from different formats (e.g. PDFs, DOCs, TXT) without any annotation into JSON annotated documents, where annotation include information like meta information like document cycle, country producing it, structure of document (sections), inverse index for key words, etc. The output JSON is stored in the database.
+  \item Web crawler: collecting documents for the extractor. Can be implemented as simple downloader of all files with given extension from a list of websites or general web crawler with proper seed for the document of interest.
+\end{itemize}
+
+% Fig: structure
+\begin{figure}
+  \begin{tikzpicture}[
+	  decoration={
+		  markings,
+		  mark=at position 1cm with {\arrow[black]{stealth}},
+	  },
+	  path/.style={
+		  ->,
+		  >=stealth,
+		  postaction=decorate
+	  },
+	  every node/.style={font=\sffamily},	
+	  >=stealth,
+      node distance=3cm,
+      database/.style={
+        cylinder,
+        cylinder uses custom fill,
+        cylinder body fill=yellow!50,
+        cylinder end fill=yellow!50,
+        shape border rotate=90,
+        aspect=0.25,
+        draw
+      }
+  ]
+
+  % Boxes
+  \node [
+	  draw,
+	  minimum width=2cm,
+	  minimum height=1cm,
+  ] (front) {Front-End};
+  \node [
+	  draw,
+	  right of=front,
+	  minimum width=2cm,
+	  minimum height=1cm,
+  ] (back) {Back-end};
+  \node [
+	  draw,
+    right of=back,
+	  minimum width=2cm,
+	  minimum height=1cm,
+  ] (extractor) {Extractor};
+  \node [
+	  draw,
+    right of=extractor,
+	  minimum width=2cm,
+	  minimum height=1cm,
+  ] (crawler) {Web Crawler};
+
+  \node[database,below of=back, node distance=2cm] (db) {Database};
+
+  % Connecting Arrows
+  \draw[<->] (front.east) -- (back.west);
+  \draw[<-] (back.east) -- (extractor.west);
+  \draw[<-] (extractor.east) -- (crawler.west);
+  \draw[<->] (db.north) -- (back.south);
+
+  \end{tikzpicture}
+  
+  \caption{System components}
+  \label{fig:maincomps}
+\end{figure}
 
 \section{Data layer}
 \subsection{Example query}
