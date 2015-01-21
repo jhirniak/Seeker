@@ -121,8 +121,8 @@ Based on the objectives and requirements it was concluded that the project shoul
 \begin{itemize}
   \item Front-End: client side code for forming queries and presenting results.
   \item Back-end: receiving queries, query processing, storing searchable data in the database and document copies.
-  \item Extractor: compiling documents from different formats (e.g. PDFs, DOCs, TXT) without any annotation into JSON annotated documents, where annotation include information like meta information like document cycle, country producing it, structure of document (sections), inverse index for key words, etc. The output JSON is stored in the database.
-  \item Web crawler: collecting documents for the extractor. Can be implemented as simple downloader of all files with given extension from a list of websites or general web crawler with proper seed for the document of interest.
+  \item Extractor: compiling documents from different formats (e.g. PDF, DOC, TXT) without any annotations into JSON format with meta-data like contextual information from the website (e.g. document cycle, country producing, language) and structured document data, i.e. create index of sections, analyse context and information in sections and paragraph in order to create index etc.
+  \item Web crawler: collecting documents for the extractor. Can be implemented as simple downloader of all files with given extension from a list of websites or general web crawler with proper seed for the documents of interest (e.g. start at MinLang committee website and Gaelic plans and follow up to 3 links).
 \end{itemize}
 
 % Fig: structure
@@ -139,7 +139,7 @@ Based on the objectives and requirements it was concluded that the project shoul
 	  },
 	  every node/.style={font=\sffamily},	
 	  >=stealth,
-      node distance=3cm,
+      node distance=3.4cm,
       database/.style={
         cylinder,
         cylinder uses custom fill,
@@ -175,14 +175,23 @@ Based on the objectives and requirements it was concluded that the project shoul
 	  minimum width=2cm,
 	  minimum height=1cm,
   ] (crawler) {Web Crawler};
+  \node [
+    cloud,
+    draw,
+    right of=crawler,
+    cloud puffs=10,
+    cloud puff arc=120,
+    aspect=2
+  ] (web) {WWW};
 
   \node[database,below of=back, node distance=2cm] (db) {Database};
 
   % Connecting Arrows
-  \draw[<->] (front.east) -- (back.west);
-  \draw[<-] (back.east) -- (extractor.west);
-  \draw[<-] (extractor.east) -- (crawler.west);
-  \draw[<->] (db.north) -- (back.south);
+  \draw[<->] (front.east) -- (back.west) node [draw=none,midway,above=.5em] {JSON};
+  \draw[<-] (back.east) -- (extractor.west) node [draw=none,midway,above=.5em] {JSON};
+  \draw[<-] (extractor.east) -- (crawler.west) node [draw=none,midway,above=.5em] {PDF};
+  \draw[<->] (db.north) -- (back.south) node [draw=none,midway] {BSON};
+  \draw[<-] (crawler.east) -- (web.west) node [draw=none,midway,above=.5em] {HTML};
 
   \end{tikzpicture}
   
