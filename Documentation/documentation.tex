@@ -47,10 +47,7 @@ The first part of the project is going to be to investigate the nature of the pr
 
 \section{Proof of concept}
 \paragraph{}
-The project idea originated from a problem presented by the researches in minority languages at the University of Edinburgh, who faced issue of gathering data from variety of sources, for instance from \href{http://www.coe.int/t/dg4/education/minlang/Report/default_en.asp}{European Charter for Regional or Minority Languages} website for comparative analysis and producing various reports based on that data. However, the problem is that data is presented in PDF reports (and is not annotated in anyway), the layout of reports vary (depending on the cycle, country issuing it, and other factors), and average length of a report is over 100 pages. Thus, any researcher interested in this data set is likely to spend majority of the time on extracting the data of interest.
-
-\paragraph{}
-Therefore, it is natural that the proof of concept is going to be implemented as a solution to a problem of selecting interesting data out of hundreds of reports availble at \href{http://www.coe.int/t/dg4/education/minlang/Report/default_en.asp}{European Charter for Regional or Minority Languages} website.
+The project idea originated from a problem common to the researches in minority languages at the University of Edinburgh, who faced issue of gathering data from variety of sources, for instance from \href{http://www.coe.int/t/dg4/education/minlang/Report/default_en.asp}{European Charter for Regional or Minority Languages} website for comparative analysis and producing various reports based on that data. However, the problem is that data is presented in PDF reports (and is not annotated in anyway), the layout of reports vary (depending on the cycle, country issuing it, and other factors), and average length of a report is over 100 pages. Thus, any researcher interested in using valuable data from reports must face first daunting extraction of interesting information sections from multiple sources.
 
 \section{Data sources}
 \paragraph{}
@@ -76,11 +73,12 @@ The project name \emph{Seeker} comes from \href{http://www.scottishpoetrylibrary
 
 \chapter{Requirements}
 
-\section{Minimal requirement}
+\section{Summer 2014 plan}
 The goal for 8 week summer project was set to
 \begin{itemize}
   \item carry out research and recommend appropriate solution (architecture, full software stack, and persistence layer);
   \item Implement a proof of concept functionality to prove the possibility of developing efficient solution for the stated problem, this is, ability to query European Committee for Minority Languages and receive combined documents composed of elements specified in the query.
+  \item Deploy the proof of concept on the university server for evaluation and presentation.
 \end{itemize}
 
 \section{Data format}
@@ -91,7 +89,7 @@ The goal of the project is to account for the future grow and to include also do
 The data needs to be assumed to do not have any common format or fields.
 
 \section{Use cases}
-During the initial meeting on 26 May 2014 the below use cases had been identified.
+During the initial meeting on 26 May 2014 the below use cases were identified.
 
 \includepdf[pages=1]{Requirements/UseCases/000_Query.pdf}
 \includepdf[pages=1]{Requirements/UseCases/001_IR.pdf}
