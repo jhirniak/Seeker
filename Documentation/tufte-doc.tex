@@ -343,12 +343,63 @@ Based on the objectives and requirements it was concluded that the project shoul
   \label{fig:maincomps}
 \end{figure*}
 
-\section{Data layer}
+\section{Front-end}
+The main functions of the front-end are
+\begin{enumerate}
+  \item query formulation by a not necessarily computer science inclined users and
+  \item presentation of the query evaluation results downloadable for off-line analysis.
+\end{enumerate}
+Because this looks exactly like SPA\footnote{SPA - Single Page Application is a web application that fits on one page and provide more fluid experience similar to a desktop application.}, the design should be based on MVC\footnote{Model-View-Controller design where our data is stored in the model, presented to the user via view, and modified via the controller.} framework, and use standard interaction libraries for intuitive feel and great reactiveness. Generally, the feel of using the application should be similar to using a desktop program.
+
+\section{Back-end}
+The back-end has two main roles:
+\begin{enumerate}
+  \item executing the query specified by the user in the front-end and returning the results,
+  \item providing point of communication of extractor to insert and update the database.
+\end{enumerate}
+The back-end must be able to communicate asynchronously with multiple users at the same time responding to their requests. As some requests are likely to take at least few seconds to execute the user should be prompted about the query evaluation result.
+
+\section{Database}
+\paragraph{}
+Database should be able to store annotated by extractor documents in a form of raw text which will vary in the structure and type of annotation as the documents from which they will come will vary. However, in the same time it should allow for query formulation based on the existing properties which may exist only for specific documents or even not at all. Also it should not be a problem to insert a document of new format into the database as it may be quite frequent (depending on the crawler configuration).
+
+\paragraph{}
+The record themselves should be documents and contain meta information as from where the document was downloaded, when, and other information depending on the type of document such as for MinLang Committee documents cycle, country producing the report, the language in which the report was written, etc. The record should also contain the stripped down version of the text in document, including the knowledge of document structure (i.e. division into chapters, sections, and paragraphs) as those are also likely to be used in the query formulation (i.e. selecting sections of interest from the range of documents). Moreover, the fields will be of varying type and will mainly include numbers, references (e.g. section number to a field of text), dates, and both short and long chunks of text (short for e.g. titles, and long ones for paragraphs and sections).
+
+\paragraph{}
+Therefore, three things become imminent from the above description
+\begin{itemize}
+  \item the database must be schemaless as it is impossible to define it upfront and moreover it needs to be flexible enough to account for different documents that needs to be stored;
+  \item the database must allow for efficient query formulation as they are likely to involve at least few constraints some of which will not be satisfiable due to the type of document (e.g. the section we are looking for does not exist in most of the documents, except the short range of them)\footnote{This last point also gives a hint how the database should be indexed.} and
+  \item the documents should be stored in a format that can be easily rendered back into documents to present results back to the user and allow for creation new documents out of query result for off-line analysis.
+\end{itemize}
+
 \subsection{Example query}
+Example query relating information gathered from MinLang committee reports could look like
 \begin{enumerate}
   \item Show all Committee of Experts recommendations under article 7b.
   \item Show all sections relating to Scottish Gaelic.
+  \item Show all sections mentioning word school, relating to Scottish Gaelic, after 2012.
 \end{enumerate}
+
+\section{Extractor}
+The goal of extractor is to compile a document from given format into format that can be queried quickly enough using information both from the website and the document and place documents from the web crawler into the database.
+
+\section{Web Crawler}
+Web Crawler should either
+\begin{itemize}
+  \item download all files in specified extensions (optionally matching given pattern) from the list of websites or
+  \item threat that list as a seed and download all files in the specified extensions up to certain depth (or until exhaustion of links or allocated time).
+\end{itemize}
+
+%---
+
+%--- Ch4: Implementation
+\chapter{Design}
+
+\section{Database}
+ and will be composed of varying fields from strings, ints, urls, dates, to paragraphs or sections of text. Therefore, the database should allow storing schemaless information and reasonably efficient query processing. It would be optimal if the database would use JSON format to store data as it would simplify the overall design\footnote{JSON is a standard format for data exchange on the Internet and has many advantages compared to other formats as simplicity, easy extensibility, interoperability, and number of open source tools available for its processing.}.
+Document database seems ideal
 
 \subsection{Options}
 The following database technologies were taken into consideration:
@@ -380,34 +431,6 @@ MongoDB has been chosen for storing documents because
 
 When developing session and account management functionality it would be beneficial to implement the concept of polyglot persistence and for these two use key-value database, which creates separation of the concers as well as suits better the case.
 
-
-\section{Application layer}
-\subsection{Example usage}
-
-\subsection{Options}
-Three programming languages/frameworks were considered as potentially suitable for the project, namely:
-\begin{itemize}
-  \item Java and JSP
-  \item Python and Django
-  \item JavaScript and Node.js
-\end{itemize}
-
-\paragraph{Java and JSP} does not support well the programmer productivity as to perform even the simplies operations it is very expressive. When used the application needs to be developed and tested as a whole, so it does not support modularity and extendability well. The data layer technology of choice provides API for the language, but it is rather easier and more natural to operate on it in JavaScript than in Java.
-
-\paragraph{Python and Django} had the same drawbacks, except it provides greater productivity.
-
-\paragraph{JavaScript and Node.js} means that one language would be used for front-end and back-end, including data quering and manipulation, what highly increases the programmer productivity. Further, JavaScript as front-end language provides rich choice of libraries like jQuery, Angular, etc. that can be used to further increase productivity and presentation quality. When it comes to the back-end all operations are handled efficiently using event-loop. The aggregates are retrieved in JSON format and MongoDB can be naturally quiered using jQuery like notation. This all results in complete and efficient solutioon.
-
-\subsection{Choice}
-
-Node.js has been chosen for the front-end and back-end development because
-\begin{itemize}
-  \item it integrates well with MongoDB
-  \item enables using one language for everything (front-end, back-end, database);
-  \item is efficient 
-\end{itemize}
-
-%---
 
 %--- Ch4: Architecture
 \chapter{Architecture}
