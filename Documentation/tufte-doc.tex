@@ -1,4 +1,4 @@
-\documentclass{tufte-book}
+\documentclass[a4paper]{tufte-book}
 
 \hypersetup{colorlinks}% uncomment this line if you prefer colored hyperlinks (e.g., for onscreen viewing)
 
@@ -156,7 +156,55 @@
 \newcommand{\docfilehook}[2]{\texttt{#1}\index{file hooks!#2}\index{#1@\texttt{#1}}}
 \newcommand{\doccounter}[1]{\texttt{#1}\index{#1 counter@\texttt{#1} counter}}
 
-%%%
+% Chapters
+\usepackage{xcolor} % for colour
+\usepackage{lipsum} % just for sample text
+
+% add numbers to chapters, sections, subsections
+\setcounter{secnumdepth}{2}
+
+% title format
+\renewcommand{\maketitlepage}[0]{%
+  \cleardoublepage%
+  {%
+  \sffamily%
+  \begin{fullwidth}%
+  \fontsize{18}{20}\selectfont\par\noindent\textcolor{white}{\allcaps{\thanklessauthor}}%
+  \vspace{11.5pc}%
+  \fontsize{36}{40}\selectfont\par\noindent\textcolor{white}{\allcaps{\thanklesstitle}}%
+  \vfill%
+  \fontsize{14}{16}\selectfont\par\noindent\allcaps{\thanklesspublisher}%
+  \end{fullwidth}%
+  }
+  \thispagestyle{empty}%
+  \clearpage%
+}
+
+% chapter format
+\titleformat{\chapter}%
+  {\huge\rmfamily\itshape\color{red}}% format applied to label+text
+  {\llap{\colorbox{red}{\parbox{1.5cm}{\hfill\itshape\huge\color{white}\thechapter}}}}% label
+  {2pt}% horizontal separation between label and title body
+  {}% before the title body
+  []% after the title body
+
+% section format
+\titleformat{\section}%
+  {\normalfont\Large\itshape\color{orange}}% format applied to label+text
+  {\llap{\colorbox{orange}{\parbox{1.5cm}{\hfill\color{white}\thesection}}}}% label
+  {1em}% horizontal separation between label and title body
+  {}% before the title body
+  []% after the title body
+
+% subsection format
+\titleformat{\subsection}%
+  {\normalfont\large\itshape\color{blue}}% format applied to label+text
+  {\llap{\colorbox{blue}{\parbox{1.5cm}{\hfill\color{white}\thesubsection}}}}% label
+  {1em}% horizontal separation between label and title body
+  {}% before the title body
+  []% after the title body
+
+%%% Front page
 \title{\textbf{Seeker\\\normalsize{Documentation}}}
 \author{Jaroslaw Hirniak}
 \date{Last updated on: \emph{\today}}
@@ -166,7 +214,22 @@
 \usepackage{makeidx}
 \makeindex
 
+%%% Front page cover image
+
+\usepackage{eso-pic}
+\newcommand\BackgroundPic{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight,%
+keepaspectratio]{cover.jpg}%
+\vfill
+}}}
+
 \begin{document}
+
+\AddToShipoutPicture*{\BackgroundPic}
 
 \maketitle
 
@@ -174,6 +237,7 @@
 
 %--- Ch1: Project
 \chapter{Project}
+\lipsum[1]
  
 \section{Motivation}
 \paragraph{}
@@ -393,7 +457,7 @@ Web Crawler should either
 \end{itemize}
 
 %---
-
+%%%%%%%%%%%%%%%%%%%%%%%%%
 %--- Ch4: Implementation
 \chapter{Design}
 
